@@ -5,12 +5,15 @@
 #'
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
+#' @import plyr, dplyr, data.table, sjstats
 #' @export
+
 
 partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # get the linear model object and turn it into a matrix and turn row names into a variable called "effect"
   # compute partial eta-squared for each effect
   # add additional columns containing data and formula that was used to create these effects
+
   x <-
     dplyr::left_join(
       x = data.table::setDT(x = as.data.frame(as.matrix(
