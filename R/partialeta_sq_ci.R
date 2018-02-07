@@ -6,14 +6,7 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #'
-#' @import plyr
-#' @import dplyr
-#' @import data.table
-#' @import sjstats
-#' @import stats
-#'
 #' @export
-
 
 partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # get the linear model object and turn it into a matrix and turn row names into a variable called "effect"
@@ -22,18 +15,24 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
 
   x <-
     dplyr::left_join(
+      # details from the anova results
       x = data.table::setDT(x = as.data.frame(as.matrix(
         stats::anova(object = lm_object)
-      )), keep.rownames = "effect"),
+      )),
+      keep.rownames = "effect"),
+      # other information about the results (data and formula used, etc.)
       y = data.table::setDT(x = as.data.frame(
         cbind(
-          "effsize" = sjstats::eta_sq(model = stats::anova(lm_object),
-                                      partial = TRUE),
+          "effsize" = sjstats::eta_sq(
+            model = stats::anova(object = lm_object),
+            partial = TRUE
+          ),
           "data" = as.character(lm_object$call[3]),
           "formula" = as.character(lm_object$call[2])
         )
       ),
       keep.rownames = "effect"),
+      # merge the two preceding pieces of information by the common element of Effect
       by = "effect"
     )
   # create a new column for residual degrees of freedom
