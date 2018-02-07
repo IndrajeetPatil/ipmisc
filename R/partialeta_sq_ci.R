@@ -8,12 +8,13 @@
 #'
 #' @importFrom dplyr %>%
 #' @importFrom dplyr do
-#'
-#' @import plyr
-#' @import dplyr
-#' @import data.table
-#' @import stats
-#' @import sjstats
+#' @importFrom dplyr select
+#' @importFrom plyr ldply
+#' @importFrom plyr dlply
+#' @importFrom sjstats eta_sq
+#' @importFrom data.table setDT
+#' @importFrom stats anova
+#' @importFrom stats na.omit
 #'
 #' @export
 
