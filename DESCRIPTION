@@ -9,13 +9,20 @@ License: GPL-2.0
 Depends: R (>= 3.1.0)
 Encoding: UTF-8
 LazyData: true
+BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
 RoxygenNote: 6.0.1
-Imports: 
+Depends:
+  R (>= 3.1.0),
+  magrittr,
   apaTables,
   data.table,
-  devtools,
-  dplyr,
+  dplyr(>= 0.7.1),
   plyr,
   rlang,
   sjstats,
   stats
+Suggests:
+  grDevices,
+  knitr,
+  RColorBrewer,
+  gtable
