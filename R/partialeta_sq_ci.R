@@ -30,7 +30,8 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # create a new column for residual degrees of freedom
   x$df2 <- x$Df[x$effect == "Residuals"]
   # remove sum of squares columns since they will not be useful
-  x <- x %>% dplyr::select(-c(grep("Sq", names(x))))
+  x <-
+    x %>% dplyr::select(.data = ., -c(base::grep(pattern = "Sq", x = names(x))))
   # remove NAs, which would remove the row containing Residuals (redundant at this point)
   x <- na.omit(x)
   # rename to something more meaningful and tidy
@@ -48,7 +49,8 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # convert the effect into a factor
   x$effect <- as.factor(x$effect)
   # for each type of effect, compute partial eta-squared confidence intervals, which would return a list
-  library(plyr); library(dplyr)
+  library(plyr)
+  library(dplyr)
   ci_df <-
     plyr::dlply(
       .data = x,
