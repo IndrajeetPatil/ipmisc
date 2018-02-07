@@ -16,8 +16,7 @@
 #' @importFrom stats anova
 #' @importFrom stats na.omit
 #'
-#' @import dplyr
-#' @import magrittr
+#' @import plyr
 #'
 #' @export
 
@@ -53,7 +52,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # remove sum of squares columns since they will not be useful
   x <-
     x %>%
-    dplyr::select(-c(base::grep(pattern = "Sq", x = names(x))))
+    dplyr::select(.data = ., -c(base::grep(pattern = "Sq", x = names(x))))
   # remove NAs, which would remove the row containing Residuals (redundant at this point)
   x <- stats::na.omit(object = x)
   # rename to something more meaningful and tidy
