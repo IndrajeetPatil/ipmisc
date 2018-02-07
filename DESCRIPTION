@@ -17,7 +17,6 @@ Imports:
   apaTables,
   data.table,
   dplyr,
-  magrittr,
   plyr,
   rlang,
   sjstats,

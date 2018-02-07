@@ -5,7 +5,8 @@
 #'
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
-#' @importFrom magrittr %>%
+#' @importFrom dplyr %>%
+#'
 #' @export
 
 partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
@@ -43,7 +44,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
     dplyr::select(.data = .,
                   -c(base::grep(pattern = "Sq", x = names(x))))
   # remove NAs, which would remove the row containing Residuals (redundant at this point)
-  x <- na.omit(x)
+  x <- stats::na.omit(object = x)
   # rename to something more meaningful and tidy
   x <- plyr::rename(x = x,
                     replace = c("Df" = "df1",
