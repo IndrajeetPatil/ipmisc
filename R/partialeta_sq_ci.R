@@ -5,8 +5,15 @@
 #'
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
+#'
 #' @importFrom dplyr %>%
 #' @importFrom dplyr do
+#'
+#' @import plyr
+#' @import dplyr
+#' @import data.table
+#' @import stats
+#' @import sjstats
 #'
 #' @export
 
