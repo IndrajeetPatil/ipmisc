@@ -6,6 +6,7 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #' @importFrom dplyr %>%
+#' @importFrom dplyr do
 #'
 #' @export
 

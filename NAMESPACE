@@ -3,3 +3,4 @@
 export(partialeta_sq_ci)
 export(strip_attributes)
 importFrom(dplyr,"%>%")
+importFrom(dplyr,do)
