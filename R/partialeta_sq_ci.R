@@ -14,7 +14,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   x <-
     dplyr::left_join(
       data.table::setDT(as.data.frame(as.matrix(
-        stats::anova(lm_object)
+        stats::anova(object = lm_object)
       )), keep.rownames = "effect"),
       data.table::setDT(as.data.frame(
         cbind(
@@ -31,11 +31,12 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   x$df2 <- x$Df[x$effect == "Residuals"]
   # remove sum of squares columns since they will not be useful
   x <-
-    x %>% dplyr::select(.data = ., -c(base::grep(pattern = "Sq", x = names(x))))
+    x %>%
+    dplyr::select(.data = ., -c(base::grep(pattern = "Sq", x = names(x))))
   # remove NAs, which would remove the row containing Residuals (redundant at this point)
   x <- na.omit(x)
   # rename to something more meaningful and tidy
-  x <- plyr::rename(x, c("Df" = "df1", "F value" = "F.value"))
+  x <- plyr::rename(x = x, replace = c("Df" = "df1", "F value" = "F.value"))
   # rearrange the columns
   x <-
     x[, c("F.value",
@@ -65,10 +66,10 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
     )
   # get elements from the effect size confidence intervals list into a neat dataframe
   ci_df <-
-    plyr::ldply(ci_df, function(x)
+    plyr::ldply(.data = ci_df, .fun = function(x)
       cbind("LL" = x[[1]], "UL" = x[[2]]))
   # merge the dataframe containing effect sizes with the dataframe containing rest of the information
-  effsize_ci <- merge(x, ci_df, by = "effect")
+  effsize_ci <- base::merge(x, ci_df, by = "effect")
   return(effsize_ci)
 
 }
