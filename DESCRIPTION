@@ -2,7 +2,7 @@ Package: ipmisc
 Type: Package
 Title: Miscellaneous functions for data cleaning and analysis
 Version: 0.1.0
-Author: Indrajeet Patil
+Authors@R: person("Indrajeet", "Patil", email = "patilindrajeet.science@gmail.com", role = c("aut", "cre"))
 Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
 Description: ipmisc provides multiple functions that have come in handy for data cleaning and data analysis in my own work.
 License: GPL-2.0
@@ -10,13 +10,16 @@ Depends: R (>= 3.1.0)
 Encoding: UTF-8
 LazyData: true
 BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
+VignetteBuilder: knitr
 Depends:
-  R (>= 3.1.0),
-  magrittr,
+  R (>= 3.1.0)
+Imports:
   apaTables,
   data.table,
-  dplyr(>= 0.7.1),
+  dplyr,
+  magrittr,
   plyr,
   rlang,
   sjstats,
