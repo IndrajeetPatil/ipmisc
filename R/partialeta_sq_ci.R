@@ -6,6 +6,12 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #'
+#' @import plyr
+#' @import dplyr
+#' @import data.table
+#' @import sjstats
+#' @import stats
+#'
 #' @export
 
 
@@ -42,7 +48,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # rename to something more meaningful and tidy
   x <- plyr::rename(x = x,
                     replace = c("Df" = "df1",
-                                       "F value" = "F.value"))
+                                "F value" = "F.value"))
   # rearrange the columns
   x <-
     x[, c("F.value",
