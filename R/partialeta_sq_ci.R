@@ -5,7 +5,7 @@
 #'
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
-#'
+#' @importFrom magrittr %>%
 #' @export
 
 partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
