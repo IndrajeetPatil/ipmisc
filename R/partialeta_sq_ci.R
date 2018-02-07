@@ -13,12 +13,12 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # add additional columns containing data and formula that was used to create these effects
   x <-
     dplyr::left_join(
-      data.table::setDT(as.data.frame(as.matrix(
-        stats::anova(lm_object)
+      x = data.table::setDT(x = as.data.frame(as.matrix(
+        stats::anova(object = lm_object)
       )), keep.rownames = "effect"),
-      data.table::setDT(as.data.frame(
+      y = data.table::setDT(x = as.data.frame(
         cbind(
-          "effsize" = sjstats::eta_sq(stats::anova(lm_object),
+          "effsize" = sjstats::eta_sq(model = stats::anova(lm_object),
                                       partial = TRUE),
           "data" = as.character(lm_object$call[3]),
           "formula" = as.character(lm_object$call[2])
@@ -30,11 +30,13 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # create a new column for residual degrees of freedom
   x$df2 <- x$Df[x$effect == "Residuals"]
   # remove sum of squares columns since they will not be useful
-  x <- x %>% dplyr::select(-c(grep("Sq", names(x))))
+  x <-
+    x %>%
+    dplyr::select(.data = ., -c(base::grep(pattern = "Sq", x = names(x))))
   # remove NAs, which would remove the row containing Residuals (redundant at this point)
   x <- na.omit(x)
   # rename to something more meaningful and tidy
-  x <- plyr::rename(x, c("Df" = "df1", "F value" = "F.value"))
+  x <- plyr::rename(x = x, replace = c("Df" = "df1", "F value" = "F.value"))
   # rearrange the columns
   x <-
     x[, c("F.value",
@@ -48,7 +50,8 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # convert the effect into a factor
   x$effect <- as.factor(x$effect)
   # for each type of effect, compute partial eta-squared confidence intervals, which would return a list
-  library(plyr); library(dplyr)
+  library(plyr)
+  library(dplyr)
   ci_df <-
     plyr::dlply(
       .data = x,
@@ -63,10 +66,13 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
     )
   # get elements from the effect size confidence intervals list into a neat dataframe
   ci_df <-
-    plyr::ldply(ci_df, function(x)
-      cbind("LL" = x[[1]], "UL" = x[[2]]))
+    plyr::ldply(
+      .data = ci_df,
+      .fun = function(x)
+        cbind("LL" = x[[1]], "UL" = x[[2]])
+    )
   # merge the dataframe containing effect sizes with the dataframe containing rest of the information
-  effsize_ci <- merge(x, ci_df, by = "effect")
+  effsize_ci <- base::merge(x = x, y = ci_df, by = "effect")
   return(effsize_ci)
 
 }
