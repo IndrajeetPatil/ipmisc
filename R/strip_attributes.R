@@ -6,6 +6,7 @@
 #' @param data a data.frame
 #' @return a data frame with variable names cleaned to remove all attributes except for
 #' names, row.names, and class
+#' @export
 
 strip_attributes <- function(data) {
   # get all the names of the attributes present in the dataframe
