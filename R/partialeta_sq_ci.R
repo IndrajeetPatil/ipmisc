@@ -17,6 +17,7 @@
 #' @importFrom stats na.omit
 #'
 #' @import dplyr
+#' @import magrittr
 #'
 #' @export
 
