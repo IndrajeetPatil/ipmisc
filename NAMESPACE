@@ -2,6 +2,7 @@
 
 export(partialeta_sq_ci)
 export(strip_attributes)
+import(dplyr)
 importFrom(data.table,setDT)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,do)
