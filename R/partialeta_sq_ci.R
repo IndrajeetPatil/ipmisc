@@ -73,10 +73,14 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
     plyr::ldply(
       .data = ci_df,
       .fun = function(x)
-        cbind("LL" = x[[1]], "UL" = x[[2]])
+        cbind("LL" = x[[1]],
+              "UL" = x[[2]])
     )
   # merge the dataframe containing effect sizes with the dataframe containing rest of the information
-  effsize_ci <- base::merge(x = x, y = ci_df, by = "effect")
+  effsize_ci <- base::merge(x = x,
+                            y = ci_df,
+                            by = "effect")
+  # returning the final dataframe
   return(effsize_ci)
 
 }
