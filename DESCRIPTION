@@ -19,6 +19,7 @@ Imports:
   dplyr,
   plyr,
   rlang,
+  rstudioapi,
   sjstats,
   stats
 Suggests:
