@@ -15,9 +15,9 @@
 #'
 #' @examples
 #' # the most common error is not adding quotes to column names that contain spaces
-#' signif_column(data = measures_posthoc, p = `p-value (adjusted)`)
-#' # or
-#' signif_column(data = measures_posthoc, p = p.value)
+#' signif_column(data = data, p = `p-value (adjusted)`)
+#' signif_column(data = data, p = `Pr(>|t|)`)
+#' signif_column(data = data$p.value)
 #'
 #' @export
 
@@ -26,8 +26,9 @@ signif_column <- function(data = NULL, p) {
   if (!is.null(data)) {
     df <- data
     dplyr::select(.data = data,
+                  # column corresponding to p-values
                   p = !!rlang::enquo(p),
-                  dplyr::everything()) # column corresponding to p-values
+                  dplyr::everything())
   } else {
     # if only vector is provided
     df <-
@@ -48,18 +49,23 @@ signif_column <- function(data = NULL, p) {
     dplyr::mutate(
       .data = .,
       significance = dplyr::case_when(
+        # first condition
         p >= 0.050 ~ 'ns',
+        # second condition
         p < 0.050 &
           p >= 0.010 ~ '*',
+        # third condition
         p < 0.010 &
           p >= 0.001 ~ '**',
+        # fourth condition
         p < 0.001 ~ '***'
       )
     ) %>%
-    tibble::as_data_frame(x = .)
+    tibble::as_data_frame(x = .) # convert to tibble dataframe
   # if the entire dataframe was provided then this will create another column of p-values, which would be redundant
   # leave it out
-  if (!is.null(data)) df$p <- NULL
+  if (!is.null(data))
+    df$p <- NULL
   # reteurn the final dataframe
   return(df)
 }
