@@ -27,4 +27,5 @@ Suggests:
   grDevices,
   knitr,
   RColorBrewer,
-  gtable
+  gtable,
+    testthat
