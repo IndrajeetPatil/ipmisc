@@ -6,7 +6,6 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #'
-#' @import plyr
 #' @import dplyr
 #'
 #' @importFrom sjstats eta_sq
@@ -14,6 +13,9 @@
 #' @importFrom stats anova
 #' @importFrom stats na.omit
 #' @importFrom tibble as_data_frame
+#' @importFrom tibble rownames_to_column
+#' @importFrom plyr ldply
+#' @importFrom plyr dlply
 #'
 #' @examples
 #' library(datasets)
@@ -27,42 +29,38 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # get the linear model object and turn it into a matrix and turn row names into a variable called "effect"
   # compute partial eta-squared for each effect
   # add additional columns containing data and formula that was used to create these effects
+  # details from the anova results
+  aov_df <-
+    as.data.frame(as.matrix(stats::anova(object = lm_object))) %>%
+    tibble::rownames_to_column(df = ., var = "effect")
 
+  # other supplementary information about the results (data and formula used, etc.)
+  supp_df <- cbind.data.frame(
+    "effsize" = sjstats::eta_sq(
+      model = stats::anova(object = lm_object),
+      partial = TRUE
+    ),
+    "data" = as.character(lm_object$call[3]),
+    "formula" = as.character(lm_object$call[2])
+  ) %>%
+    tibble::rownames_to_column(df = ., var = "effect")
+
+  # combining the dataframes (erge the two preceding pieces of information by the common element of Effect)
   x <-
-    dplyr::left_join(
-      # details from the anova results
-      x = data.table::setDT(x = as.data.frame(as.matrix(
-        stats::anova(object = lm_object)
-      )),
-      keep.rownames = "effect"),
-      # other information about the results (data and formula used, etc.)
-      y = data.table::setDT(x = as.data.frame(
-        cbind(
-          "effsize" = sjstats::eta_sq(
-            model = stats::anova(object = lm_object),
-            partial = TRUE
-          ),
-          "data" = as.character(lm_object$call[3]),
-          "formula" = as.character(lm_object$call[2])
-        )
-      ),
-      keep.rownames = "effect"),
-      # merge the two preceding pieces of information by the common element of Effect
-      by = "effect"
-    )
+    dplyr::left_join(x = aov_df,
+                     y = supp_df,
+                     by = "effect")
   # create a new column for residual degrees of freedom
   x$df2 <- x$Df[x$effect == "Residuals"]
   # remove sum of squares columns since they will not be useful
-  x <-
-    x %>%
+  x <- x %>%
     dplyr::select(.data = .,
-                  -c(base::grep(pattern = "Sq", x = names(x))))
-  # remove NAs, which would remove the row containing Residuals (redundant at this point)
-  x <- stats::na.omit(object = x)
-  # rename to something more meaningful and tidy
-  x <- plyr::rename(x = x,
-                    replace = c("Df" = "df1",
-                                "F value" = "F.value"))
+                  -c(base::grep(pattern = "Sq", x = names(x)))) %>%
+    dplyr::rename(.data = .,
+                  df1 = Df,
+                  F.value = `F value`) %>% # rename to something more meaningful and tidy
+    stats::na.omit(.) # remove NAs, which would remove the row containing Residuals (redundant at this point)
+
   # rearrange the columns
   x <-
     x[, c("F.value",
