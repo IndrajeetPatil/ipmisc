@@ -11,6 +11,13 @@ partialeta_sq_ci(lm_object, conf.level = 0.95)
 
 \item{conf.level}{Level of confidence for the confidence interval}
 }
+\examples{
+library(datasets)
+library(stats)
+x <- stats::lm(iris$Sepal.Length ~ iris$Species)
+ipmisc::partialeta_sq_ci(lm_object = x, conf.level = 0.95)
+
+}
 \author{
 Indrajeet Patil
 }

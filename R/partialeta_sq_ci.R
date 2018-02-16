@@ -6,17 +6,20 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #'
-#' @importFrom dplyr %>%
-#' @importFrom dplyr do
-#' @importFrom dplyr select
-#' @importFrom plyr ldply
-#' @importFrom plyr dlply
+#' @import plyr
+#' @import dplyr
+#'
 #' @importFrom sjstats eta_sq
 #' @importFrom data.table setDT
 #' @importFrom stats anova
 #' @importFrom stats na.omit
+#' @importFrom tibble as_data_frame
 #'
-#' @import plyr
+#' @examples
+#' library(datasets)
+#' library(stats)
+#' x <- stats::lm(iris$Sepal.Length ~ iris$Species)
+#' ipmisc::partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 #'
 #' @export
 
@@ -52,7 +55,8 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # remove sum of squares columns since they will not be useful
   x <-
     x %>%
-    dplyr::select(.data = ., -c(base::grep(pattern = "Sq", x = names(x))))
+    dplyr::select(.data = .,
+                  -c(base::grep(pattern = "Sq", x = names(x))))
   # remove NAs, which would remove the row containing Residuals (redundant at this point)
   x <- stats::na.omit(object = x)
   # rename to something more meaningful and tidy
@@ -93,9 +97,10 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
               "UL" = x[[2]])
     )
   # merge the dataframe containing effect sizes with the dataframe containing rest of the information
-  effsize_ci <- base::merge(x = x,
-                            y = ci_df,
-                            by = "effect")
+  # and convert to tibble
+  effsize_ci <- tibble::as_data_frame(base::merge(x = x,
+                                                  y = ci_df,
+                                                  by = "effect"))
   # returning the final dataframe
   return(effsize_ci)
 
