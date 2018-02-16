@@ -21,7 +21,8 @@ Imports:
   rlang,
   rstudioapi,
   sjstats,
-  stats
+  stats,
+  tibble
 Suggests:
   grDevices,
   knitr,
