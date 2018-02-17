@@ -9,6 +9,7 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #'
+#' @import plyr
 #' @import dplyr
 #'
 #' @importFrom sjstats eta_sq
@@ -17,14 +18,12 @@
 #' @importFrom stats na.omit
 #' @importFrom tibble as_data_frame
 #' @importFrom tibble rownames_to_column
-#' @importFrom plyr ldply
-#' @importFrom plyr dlply
 #'
 #' @examples
 #' library(datasets)
 #' library(stats)
 #' x <- stats::lm(iris$Sepal.Length ~ iris$Species)
-#' ipmisc::partialeta_sq_ci(lm_object = x, conf.level = 0.95)
+#' partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 #'
 #' @export
 
@@ -89,6 +88,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
           conf.level = conf.level
         )
     )
+
   # get elements from the effect size confidence intervals list into a neat dataframe
   ci_df <-
     plyr::ldply(
@@ -97,6 +97,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
         cbind("LL" = x[[1]],
               "UL" = x[[2]])
     )
+
   # merge the dataframe containing effect sizes with the dataframe containing rest of the information
   # and convert to tibble
   effsize_ci <- tibble::as_data_frame(base::merge(x = x,

@@ -11,6 +11,10 @@ signif_column(data = NULL, p)
 
 \item{p}{the column containing p-values}
 }
+\value{
+Returns the originally entered object (either a vector or a dataframe) in tibble format with
+an additional column corresponding to statistical significance.
+}
 \description{
 This function will add a new column to a dataframe containing p-values
 }

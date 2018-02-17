@@ -6,12 +6,20 @@
 \usage{
 set_cwd()
 }
+\value{
+Path to changed working directory.
+}
 \description{
 This function will change the current working directoy to whichever directory the R script you are currently
 working on is located. This preempts the trouble of setting the working directory manually.
 }
 \note{
 From: https://eranraviv.com/r-tips-and-tricks-working-directory/
+}
+\examples{
+# place this code at the top of your script
+set_cwd()
+
 }
 \author{
 Indrajeet Patil

@@ -22,7 +22,7 @@ for all effects along with partial eta-squared effect size and its confidence in
 library(datasets)
 library(stats)
 x <- stats::lm(iris$Sepal.Length ~ iris$Species)
-ipmisc::partialeta_sq_ci(lm_object = x, conf.level = 0.95)
+partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 
 }
 \author{

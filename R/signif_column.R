@@ -2,8 +2,10 @@
 #' @title creating a column with significance labels
 #' @name signif_column
 #' @aliases signif_column
-#' @description This function will add a new column to a dataframe containing p-values
 #' @author Indrajeet Patil
+#' @description This function will add a new column to a dataframe containing p-values
+#' @return Returns the originally entered object (either a vector or a dataframe) in tibble format with
+#' an additional column corresponding to statistical significance.
 #'
 #' @param data data frame from which variables specified are preferentially to be taken
 #' @param p the column containing p-values
@@ -26,8 +28,8 @@ signif_column <- function(data = NULL, p) {
   if (!is.null(data)) {
     df <- data
     dplyr::select(.data = data,
-                  # column corresponding to p-values
                   p = !!rlang::enquo(p),
+                  # column corresponding to p-values
                   dplyr::everything())
   } else {
     # if only vector is provided
@@ -62,10 +64,10 @@ signif_column <- function(data = NULL, p) {
       )
     ) %>%
     tibble::as_data_frame(x = .) # convert to tibble dataframe
-  # if the entire dataframe was provided then this will create another column of p-values, which would be redundant
-  # leave it out
+  # if the entire dataframe was provided then this will create another column of p-values,
+  # which would be redundant leave it out
   if (!is.null(data))
     df$p <- NULL
-  # reteurn the final dataframe
+  # return the final tibble dataframe
   return(df)
 }
