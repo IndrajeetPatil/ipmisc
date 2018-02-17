@@ -17,9 +17,9 @@
 #'
 #' @examples
 #' # the most common error is not adding quotes to column names that contain spaces
-#' signif_column(data = data, p = `p-value (adjusted)`)
-#' signif_column(data = data, p = `Pr(>|t|)`)
-#' signif_column(data = data$p.value)
+#' # signif_column(data = df, p = `p-value (adjusted)`)
+#' # signif_column(data = df, p = `Pr(>|t|)`)
+#' # signif_column(data = df$p.value)
 #'
 #' @export
 

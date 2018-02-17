@@ -9,10 +9,6 @@
 #'
 #' @importFrom rstudioapi getActiveDocumentContext
 #'
-#' @examples
-#' # place this code at the top of your script
-#' set_cwd()
-#'
 #' @export
 
 set_cwd <- function() {

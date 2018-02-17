@@ -20,9 +20,9 @@ This function will add a new column to a dataframe containing p-values
 }
 \examples{
 # the most common error is not adding quotes to column names that contain spaces
-signif_column(data = data, p = `p-value (adjusted)`)
-signif_column(data = data, p = `Pr(>|t|)`)
-signif_column(data = data$p.value)
+# signif_column(data = df, p = `p-value (adjusted)`)
+# signif_column(data = df, p = `Pr(>|t|)`)
+# signif_column(data = df$p.value)
 
 }
 \author{

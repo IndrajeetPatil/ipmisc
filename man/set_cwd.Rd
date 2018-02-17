@@ -16,11 +16,6 @@ working on is located. This preempts the trouble of setting the working director
 \note{
 From: https://eranraviv.com/r-tips-and-tricks-working-directory/
 }
-\examples{
-# place this code at the top of your script
-set_cwd()
-
-}
 \author{
 Indrajeet Patil
 }
