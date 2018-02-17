@@ -17,12 +17,13 @@ Imports:
   apaTables,
   data.table,
   dplyr,
-  plyr,
+  purrr,
   rlang,
   rstudioapi,
   sjstats,
   stats,
-  tibble
+  tibble,
+  tidyr
 Suggests:
   grDevices,
   knitr,

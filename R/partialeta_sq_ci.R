@@ -9,11 +9,12 @@
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
 #'
-#' @import plyr
 #' @import dplyr
 #'
+#' @importFrom purrr map
+#' @importFrom tidyr nest
+#' @importFrom tidyr unnest
 #' @importFrom sjstats eta_sq
-#' @importFrom data.table setDT
 #' @importFrom stats anova
 #' @importFrom stats na.omit
 #' @importFrom tibble as_data_frame
@@ -63,46 +64,66 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
                   F.value = `F value`) %>% # rename to something more meaningful and tidy
     stats::na.omit(.) # remove NAs, which would remove the row containing Residuals (redundant at this point)
 
-  # rearrange the columns
-  x <-
-    x[, c("F.value",
-          "df1",
-          "df2",
-          "effect",
-          "effsize",
-          "Pr(>F)",
-          "data",
-          "formula")]
   # convert the effect into a factor
-  x$effect <- as.factor(x$effect)
-  # for each type of effect, compute partial eta-squared confidence intervals, which would return a list
-  ci_df <-
-    plyr::dlply(
-      .data = x,
-      .variables = .(effect),
-      .fun = function(data)
-        apaTables::get.ci.partial.eta.squared(
-          F.value = data$F.value,
-          df1 = data$df1,
-          df2 = data$df2,
-          conf.level = conf.level
+  x <- x  %>%
+    dplyr::mutate_if(.tbl = .,
+                     .predicate = is.character,
+                     .funs = as.factor)
+
+  # creating a custom function that extracts lower and upper bounds of confidence intervals
+  partialetaci <- function(data, which, conf.level = conf.level) {
+    d <- apaTables::get.ci.partial.eta.squared(
+      F.value = data$F.value,
+      df1 = data$df1,
+      df2 = data$df2,
+      conf.level = conf.level
+    )
+    # return either LL or UL
+    if (which == 'LL') {
+      return(d[attributes(d)$name == "LL"][[1]])
+    } else if (which == 'UL') {
+      return(d[attributes(d)$name == "UL"][[1]])
+    }
+  }
+
+  # creating a dataframe with confidence intervals for partial eta-squared
+  effsize_ci <- x %>%
+    dplyr::group_by(.data = ., effect) %>%
+    tidyr::nest(data = .) %>% # 'data' variable is automatically created by tidyr::nest function
+    dplyr::mutate(
+      .data = .,
+      LL = data %>% # adding lower bound column
+        purrr::map(
+          .x = .,
+          .f = ~ partialetaci(
+            data = .,
+            which = 'LL',
+            conf.level = conf.level
+          )
+        ),
+      UL = data %>% # adding upper bound column
+        purrr::map(
+          .x = .,
+          .f = ~ partialetaci(
+            data = .,
+            which = 'UL',
+            conf.level = conf.level
+          )
         )
-    )
+    ) %>%
+    tidyr::unnest(data = .) %>% # unnest the data
+    dplyr::select(.data = .,
+                  F.value,
+                  df1,
+                  df2,
+                  effect,
+                  effsize,
+                  LL,
+                  UL,
+                  `Pr(>F)`,
+                  data,
+                  formula) # reoder the columns in the dataframe
 
-  # get elements from the effect size confidence intervals list into a neat dataframe
-  ci_df <-
-    plyr::ldply(
-      .data = ci_df,
-      .fun = function(x)
-        cbind("LL" = x[[1]],
-              "UL" = x[[2]])
-    )
-
-  # merge the dataframe containing effect sizes with the dataframe containing rest of the information
-  # and convert to tibble
-  effsize_ci <- tibble::as_data_frame(base::merge(x = x,
-                                                  y = ci_df,
-                                                  by = "effect"))
   # returning the final dataframe
   return(effsize_ci)
 
