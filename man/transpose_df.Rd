@@ -13,9 +13,17 @@ transpose_df(df, var = "rowname", ignore.empty = FALSE)
 
 \item{ignore.empty}{Default is \code{FALSE}. \code{TRUE} will ignore length-0 list elements.}
 }
+\value{
+A transposed dataframes with row and column names.
+}
+\description{
+Although functions like \code{data.table::transpose()} or \code{base::t()} can transpose dataframes well, they
+don't preserve row and column names. The current function transposes dataframes while preserving row and column names.
+}
 \examples{
+set.seed(402)
 data <- cbind.data.frame(x = rnorm(5), y = rnorm(5))
-ipmisc::transpose_df(df = data)
+transpose_df(df = data)
 
 }
 \author{

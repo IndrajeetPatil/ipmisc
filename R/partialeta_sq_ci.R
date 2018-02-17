@@ -2,6 +2,9 @@
 #' @title Confidence intervals for Partial Eta Squared
 #' @name partialeta_sq_ci
 #' @author Indrajeet Patil
+#' @description This function will convert a linear model object to a dataframe containing statistical details
+#' for all effects along with partial eta-squared effect size and its confidence interval.
+#' @return A dataframe with results from `stats::lm()` with partial eta-squared and its confidence interval.
 #'
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval

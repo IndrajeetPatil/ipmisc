@@ -2,6 +2,9 @@
 #' @title Transposing a dataframe while preserving row and column names
 #' @name transpose_df
 #' @author Indrajeet Patil
+#' @description Although functions like `data.table::transpose()` or `base::t()` can transpose dataframes well, they
+#' don't preserve row and column names. The current function transposes dataframes while preserving row and column names.
+#' @return A transposed dataframes with row and column names.
 #'
 #' @param df Dataframe to tranpose.
 #' @param var Name of column to use for rownames.
@@ -14,7 +17,7 @@
 #' @examples
 #' set.seed(402)
 #' data <- cbind.data.frame(x = rnorm(5), y = rnorm(5))
-#' ipmisc::transpose_df(df = data)
+#' transpose_df(df = data)
 #'
 #' @export
 

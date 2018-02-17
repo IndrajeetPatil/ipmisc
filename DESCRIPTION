@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: person("Indrajeet", "Patil", email = "patilindrajeet.science@gmail.com", role = c("aut", "cre"))
 Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
 Description: ipmisc provides multiple functions that have come in handy for data cleaning and data analysis in my own work.
-License: GPL-2.0
+License: GPL-2
 Depends: R (>= 3.1.0)
 Encoding: UTF-8
 LazyData: true
@@ -28,4 +28,4 @@ Suggests:
   knitr,
   RColorBrewer,
   gtable,
-    testthat
+  testthat

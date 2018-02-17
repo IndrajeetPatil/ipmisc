@@ -11,6 +11,13 @@ partialeta_sq_ci(lm_object, conf.level = 0.95)
 
 \item{conf.level}{Level of confidence for the confidence interval}
 }
+\value{
+A dataframe with results from \code{stats::lm()} with partial eta-squared and its confidence interval.
+}
+\description{
+This function will convert a linear model object to a dataframe containing statistical details
+for all effects along with partial eta-squared effect size and its confidence interval.
+}
 \examples{
 library(datasets)
 library(stats)
