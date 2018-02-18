@@ -4,7 +4,7 @@
 \alias{summary_skim}
 \title{custom function to get summary for multiple variables for all grouping variable levels}
 \usage{
-summary_skim(data, grouping.vars = ..., measures = ...)
+summary_skim(data, grouping.vars, measures)
 }
 \arguments{
 \item{data}{dataframe}
