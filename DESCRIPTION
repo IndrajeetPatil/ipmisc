@@ -1,7 +1,7 @@
 Package: ipmisc
 Type: Package
 Title: Miscellaneous functions for data cleaning and analysis
-Version: 0.1.0
+Version: 0.0.0.9000
 Authors@R: person("Indrajeet", "Patil", email = "patilindrajeet.science@gmail.com", role = c("aut", "cre"))
 Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
 Description: ipmisc provides multiple functions that have come in handy for data cleaning and data analysis in my own work.
@@ -21,6 +21,7 @@ Imports:
   rlang,
   rstudioapi,
   sjstats,
+  skimr,
   stats,
   tibble,
   tidyr
