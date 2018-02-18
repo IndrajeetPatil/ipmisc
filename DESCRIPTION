@@ -14,20 +14,20 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1.9000
 VignetteBuilder: knitr
 Imports:
-  apaTables,
-  data.table,
-  dplyr,
-  purrr,
-  rlang,
-  rstudioapi,
-  sjstats,
-  skimr,
-  stats,
-  tibble,
-  tidyr
+  apaTables (>= 1.5.1),
+  data.table (>= 1.10.4-3),
+  dplyr (>= 0.7.4),
+  purrr (>= 0.2.4),
+  rlang (>= 0.1.6.9003),
+  rstudioapi (>= 0.7.0.9000),
+  sjstats (>= 0.14.1),
+  skimr (>= 1.0.2),
+  stats (>= 3.4.3),
+  tibble (>= 1.4.2),
+  tidyr (>= 0.8.0)
 Suggests:
   grDevices,
   knitr,
   RColorBrewer,
   gtable,
-  testthat
+  testthat (>= 2.0.0)
