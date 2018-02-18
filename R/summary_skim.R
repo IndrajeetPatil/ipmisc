@@ -24,8 +24,8 @@
 #' @export
 
 summary_skim <- function(data,
-                         grouping.vars = ...,
-                         measures = ...) {
+                         grouping.vars,
+                         measures) {
   # getting the dataframe ready
   df <-
     dplyr::select(.data = data,
