@@ -30,4 +30,5 @@ Suggests:
   knitr,
   RColorBrewer,
   gtable,
-  testthat (>= 2.0.0)
+  testthat (>= 2.0.0),
+    rmarkdown
