@@ -2,7 +2,7 @@
 % Please edit documentation in R/summary_skim.R
 \name{summary_skim}
 \alias{summary_skim}
-\title{custom function to get summary for multiple variables for all grouping variable levels}
+\title{Custom function to get descriptive statistics for multiple numeric variables for all grouping variable levels}
 \usage{
 summary_skim(data, grouping.vars, measures)
 }
@@ -11,17 +11,18 @@ summary_skim(data, grouping.vars, measures)
 
 \item{grouping.vars}{list of grouping variables}
 
-\item{measures}{list variables for which summary needs to computed}
+\item{measures}{list variables for which summary needs to computed (only \emph{numeric} variables should be entered)}
 }
 \value{
-dataframe with summary statistics
+Dataframe with descriptive statistics for numeric variables (n, mean, sd, median, min, max)
 }
 \description{
-custom function to get summary for multiple variables for all grouping variable levels
+Custom function to get descriptive statistics for multiple numeric variables for all grouping variable levels
 }
 \examples{
 library(datasets)
 summary_skim(data = mtcars, grouping.vars = c(am, cyl), measures = c(wt, mpg))
+summary_skim(data = mtcars, grouping.vars = am, measures = wt)
 
 }
 \author{
