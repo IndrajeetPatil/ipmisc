@@ -19,8 +19,12 @@
 #'
 #' @examples
 #' library(datasets)
+#' # if you have multiple variable for each argument
 #' summary_skim(data = mtcars, grouping.vars = c(am, cyl), measures = c(wt, mpg))
+#' # if you have just one variable per argument
 #' summary_skim(data = mtcars, grouping.vars = am, measures = wt)
+#' # or
+#' summary_skim(data = mtcars, grouping.vars = c(am), measures = c(wt))
 #'
 #' @export
 
