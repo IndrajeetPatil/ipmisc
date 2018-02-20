@@ -26,11 +26,11 @@
 signif_column <- function(data = NULL, p) {
   # if dataframe is provided
   if (!is.null(data)) {
-    df <- data
-    dplyr::select(.data = data,
-                  p = !!rlang::enquo(p),
-                  # column corresponding to p-values
-                  dplyr::everything())
+    df <-
+      dplyr::select(.data = data,
+                    p = !!rlang::enquo(p),
+                    # column corresponding to p-values
+                    dplyr::everything())
   } else {
     # if only vector is provided
     df <-
