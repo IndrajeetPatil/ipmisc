@@ -4,9 +4,12 @@ author: "Indrajeet Patil"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{Data wrangling functions}
+  %\VignetteEngine{R.rsp::asis}
+  %\VignetteKeyword{PDF}
+  %\VignetteKeyword{HTML}
+  %\VignetteKeyword{vignette}
+  %\VignetteKeyword{package}
 ---
 
 ```{r setup, include = FALSE}
