@@ -1,0 +1,61 @@
+---
+title: "Data wrangling functions"
+author: "Indrajeet Patil"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette will provide documentation for how to use data wrangling helper functions from the package `ipmisc`.
+
+## transpose_df
+
+Although both `data.table::transpose` and `base::t` functions can transpose a dataframe, they both have their shortcomings. This can be illustrated one of the most common instances where the dataframe needs to be transposed: displaying results from statistical tests in a table.
+
+```{r}
+library(datasets)
+library(stats)
+library(data.table)
+library(ipmisc)
+
+# define a new dataframe containing coefficients from linear regression
+df <-
+  cbind.data.frame("coef" = coef(stats::lm(
+  data = iris,
+  formula = Sepal.Length ~ Species
+  )))
+
+# print the dataframe
+print(df)
+
+# let's say we need the coefficients which are in rows right now to be in columns for publication
+# we will need to transpose this dataframe while preserving names of rows and columns
+
+# transform using data.table::transpose function
+data.table::transpose(l = df)
+
+# this doesn't preserve rows and names and additional renaming steps will be required
+
+# transform using base::t() function
+base::t(x = df)
+
+# although this seems to do the trick, it has converted a dataframe into a matrix, which is undesirable behavior
+str(base::t(x = df))
+
+# doing this with ipmisc::transpose_df() function
+ipmisc::transpose_df(df = df, var = "effect")
+
+# this returns a tibble dataframe with row and column names preserved
+
+```
+
