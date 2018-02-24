@@ -27,10 +27,12 @@ signif_column <- function(data = NULL, p) {
   # if dataframe is provided
   if (!is.null(data)) {
     df <-
-      dplyr::select(.data = data,
-                    p = !!rlang::enquo(p),
-                    # column corresponding to p-values
-                    dplyr::everything())
+      dplyr::select(
+        .data = data,
+        p = !!rlang::enquo(p),
+        # column corresponding to p-values
+        dplyr::everything()
+      )
   } else {
     # if only vector is provided
     df <-
@@ -42,7 +44,7 @@ signif_column <- function(data = NULL, p) {
     df$p <- as.numeric(as.character(df$p))
     warning(
       paste(
-        'Entered p-values were not numeric variables, so ipmisc has converted them to numeric'
+        "Entered p-values were not numeric variables, so ipmisc has converted them to numeric"
       )
     )
   }
@@ -52,22 +54,23 @@ signif_column <- function(data = NULL, p) {
       .data = .,
       significance = dplyr::case_when(
         # first condition
-        p >= 0.050 ~ 'ns',
+        p >= 0.050 ~ "ns",
         # second condition
         p < 0.050 &
-          p >= 0.010 ~ '*',
+          p >= 0.010 ~ "*",
         # third condition
         p < 0.010 &
-          p >= 0.001 ~ '**',
+          p >= 0.001 ~ "**",
         # fourth condition
-        p < 0.001 ~ '***'
+        p < 0.001 ~ "***"
       )
     ) %>%
     tibble::as_data_frame(x = .) # convert to tibble dataframe
   # if the entire dataframe was provided then this will create another column of p-values,
   # which would be redundant leave it out
-  if (!is.null(data))
+  if (!is.null(data)) {
     df$p <- NULL
+  }
   # return the final tibble dataframe
   return(df)
 }

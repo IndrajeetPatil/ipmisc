@@ -19,8 +19,8 @@
 #' 0 = flush-left at x, 1 = flush-right.
 #' @param title.hjust Horizontal justification for title. Default = 0.5 (centered on x).
 #' 0 = flush-left at x, 1 = flush-right.
-#' @param caption.rel.heights Numerical vector of relative columns heights while combining (title, plot, caption). 
-#' @param title.rel.heights Numerical vector of relative columns heights while combining (title, plot). 
+#' @param caption.rel.heights Numerical vector of relative columns heights while combining (title, plot, caption).
+#' @param title.rel.heights Numerical vector of relative columns heights while combining (title, plot).
 #'
 #' @import cowplot
 #'
@@ -70,20 +70,20 @@ combine_plots <-
            caption.rel.heights  = c(0.1, 1.2, 0.1)) {
     # preparing the basic plot
     plot <- cowplot::plot_grid(...)
-    
+
     # preparing the title
     if (!is.null(title.text)) {
       title <-
         cowplot::ggdraw() +
         cowplot::draw_label(
           label = title.text,
-          fontface = 'bold',
+          fontface = "bold",
           colour = title.colour,
           size = title.size,
           vjust = title.vjust,
           hjust = title.hjust
         )
-      
+
       # preparing the caption
       if (!is.null(caption.text)) {
         caption <-
@@ -95,24 +95,25 @@ combine_plots <-
             vjust = caption.vjust,
             hjust = caption.hjust
           )
-        
+
         # combining the basic plot with the title and the caption
         plot <-
           cowplot::plot_grid(title,
-                             plot,
-                             caption,
-                             ncol = 1,
-                             rel_heights = caption.rel.heights)
+            plot,
+            caption,
+            ncol = 1,
+            rel_heights = caption.rel.heights
+          )
       } else {
         # combining the basic plot with the title
         plot <-
           cowplot::plot_grid(title,
-                             plot,
-                             ncol = 1,
-                             rel_heights = title.rel.heights)
+            plot,
+            ncol = 1,
+            rel_heights = title.rel.heights
+          )
       }
     }
-    
+
     return(plot)
-    
   }

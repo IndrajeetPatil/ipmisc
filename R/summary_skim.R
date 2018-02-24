@@ -71,9 +71,11 @@ summary_skim <- function(data,
     }
 
   # getting the dataframe ready
-  df <- dplyr::select(.data = data,
-                      !!!grouping.vars,
-                      !!rlang::enquo(measures))
+  df <- dplyr::select(
+    .data = data,
+    !!!grouping.vars,
+    !!rlang::enquo(measures)
+  )
 
   # creating a nested dataframe
   df_nest <- df %>%
@@ -85,8 +87,10 @@ summary_skim <- function(data,
     dplyr::mutate(
       .data = .,
       summary = data %>% # 'data' variable is automatically created by tidyr::nest function
-        purrr::map(.x = .,
-                   .f = skimr::skim_to_wide)
+        purrr::map(
+          .x = .,
+          .f = skimr::skim_to_wide
+        )
     )
 
   # tidying up the skimr output by removing unnecessary information and renaming certain columns
@@ -116,10 +120,11 @@ summary_skim <- function(data,
       .funs = ~ as.numeric(as.character(.)) # change summary variables to numeric
     ) %>%
     dplyr::rename(.data = ., min = p0, max = p100) %>% # renaming columns to minimum and maximum
-    dplyr::mutate_if(.tbl = .,
-                     .predicate = is.character,
-                     .funs = as.factor) # change grouping variables to factors
+    dplyr::mutate_if(
+      .tbl = .,
+      .predicate = is.character,
+      .funs = as.factor
+    ) # change grouping variables to factors
 
   return(df_summary)
-
 }

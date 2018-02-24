@@ -23,15 +23,17 @@
 
 transpose_df <-
   function(df,
-           var = 'rowname',
+           var = "rowname",
            ignore.empty = FALSE) {
     # transpose the dataframe
     t_df <-
-      data.table::transpose(l = df,
-                            fill = NA,
-                            # used to fill shorter list elements so as to return each element of
-                            # the transposed result of equal lengths
-                            ignore.empty = ignore.empty)
+      data.table::transpose(
+        l = df,
+        fill = NA,
+        # used to fill shorter list elements so as to return each element of
+        # the transposed result of equal lengths
+        ignore.empty = ignore.empty
+      )
     # assign the row and column names of the original dataframe to the new dataframe
     colnames(t_df) <- rownames(df)
     rownames(t_df) <- colnames(df)

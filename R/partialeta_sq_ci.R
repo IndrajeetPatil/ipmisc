@@ -77,25 +77,33 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
 
   # combining the dataframes (erge the two preceding pieces of information by the common element of Effect)
   x <-
-    dplyr::left_join(x = aov_df,
-                     y = supp_df,
-                     by = "effect")
+    dplyr::left_join(
+      x = aov_df,
+      y = supp_df,
+      by = "effect"
+    )
   # create a new column for residual degrees of freedom
   x$df2 <- x$Df[x$effect == "Residuals"]
   # remove sum of squares columns since they will not be useful
   x <- x %>%
-    dplyr::select(.data = .,
-                  -c(base::grep(pattern = "Sq", x = names(x)))) %>%
-    dplyr::rename(.data = .,
-                  df1 = Df,
-                  F.value = `F value`) %>% # rename to something more meaningful and tidy
+    dplyr::select(
+      .data = .,
+      -c(base::grep(pattern = "Sq", x = names(x)))
+    ) %>%
+    dplyr::rename(
+      .data = .,
+      df1 = Df,
+      F.value = `F value`
+    ) %>% # rename to something more meaningful and tidy
     stats::na.omit(.) # remove NAs, which would remove the row containing Residuals (redundant at this point)
 
   # convert the effect into a factor
-  x <- x  %>%
-    dplyr::mutate_if(.tbl = .,
-                     .predicate = is.character,
-                     .funs = as.factor)
+  x <- x %>%
+    dplyr::mutate_if(
+      .tbl = .,
+      .predicate = is.character,
+      .funs = as.factor
+    )
 
   # creating a custom function that extracts lower and upper bounds of confidence intervals
   partialetaci <- function(data, which, conf.level = conf.level) {
@@ -106,9 +114,9 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
       conf.level = conf.level
     )
     # return either LL or UL
-    if (which == 'LL') {
+    if (which == "LL") {
       return(d[attributes(d)$name == "LL"][[1]])
-    } else if (which == 'UL') {
+    } else if (which == "UL") {
       return(d[attributes(d)$name == "UL"][[1]])
     }
   }
@@ -124,7 +132,7 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
           .x = .,
           .f = ~ partialetaci(
             data = .,
-            which = 'LL',
+            which = "LL",
             conf.level = conf.level
           )
         ),
@@ -133,25 +141,26 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
           .x = .,
           .f = ~ partialetaci(
             data = .,
-            which = 'UL',
+            which = "UL",
             conf.level = conf.level
           )
         )
     ) %>%
     tidyr::unnest(data = .) %>% # unnest the data
-    dplyr::select(.data = .,
-                  F.value,
-                  df1,
-                  df2,
-                  effect,
-                  effsize,
-                  LL,
-                  UL,
-                  `Pr(>F)`,
-                  data,
-                  formula) # reoder the columns in the dataframe
+    dplyr::select(
+      .data = .,
+      F.value,
+      df1,
+      df2,
+      effect,
+      effsize,
+      LL,
+      UL,
+      `Pr(>F)`,
+      data,
+      formula
+    ) # reoder the columns in the dataframe
 
   # returning the final dataframe
   return(effsize_ci)
-
 }
