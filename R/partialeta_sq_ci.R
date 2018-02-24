@@ -28,6 +28,33 @@
 #'
 #' @export
 
+# defining global variables and functions to quient the R CMD check notes
+utils::globalVariables(
+  c(
+    "Df",
+    "F value",
+    "F.value",
+    "LL",
+    "Pr(>F)",
+    "UL",
+    "complete",
+    "data",
+    "df1",
+    "df2",
+    "effect",
+    "effsize",
+    "formula",
+    "hist",
+    "median",
+    "p0",
+    "p100",
+    "p25",
+    "p75",
+    "sd",
+    "type"
+  )
+)
+
 partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   # get the linear model object and turn it into a matrix and turn row names into a variable called "effect"
   # compute partial eta-squared for each effect

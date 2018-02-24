@@ -1,4 +1,4 @@
-#' ipmisc
+#' \code{ipmisc}
 #'
 #' Collection of functions to help with certain aspects of data-wrangling and data analysis that are not covered in the
 #' existing R packages.
@@ -10,3 +10,8 @@
 #' @name ipmisc
 #'
 NULL
+
+# to appease R CMD Check
+if (getRversion() >= "2.15.1")
+  utils::globalVariables(c(".")
+  )

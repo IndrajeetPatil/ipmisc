@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' library(datasets)
-#' data <- strip_attributes(data = iris)
+#' strip_attributes(data = iris)
 #'
 #' @export
 
