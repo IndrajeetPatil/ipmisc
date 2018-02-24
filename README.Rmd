@@ -1,0 +1,33 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# ipmisc
+
+[![Travis Build Status](https://travis-ci.org/IndrajeetPatil/ipmisc.svg?branch=master)](https://travis-ci.org/IndrajeetPatil/ipmisc)
+
+## Overview
+
+The goal of ipmisc is to gather miscellaneous helper functions that have been helpful to me in data cleaning and analysis.
+
+## Installation
+
+You can install `ipmisc` from GitHub with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("IndrajeetPatil/ipmisc")
+```
+
+## Documentation
+For documentation, please check out the vignettes folder of the package.
