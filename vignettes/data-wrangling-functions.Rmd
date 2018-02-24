@@ -4,20 +4,18 @@ author: "Indrajeet Patil"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
+  %\VignetteEngine{knitr::knitr}
   %\VignetteIndexEntry{Data wrangling functions}
-  %\VignetteEngine{R.rsp::asis}
-  %\VignetteKeyword{PDF}
-  %\VignetteKeyword{HTML}
-  %\VignetteKeyword{vignette}
-  %\VignetteKeyword{package}
+  \usepackage[utf8]{inputenc}
 ---
-
+  
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
+## Data wrangling functions
 
 This vignette will provide documentation for how to use data wrangling helper functions from the package `ipmisc`.
 
@@ -34,8 +32,8 @@ library(ipmisc)
 # define a new dataframe containing coefficients from linear regression
 df <-
   cbind.data.frame("coef" = coef(stats::lm(
-  data = iris,
-  formula = Sepal.Length ~ Species
+    data = mtcars,
+    formula = mpg ~ am*cyl
   )))
 
 # print the dataframe
