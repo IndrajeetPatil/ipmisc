@@ -23,8 +23,8 @@
 #' summary_skim(data = mtcars, grouping.vars = c(am, cyl), measures = c(wt, mpg))
 #' # if you have just one variable per argument
 #' summary_skim(data = mtcars, grouping.vars = am, measures = wt)
-#' # or
-#' summary_skim(data = mtcars, grouping.vars = c(am), measures = c(wt))
+#' # another way of entering arguments
+#' summary_skim(data = iris, grouping.vars = c(Species), measures = c(Sepal.Length, Sepal.Width))
 #'
 #' @export
 
@@ -102,10 +102,7 @@ summary_skim <- function(data,
         purrr::map(
           .x = .,
           .f = dplyr::select,
-          -type,
-          -missing,
-          -complete,
-          -hist
+          -hist # remove the histograms since they are not that helpful
         )
     ) %>%
     tidyr::unnest(data = .) %>% # unnesting the data
@@ -116,7 +113,7 @@ summary_skim <- function(data,
     df_summary %>%
     dplyr::mutate_at(
       .tbl = .,
-      .vars = dplyr::vars(n, mean, sd, p0, p25, median, p75, p100),
+      .vars = dplyr::vars(missing, complete, n, mean, sd, p0, p25, median, p75, p100),
       .funs = ~ as.numeric(as.character(.)) # change summary variables to numeric
     ) %>%
     dplyr::rename(.data = ., min = p0, max = p100) %>% # renaming columns to minimum and maximum
@@ -124,7 +121,8 @@ summary_skim <- function(data,
       .tbl = .,
       .predicate = is.character,
       .funs = as.factor
-    ) # change grouping variables to factors
+    ) # change grouping variables to factors (tibble won't have it though)
 
+  # return the summary dataframe
   return(df_summary)
 }

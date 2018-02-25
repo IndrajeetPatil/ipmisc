@@ -3,9 +3,6 @@
 \name{summary_skim}
 \alias{summary_skim}
 \title{Custom function to get descriptive statistics for multiple numeric variables for all grouping variable levels}
-\usage{
-summary_skim(data, grouping.vars, measures)
-}
 \arguments{
 \item{data}{dataframe}
 
