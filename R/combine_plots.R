@@ -4,7 +4,7 @@
 #' @description Wrapper around `cowplot::plot_grid()` that will return a plot grid along with a title and a caption
 #' @return Combined plot with title and caption
 #'
-#' @param ... additional arguments that will be fed into the function `cowplot::plot_grid()`.
+#' @param ... Additional arguments used in the function `cowplot::plot_grid()`.
 #' @param title.text String or plotmath expression to be drawn as title for the *combined plot*.
 #' @param caption.text String or plotmath expression to be drawn as the captionfor the *combined plot*.
 #' @param title.colour Text color for title.
@@ -115,5 +115,6 @@ combine_plots <-
       }
     }
 
+    # return the comibined plot with a title and caption
     return(plot)
   }
