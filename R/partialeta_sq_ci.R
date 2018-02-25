@@ -19,6 +19,7 @@
 #' @importFrom stats na.omit
 #' @importFrom tibble as_data_frame
 #' @importFrom tibble rownames_to_column
+#' @importFrom apaTables get.ci.partial.eta.squared
 #'
 #' @examples
 #' library(datasets)
