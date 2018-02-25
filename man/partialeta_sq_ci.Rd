@@ -3,9 +3,6 @@
 \name{partialeta_sq_ci}
 \alias{partialeta_sq_ci}
 \title{Confidence intervals for Partial Eta Squared}
-\usage{
-partialeta_sq_ci(lm_object, conf.level = 0.95)
-}
 \arguments{
 \item{lm_object}{stats::lm linear model object}
 
