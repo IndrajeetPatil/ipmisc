@@ -18,7 +18,7 @@ for all effects along with partial eta-squared effect size and its confidence in
 \examples{
 library(datasets)
 library(stats)
-x <- stats::lm(iris$Sepal.Length ~ iris$Species)
+x <- stats::lm(data = iris, formula = Sepal.Length ~ Species)
 partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 
 }

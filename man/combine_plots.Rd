@@ -11,7 +11,7 @@ combine_plots(..., title.text = NULL, caption.text = NULL,
   caption.rel.heights = c(0.1, 1.2, 0.1))
 }
 \arguments{
-\item{...}{additional arguments that will be fed into the function \code{cowplot::plot_grid()}.}
+\item{...}{Additional arguments used in the function \code{cowplot::plot_grid()}.}
 
 \item{title.text}{String or plotmath expression to be drawn as title for the \emph{combined plot}.}
 
