@@ -24,7 +24,7 @@
 #' @examples
 #' library(datasets)
 #' library(stats)
-#' x <- stats::lm(iris$Sepal.Length ~ iris$Species)
+#' x <- stats::lm(data = iris, formula = Sepal.Length ~ Species)
 #' partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 #'
 #' @export
@@ -150,16 +150,16 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
     tidyr::unnest(data = .) %>% # unnest the data
     dplyr::select(
       .data = .,
+      data,
+      formula,
+      effect,
       F.value,
       df1,
       df2,
-      effect,
+      `Pr(>F)`,
       effsize,
       LL,
-      UL,
-      `Pr(>F)`,
-      data,
-      formula
+      UL
     ) # reoder the columns in the dataframe
 
   # returning the final dataframe
