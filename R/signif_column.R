@@ -24,15 +24,16 @@
 #' @export
 
 signif_column <- function(data = NULL, p) {
+  # storing variable name to be assigned later
+  p_lab <- colnames(dplyr::select(.data = data,
+                                  !!rlang::enquo(p)))
   # if dataframe is provided
   if (!is.null(data)) {
     df <-
-      dplyr::select(
-        .data = data,
-        p = !!rlang::enquo(p),
-        # column corresponding to p-values
-        dplyr::everything()
-      )
+      dplyr::select(.data = data,
+                    # column corresponding to p-values
+                    p = !!rlang::enquo(p),
+                    dplyr::everything())
   } else {
     # if only vector is provided
     df <-
@@ -66,10 +67,13 @@ signif_column <- function(data = NULL, p) {
       )
     ) %>%
     tibble::as_data_frame(x = .) # convert to tibble dataframe
-  # if the entire dataframe was provided then this will create another column of p-values,
-  # which would be redundant leave it out
+  # change back from the generic p-value to the original name that was provided by the user for the p-value
   if (!is.null(data)) {
-    df$p <- NULL
+    # reordering the dataframe
+    df <- df %>%
+      dplyr::select(.data = ., -p, -significance, dplyr::everything())
+    # renaming the p-value variable with the name provided by the user
+    colnames(df)[which(names(df) == "p")] <- p_lab
   }
   # return the final tibble dataframe
   return(df)
