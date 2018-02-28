@@ -20,7 +20,6 @@ Imports:
     dplyr (>= 0.7.4),
     ggplot2 (>= 2.2.1),
     magrittr,
-    MBESS (>= 4.4.3),
     purrr (>= 0.2.4),
     rlang (>= 0.1.6),
     rstudioapi (>= 0.7.0),
