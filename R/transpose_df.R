@@ -23,8 +23,8 @@
 
 transpose_df <-
   function(df,
-           var = "rowname",
-           ignore.empty = FALSE) {
+             var = "rowname",
+             ignore.empty = FALSE) {
     # transpose the dataframe
     t_df <-
       data.table::transpose(

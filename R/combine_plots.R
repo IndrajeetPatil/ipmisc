@@ -56,18 +56,18 @@
 
 combine_plots <-
   function(...,
-           title.text = NULL,
-           caption.text = NULL,
-           title.colour = "black",
-           caption.colour = "black",
-           caption.size = 10,
-           title.size = 16,
-           caption.vjust = 0.5,
-           caption.hjust = 0.5,
-           title.vjust = 0.5,
-           title.hjust = 0.5,
-           title.rel.heights = c(0.1, 1.2),
-           caption.rel.heights  = c(0.1, 1.2, 0.1)) {
+             title.text = NULL,
+             caption.text = NULL,
+             title.colour = "black",
+             caption.colour = "black",
+             caption.size = 10,
+             title.size = 16,
+             caption.vjust = 0.5,
+             caption.hjust = 0.5,
+             title.vjust = 0.5,
+             title.hjust = 0.5,
+             title.rel.heights = c(0.1, 1.2),
+             caption.rel.heights  = c(0.1, 1.2, 0.1)) {
     # preparing the basic plot
     plot <- cowplot::plot_grid(...)
 
