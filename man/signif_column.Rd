@@ -3,9 +3,6 @@
 \name{signif_column}
 \alias{signif_column}
 \title{creating a column with significance labels}
-\usage{
-signif_column(data = NULL, p)
-}
 \arguments{
 \item{data}{data frame from which variables specified are preferentially to be taken}
 
@@ -19,10 +16,13 @@ an additional column corresponding to statistical significance.
 This function will add a new column to a dataframe containing p-values
 }
 \examples{
-# the most common error is not adding quotes to column names that contain spaces
-# signif_column(data = df, p = `p-value (adjusted)`)
-# signif_column(data = df, p = `Pr(>|t|)`)
-# signif_column(data = df$p.value)
+library(datasets)
+library(stats)
+library(broom)
+mtcars \%>\%
+stats::lm(mpg ~ wt + qsec, .) \%>\%
+broom::tidy(.) \%>\%
+ipmisc::signif_column(data = ., p = p.value)
 
 }
 \author{
