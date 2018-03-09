@@ -3,7 +3,7 @@
 language: R
 cache: packages
 latex: false
-fortran: false
+fortran: true
 
 # Note: http test servers are flaky and we want to minimze false positives
 # so we skip examples and vignettes (but not unit tests) on OS X.
@@ -11,11 +11,6 @@ fortran: false
 matrix:
   include:
 #   precise is getting decommissioned on Travis, so better to leave it out
-   - os: linux
-      dist: trusty
-      sudo: required
-      r_build_args: '--no-build-vignettes'
-      r_check_args: '--ignore-vignettes --no-examples'
     - os: linux
       dist: trusty
       sudo: false
