@@ -12,16 +12,52 @@
 #'
 #' @import dplyr
 #'
+#' @importFrom broom tidy
+#' @importFrom crayon red
+#' @importFrom crayon blue
 #' @importFrom rlang enquo
+#' @importFrom stats lm
 #' @importFrom tibble as_data_frame
 #'
 #' @examples
-#' # the most common error is not adding quotes to column names that contain spaces
-#' # signif_column(data = df, p = `p-value (adjusted)`)
-#' # signif_column(data = df, p = `Pr(>|t|)`)
-#' # signif_column(data = df$p.value)
+#' library(datasets)
+#' library(stats)
+#' library(broom)
+#' mtcars %>%
+#' stats::lm(mpg ~ wt + qsec, .) %>%
+#' broom::tidy(.) %>%
+#' ipmisc::signif_column(data = ., p = p.value)
 #'
 #' @export
+
+# defining global variables and functions to quient the R CMD check notes
+utils::globalVariables(
+  c(
+    "Df",
+    "F value",
+    "F.value",
+    "LL",
+    "Pr(>F)",
+    "UL",
+    "complete",
+    "data",
+    "df1",
+    "df2",
+    "effect",
+    "effsize",
+    "formula",
+    "hist",
+    "median",
+    "p0",
+    "p100",
+    "p25",
+    "p50",
+    "p75",
+    "sd",
+    "significance",
+    "type"
+  )
+)
 
 signif_column <- function(data = NULL, p) {
   # storing variable name to be assigned later
@@ -43,11 +79,12 @@ signif_column <- function(data = NULL, p) {
   # make sure the p-value column is numeric; if not, convert it to numeric and give a warning to the user
   if (!is.numeric(df$p)) {
     df$p <- as.numeric(as.character(df$p))
-    warning(
-      paste(
+    base::message(cat(
+      crayon::red("Warning: "),
+      crayon::blue(
         "Entered p-values were not numeric variables, so ipmisc has converted them to numeric"
       )
-    )
+    ))
   }
   # add new significance column based on standard APA guidelines for describing different levels of significance
   df <- df %>%

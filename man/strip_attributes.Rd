@@ -7,10 +7,10 @@
 strip_attributes(data)
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{a dataframe}
 }
 \value{
-a data frame with variable names cleaned to remove all attributes except for
+a tibble with variable names cleaned to remove all attributes except for
 names, row.names, and class
 }
 \description{

@@ -2,10 +2,12 @@
 #' @name strip_attributes
 #' @author Indrajeet Patil
 #' @description Strips attributes off of a data frame that come with a merMod model.frame
-#' @return a data frame with variable names cleaned to remove all attributes except for
+#' @return a tibble with variable names cleaned to remove all attributes except for
 #' names, row.names, and class
 #'
-#' @param data a data.frame
+#' @param data a dataframe
+#'
+#' @importFrom tibble as_data_frame
 #'
 #' @examples
 #' library(datasets)
@@ -22,6 +24,8 @@ strip_attributes <- function(data) {
   for (i in attr[!attr %in% good]) {
     attr(data, i) <- NULL
   }
+  # convert it to tibble
+  data <- tibble::as_data_frame(data)
   # return the stripped dataframe
   return(data)
 }

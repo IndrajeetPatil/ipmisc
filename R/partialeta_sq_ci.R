@@ -17,6 +17,7 @@
 #' @importFrom sjstats eta_sq
 #' @importFrom stats anova
 #' @importFrom stats na.omit
+#' @importFrom stats lm
 #' @importFrom tibble as_data_frame
 #' @importFrom tibble rownames_to_column
 #' @importFrom apaTables get.ci.partial.eta.squared
@@ -25,7 +26,7 @@
 #' library(datasets)
 #' library(stats)
 #' x <- stats::lm(data = iris, formula = Sepal.Length ~ Species)
-#' partialeta_sq_ci(lm_object = x, conf.level = 0.95)
+#' ipmisc::partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 #'
 #' @export
 
@@ -50,8 +51,10 @@ utils::globalVariables(
     "p0",
     "p100",
     "p25",
+    "p50",
     "p75",
     "sd",
+    "significance",
     "type"
   )
 )

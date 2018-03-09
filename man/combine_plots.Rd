@@ -5,7 +5,7 @@
 \title{Combining multiple plots using \code{cowplot::plot_grid()} with a title and a caption}
 \usage{
 combine_plots(..., title.text = NULL, caption.text = NULL,
-  title.colour = "blue", caption.colour = "black", caption.size = 10,
+  title.colour = "black", caption.colour = "black", caption.size = 10,
   title.size = 16, caption.vjust = 0.5, caption.hjust = 0.5,
   title.vjust = 0.5, title.hjust = 0.5, title.rel.heights = c(0.1, 1.2),
   caption.rel.heights = c(0.1, 1.2, 0.1))

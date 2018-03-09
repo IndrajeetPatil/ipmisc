@@ -58,7 +58,7 @@ combine_plots <-
   function(...,
            title.text = NULL,
            caption.text = NULL,
-           title.colour = "blue",
+           title.colour = "black",
            caption.colour = "black",
            caption.size = 10,
            title.size = 16,
