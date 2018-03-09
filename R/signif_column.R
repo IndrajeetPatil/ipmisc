@@ -61,15 +61,19 @@ utils::globalVariables(
 
 signif_column <- function(data = NULL, p) {
   # storing variable name to be assigned later
-  p_lab <- colnames(dplyr::select(.data = data,
-                                  !!rlang::enquo(p)))
+  p_lab <- colnames(dplyr::select(
+    .data = data,
+    !!rlang::enquo(p)
+  ))
   # if dataframe is provided
   if (!is.null(data)) {
     df <-
-      dplyr::select(.data = data,
-                    # column corresponding to p-values
-                    p = !!rlang::enquo(p),
-                    dplyr::everything())
+      dplyr::select(
+        .data = data,
+        # column corresponding to p-values
+        p = !!rlang::enquo(p),
+        dplyr::everything()
+      )
   } else {
     # if only vector is provided
     df <-
