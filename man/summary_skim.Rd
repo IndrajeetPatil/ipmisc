@@ -18,12 +18,11 @@ Custom function to get descriptive statistics for multiple numeric variables for
 }
 \examples{
 library(datasets)
+library(ipmisc)
 # if you have multiple variable for each argument
 summary_skim(data = mtcars, grouping.vars = c(am, cyl), measures = c(wt, mpg))
 # if you have just one variable per argument
 summary_skim(data = mtcars, grouping.vars = am, measures = wt)
-# another way of entering arguments
-summary_skim(data = iris, grouping.vars = c(Species), measures = c(Sepal.Length, Sepal.Width))
 
 }
 \author{
