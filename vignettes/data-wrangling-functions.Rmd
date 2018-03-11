@@ -60,3 +60,6 @@ ipmisc::transpose_df(df = df, var = "effect")
 
 ```
 
+## strip_attributes
+
+Attributes are used to store metadata about a dataframe. As Hadley Wickham notes in *Advanced R* (2014), there are three atttributes that are most important: Names, Dimensions, Class. In some cases, you might want to remove non-important attributes from a dataframe. `ipmisc::strip_attributes` achieves this.
