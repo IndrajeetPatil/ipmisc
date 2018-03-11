@@ -11,7 +11,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/IndrajeetPatil/ipmisc
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/IndrajeetPatil/ipmisc/master.svg)](https://codecov.io/github/IndrajeetPatil/ipmisc?branch=master)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--03--09-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--03--10-yellowgreen.svg)](/commits/master)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.2.0-6666ff.svg)](https://cran.r-project.org/)
@@ -33,3 +33,11 @@ devtools::install_github("IndrajeetPatil/ipmisc")
 ## Documentation
 
 For documentation, please check out the vignettes folder of the package.
+
+Note that the current package build is faling because the function
+`ipmisc::summary_skim` depends on the development version of `skimr`,
+which can be downloaded here:
+
+``` r
+devtools::install_github("ropenscilabs/skimr")
+```
