@@ -20,7 +20,7 @@ for all effects along with partial eta-squared effect size and its confidence in
 \examples{
 library(datasets)
 library(stats)
-x <- stats::lm(data = iris, formula = Sepal.Length ~ Species)
+x <- stats::lm(formula = wt ~ mpg*cyl, data = mtcars)
 ipmisc::partialeta_sq_ci(lm_object = x, conf.level = 0.95)
 
 }
