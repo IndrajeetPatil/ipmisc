@@ -23,7 +23,7 @@ This vignette will provide documentation for how to use data wrangling helper fu
 
 Although both `data.table::transpose` and `base::t` functions can transpose a dataframe, they both have their shortcomings. This can be illustrated one of the most common instances where the dataframe needs to be transposed: displaying results from statistical tests in a table.
 
-```{r}
+```{r transpose_df}
 library(datasets)
 library(stats)
 library(data.table)
@@ -63,3 +63,17 @@ ipmisc::transpose_df(df = df, var = "effect")
 ## strip_attributes
 
 Attributes are used to store metadata about a dataframe. As Hadley Wickham notes in *Advanced R* (2014), there are three atttributes that are most important: Names, Dimensions, Class. In some cases, you might want to remove non-important attributes from a dataframe. `ipmisc::strip_attributes` achieves this.
+
+## grouped_proptest
+
+This function lets you carry out proportion test for every combination of levels of whatever grouping variables you are working with.
+```{r grouped_proptest}
+library(datasets)
+
+# let's say we want to figure out if the proportion of automatic (am = 0) to manual (am = 1) 
+# transmission cars is equal for each type of cylinder count (cyl) in the mtcars dataset
+ipmisc::grouped_proptest(data = mtcars,
+grouping.vars = cyl,
+measure = am)
+
+```
