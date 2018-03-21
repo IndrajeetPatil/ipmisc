@@ -7,6 +7,8 @@
 \item{lm_object}{stats::lm linear model object}
 
 \item{conf.level}{Level of confidence for the confidence interval}
+
+\item{nboot}{Number of bootstrap samples for confidence intervals for partial eta-squared.}
 }
 \value{
 A dataframe with results from \code{stats::lm()} with partial eta-squared and its confidence interval.

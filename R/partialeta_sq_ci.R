@@ -8,6 +8,7 @@
 #'
 #' @param lm_object stats::lm linear model object
 #' @param conf.level Level of confidence for the confidence interval
+#' @param nboot Number of bootstrap samples for confidence intervals for partial eta-squared.
 #'
 #' @import dplyr
 #'
@@ -20,7 +21,6 @@
 #' @importFrom stats lm
 #' @importFrom tibble as_data_frame
 #' @importFrom tibble rownames_to_column
-#' @importFrom apaTables get.ci.partial.eta.squared
 #'
 #' @examples
 #' library(datasets)
@@ -59,7 +59,7 @@ utils::globalVariables(
   )
 )
 
-partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
+partialeta_sq_ci <- function(lm_object, conf.level = 0.95, nboot = 1000) {
   # get the linear model object and turn it into a matrix and turn row names into a variable called "effect"
   # compute partial eta-squared for each effect
   # add additional columns containing data and formula that was used to create these effects
@@ -67,104 +67,62 @@ partialeta_sq_ci <- function(lm_object, conf.level = 0.95) {
   aov_df <-
     as.data.frame(as.matrix(stats::anova(object = lm_object))) %>%
     tibble::rownames_to_column(df = ., var = "effect")
+  # create a new column for residual degrees of freedom
+  aov_df$df2 <- aov_df$Df[aov_df$effect == "Residuals"]
 
-  # other supplementary information about the results (data and formula used, etc.)
+  aov_df <- aov_df %>%
+    dplyr::select(
+      .data = .,
+      -c(base::grep(pattern = "Sq", x = names(.)))
+    ) %>%
+    dplyr::rename(
+      .data = .,
+      df1 = Df
+    ) %>% # rename to something more meaningful and tidy
+    stats::na.omit(.) # remove NAs, which would remove the row containing Residuals (redundant at this point)
+
+  # other supplementary information about the results (data and formula used, etc.) can be composed from
+  # sjstats::eta_sq function that now provides 95% CI as well
+
+  # creating dataframe of effect size and its CI with sjstats
+  etasq_df <- sjstats::eta_sq(
+    model = stats::anova(object = lm_object),
+    partial = TRUE,
+    ci.lvl = conf.level,
+    n = nboot
+  )
+
+  # extracting statistically important information
   supp_df <- cbind.data.frame(
-    "effsize" = sjstats::eta_sq(
-      model = stats::anova(object = lm_object),
-      partial = TRUE
-    ),
+    "effect" = etasq_df$term[[1]],
+    "effsize" = etasq_df$partial.etasq[[1]],
+    "LL" = etasq_df$partial.etasq[[1]],
+    "UL" = etasq_df$partial.etasq[[1]],
     "data" = as.character(lm_object$call[3]),
     "formula" = as.character(lm_object$call[2])
-  ) %>%
-    tibble::rownames_to_column(df = ., var = "effect")
+  )
 
-  # combining the dataframes (erge the two preceding pieces of information by the common element of Effect)
-  x <-
+  # combining the dataframes (erge the two preceding pieces of information by the common element of Effect
+  combined_df <-
     dplyr::left_join(
       x = aov_df,
       y = supp_df,
       by = "effect"
-    )
-  # create a new column for residual degrees of freedom
-  x$df2 <- x$Df[x$effect == "Residuals"]
-  # remove sum of squares columns since they will not be useful
-  x <- x %>%
-    dplyr::select(
-      .data = .,
-      -c(base::grep(pattern = "Sq", x = names(x)))
     ) %>%
-    dplyr::rename(
-      .data = .,
-      df1 = Df,
-      F.value = `F value`
-    ) %>% # rename to something more meaningful and tidy
-    stats::na.omit(.) # remove NAs, which would remove the row containing Residuals (redundant at this point)
-
-  # convert the effect into a factor
-  x <- x %>%
-    dplyr::mutate_if(
-      .tbl = .,
-      .predicate = is.character,
-      .funs = as.factor
-    )
-
-  # creating a custom function that extracts lower and upper bounds of confidence intervals
-  partialetaci <- function(data, which, conf.level = conf.level) {
-    d <- apaTables::get.ci.partial.eta.squared(
-      F.value = data$F.value,
-      df1 = data$df1,
-      df2 = data$df2,
-      conf.level = conf.level
-    )
-    # return either LL or UL
-    if (which == "LL") {
-      return(d[attributes(d)$name == "LL"][[1]])
-    } else if (which == "UL") {
-      return(d[attributes(d)$name == "UL"][[1]])
-    }
-  }
-
-  # creating a dataframe with confidence intervals for partial eta-squared
-  effsize_ci <- x %>%
-    dplyr::group_by(.data = ., effect) %>%
-    tidyr::nest(data = .) %>% # 'data' variable is automatically created by tidyr::nest function
-    dplyr::mutate(
-      .data = .,
-      LL = data %>% # adding lower bound column
-        purrr::map(
-          .x = .,
-          .f = ~ partialetaci(
-            data = .,
-            which = "LL",
-            conf.level = conf.level
-          )
-        ),
-      UL = data %>% # adding upper bound column
-        purrr::map(
-          .x = .,
-          .f = ~ partialetaci(
-            data = .,
-            which = "UL",
-            conf.level = conf.level
-          )
-        )
-    ) %>%
-    tidyr::unnest(data = .) %>% # unnest the data
     dplyr::select(
       .data = .,
       data,
       formula,
       effect,
-      F.value,
+      `F value`,
       df1,
       df2,
       `Pr(>F)`,
       effsize,
       LL,
       UL
-    ) # reoder the columns in the dataframe
+    )
 
   # returning the final dataframe
-  return(effsize_ci)
+  return(combined_df)
 }
