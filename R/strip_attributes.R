@@ -12,7 +12,6 @@
 #' @examples
 #' library(datasets)
 #' strip_attributes(data = iris)
-#'
 #' @export
 
 strip_attributes <- function(data) {

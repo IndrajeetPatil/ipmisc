@@ -19,7 +19,6 @@ Strips attributes off of a data frame that come with a merMod model.frame
 \examples{
 library(datasets)
 strip_attributes(data = iris)
-
 }
 \author{
 Indrajeet Patil

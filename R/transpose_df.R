@@ -18,7 +18,6 @@
 #' set.seed(402)
 #' data <- cbind.data.frame(x = rnorm(5), y = rnorm(5))
 #' transpose_df(df = data)
-#'
 #' @export
 
 transpose_df <-

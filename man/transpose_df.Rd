@@ -24,7 +24,6 @@ don't preserve row and column names. The current function transposes dataframes 
 set.seed(402)
 data <- cbind.data.frame(x = rnorm(5), y = rnorm(5))
 transpose_df(df = data)
-
 }
 \author{
 Indrajeet Patil

@@ -25,7 +25,8 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-The goal of ipmisc is to gather miscellaneous helper functions that have been helpful to me in data cleaning and analysis.
+The goal of ipmisc is to gather miscellaneous helper functions that have been
+helpful to me in data cleaning and analysis.
 
 ## Installation
 
@@ -36,16 +37,3 @@ You can install `ipmisc` from GitHub with:
 devtools::install_github("IndrajeetPatil/ipmisc")
 ```
 
-## Documentation
-For documentation, please check out the vignettes folder of the package.
-
-Note that the current package build is faling because the function `ipmisc::summary_skim` and `ipmisc::partialeta_sq_ci`depend on the development version of `skimr` and `sjstats`, which can be downloaded here:
-
-```{r skimr, eval = FALSE}
-# library(devtools)
-# skimr
-devtools::install_github("ropenscilabs/skimr")
-
-# sjstats
-devtools::install_github("strengejacke/sjstats")
-```
