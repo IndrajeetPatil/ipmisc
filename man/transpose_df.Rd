@@ -17,8 +17,10 @@ transpose_df(df, var = "rowname", ignore.empty = FALSE)
 A transposed dataframes with row and column names.
 }
 \description{
-Although functions like \code{data.table::transpose()} or \code{base::t()} can transpose dataframes well, they
-don't preserve row and column names. The current function transposes dataframes while preserving row and column names.
+Although functions like \code{data.table::transpose()} or \code{base::t()}
+can transpose dataframes well, they don't preserve row and column names.
+The current function transposes dataframes while preserving row and column
+names.
 }
 \examples{
 set.seed(402)

@@ -7,17 +7,16 @@ Authors@R: person(given = "Indrajeet",
   email = "patilindrajeet.science@gmail.com", 
   role = c("aut", "cre"))
 Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
-Description: ipmisc provides multiple functions that have come in handy for data cleaning and 
+Description: The `ipmisc` provides multiple functions that have come in handy for data cleaning and 
   data analysis in my own work.
 License: GPL-3 | file LICENSE
 BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
 Depends: 
-    R (>= 3.3.0)
+    R (>= 3.5.0)
 Imports: 
-    data.table (>= 1.10.4-3),
+    data.table (>= 1.12.0),
     magrittr,
-    rstudioapi (>= 0.7),
-    tibble (>= 1.4.2)
+    tibble (>= 2.0.1)
 Suggests: 
     knitr,
     rmarkdown
@@ -25,4 +24,4 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
