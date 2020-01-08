@@ -30,24 +30,9 @@ matrix:
   include:
     - os: linux
       dist: trusty
-      r: release
-      r_packages:
-        - rlang
-        - bindrcpp
-        - tidyr
-        - dplyr
-        - coin
-        - sjstats
-        - WRS2
-        - bridgesampling
-        - BH
-        - remotes
-      r_github_packages:
-        - jimhester/lintr
-        - r-lib/covr
-    - os: linux
-      dist: trusty
-      r: devel
+      r:
+        - release
+        - devel
       r_packages:
         - rlang
         - tidyr
