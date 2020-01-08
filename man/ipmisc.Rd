@@ -3,13 +3,11 @@
 \docType{package}
 \name{ipmisc}
 \alias{ipmisc}
-\alias{ipmisc-package}
 \title{\code{ipmisc}}
 \description{
-Collection of functions to help with certain aspects of data-wrangling and data analysis that are not covered in the
-existing R packages.
+Collection of functions to help with certain aspects of data-wrangling and
+data analysis that are not covered in the existing R packages.
 }
 \details{
 For more documentation, see \href{https://github.com/IndrajeetPatil/ipmisc}{README} on GitHub.
-Vignette preparation in progress.
 }
