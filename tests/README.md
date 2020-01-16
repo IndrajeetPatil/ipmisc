@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-08 January, 2020 19:31:05
+16 January, 2020 22:20:39
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -15,11 +15,12 @@ Coverage summary is created using the
 
 | Object                                                         | Coverage (%) |
 | :------------------------------------------------------------- | :----------: |
-| ipmisc                                                         |      86      |
-| [R/set\_cwd.R](../R/set_cwd.R)                                 |      0       |
-| [R/specify\_decimal\_p.R](../R/specify_decimal_p.R)            |      75      |
-| [R/long\_to\_wide\_converter.R](../R/long_to_wide_converter.R) |     100      |
-| [R/signif\_column.R](../R/signif_column.R)                     |     100      |
+| ipmisc                                                         |    97.22     |
+| [R/set\_cwd.R](../R/set_cwd.R)                                 |     0.00     |
+| [R/long\_to\_wide\_converter.R](../R/long_to_wide_converter.R) |    100.00    |
+| [R/outlier\_df.R](../R/outlier_df.R)                           |    100.00    |
+| [R/signif\_column.R](../R/signif_column.R)                     |    100.00    |
+| [R/specify\_decimal\_p.R](../R/specify_decimal_p.R)            |    100.00    |
 
 <br>
 
@@ -30,9 +31,10 @@ Unit Test summary is created using the
 
 | file                                                                       | n | time | error | failed | skipped | warning |
 | :------------------------------------------------------------------------- | -: | ---: | ----: | -----: | ------: | ------: |
-| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R) | 4 | 0.17 |     0 |      0 |       0 |       0 |
-| [test-signif\_column.R](testthat/test-signif_column.R)                     | 9 | 0.02 |     0 |      0 |       0 |       0 |
-| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R)            | 8 | 0.03 |     0 |      0 |       0 |       0 |
+| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R) | 4 | 0.06 |     0 |      0 |       0 |       0 |
+| [test-outlier\_df.R](testthat/test-outlier_df.R)                           | 4 | 0.02 |     0 |      0 |       0 |       0 |
+| [test-signif\_column.R](testthat/test-signif_column.R)                     | 9 | 0.12 |     0 |      0 |       0 |       0 |
+| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R)            | 9 | 0.02 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -40,9 +42,10 @@ Unit Test summary is created using the
 
 | file                                                                           | context                   |              test               | status | n | time |
 | :----------------------------------------------------------------------------- | :------------------------ | :-----------------------------: | :----- | -: | ---: |
-| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R#L26) | long\_to\_wide\_converter | long\_to\_wide\_converter works | PASS   | 4 | 0.17 |
-| [test-signif\_column.R](testthat/test-signif_column.R#L45)                     | signif column             |      signif\_column works       | PASS   | 9 | 0.02 |
-| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R#L25)            | Specify decimals          |    specify\_decimal\_p works    | PASS   | 8 | 0.03 |
+| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R#L26) | long\_to\_wide\_converter | long\_to\_wide\_converter works | PASS   | 4 | 0.06 |
+| [test-outlier\_df.R](testthat/test-outlier_df.R#L23)                           | outlier\_df               |  outlier\_df works as expected  | PASS   | 4 | 0.02 |
+| [test-signif\_column.R](testthat/test-signif_column.R#L45)                     | signif column             |      signif\_column works       | PASS   | 9 | 0.12 |
+| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R#L26)            | Specify decimals          |    specify\_decimal\_p works    | PASS   | 9 | 0.02 |
 
 </details>
 

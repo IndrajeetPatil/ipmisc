@@ -14,15 +14,9 @@
 
 # function body
 set_cwd <- function() {
-  # get path to the folder wherever the R script is located
-  current_path <-
-    rstudioapi::getActiveDocumentContext()$path
-
   # set working directory to that path
-  base::setwd(dir = dirname(path = current_path))
+  setwd(dir = dirname(path = rstudioapi::getActiveDocumentContext()$path))
 
   # print the current directory to confirm you are in the right directory
-  print(x = paste("setting current working directory to: ", base::getwd(),
-    sep = ""
-  ))
+  print(x = paste("setting current working directory to: ", getwd(), sep = ""))
 }
