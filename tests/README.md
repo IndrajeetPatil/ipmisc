@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-16 January, 2020 22:20:39
+17 January, 2020 21:23:35
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -31,10 +31,10 @@ Unit Test summary is created using the
 
 | file                                                                       | n | time | error | failed | skipped | warning |
 | :------------------------------------------------------------------------- | -: | ---: | ----: | -----: | ------: | ------: |
-| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R) | 4 | 0.06 |     0 |      0 |       0 |       0 |
+| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R) | 4 | 0.36 |     0 |      0 |       0 |       0 |
 | [test-outlier\_df.R](testthat/test-outlier_df.R)                           | 4 | 0.02 |     0 |      0 |       0 |       0 |
-| [test-signif\_column.R](testthat/test-signif_column.R)                     | 9 | 0.12 |     0 |      0 |       0 |       0 |
-| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R)            | 9 | 0.02 |     0 |      0 |       0 |       0 |
+| [test-signif\_column.R](testthat/test-signif_column.R)                     | 9 | 0.01 |     0 |      0 |       0 |       0 |
+| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R)            | 9 | 0.01 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -42,10 +42,10 @@ Unit Test summary is created using the
 
 | file                                                                           | context                   |              test               | status | n | time |
 | :----------------------------------------------------------------------------- | :------------------------ | :-----------------------------: | :----- | -: | ---: |
-| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R#L26) | long\_to\_wide\_converter | long\_to\_wide\_converter works | PASS   | 4 | 0.06 |
+| [test-long\_to\_wide\_converter.R](testthat/test-long_to_wide_converter.R#L26) | long\_to\_wide\_converter | long\_to\_wide\_converter works | PASS   | 4 | 0.36 |
 | [test-outlier\_df.R](testthat/test-outlier_df.R#L23)                           | outlier\_df               |  outlier\_df works as expected  | PASS   | 4 | 0.02 |
-| [test-signif\_column.R](testthat/test-signif_column.R#L45)                     | signif column             |      signif\_column works       | PASS   | 9 | 0.12 |
-| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R#L26)            | Specify decimals          |    specify\_decimal\_p works    | PASS   | 9 | 0.02 |
+| [test-signif\_column.R](testthat/test-signif_column.R#L45)                     | signif column             |      signif\_column works       | PASS   | 9 | 0.01 |
+| [test-specify\_decimal\_p.R](testthat/test-specify_decimal_p.R#L26)            | Specify decimals          |    specify\_decimal\_p works    | PASS   | 9 | 0.01 |
 
 </details>
 
