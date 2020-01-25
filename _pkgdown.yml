@@ -2,8 +2,6 @@ url: https://indrajeetpatil.github.io/ipmisc/
 
 template:
   params:
-    docsearch:
-      index_name: ipmisc
     bootswatch: simplex
 
 development:

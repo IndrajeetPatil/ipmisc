@@ -29,7 +29,7 @@ Status](https://img.shields.io/codecov/c/github/IndrajeetPatil/ipmisc/master.svg
 Status](https://coveralls.io/repos/github/IndrajeetPatil/ipmisc/badge.svg?branch=master)](https://coveralls.io/github/IndrajeetPatil/ipmisc?branch=master)
 [![status](https://tinyverse.netlify.com/badge/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 
-## Overview
+# Overview
 
 The `ipmisc` provides functions for data cleaning and formatting. These
 functions form data cleaning backend for the following packages:
@@ -41,7 +41,7 @@ functions form data cleaning backend for the following packages:
     <https://indrajeetpatil.github.io/pairwiseComparisons/>
   - `groupedstats`: <https://indrajeetpatil.github.io/groupedstats/>
 
-## Installation
+# Installation
 
 You can install the development version of `ipmisc`:
 
@@ -56,12 +56,12 @@ And from `GitHub` with:
 remotes::install_github("IndrajeetPatil/ipmisc")
 ```
 
-## Functions
+# Functions
 
 To see all available functionality, see the documentation provided here:
 <https://indrajeetpatil.github.io/ipmisc/reference/index.html>
 
-## Code of Conduct
+# Code of Conduct
 
 Please note that the `ipmisc` project is released with a [Contributor
 Code of
