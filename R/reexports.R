@@ -1,20 +1,20 @@
 # ----------------------- tidyverse -------------------------------------
 
 #' @export
-#' @importFrom magrittr "%>%"
-magrittr::`%>%`
+#' @importFrom broomExtra "%>%"
+broomExtra::`%>%`
 
 #' @export
-#' @importFrom magrittr "%<>%"
-magrittr::`%<>%`
+#' @importFrom broomExtra "%<>%"
+broomExtra::`%<>%`
 
 #' @export
-#' @importFrom magrittr "%$%"
-magrittr::`%$%`
+#' @importFrom broomExtra "%$%"
+broomExtra::`%$%`
 
 #' @export
-#' @importFrom dplyr tibble
-dplyr::tibble
+#' @importFrom tibble tibble
+tibble::tibble
 
 #' @export
 #' @importFrom rlang "%||%"
@@ -23,3 +23,24 @@ rlang::`%||%`
 #' @export
 #' @importFrom rlang "%|%"
 rlang::`%|%`
+
+# ----------------------- broom -------------------------------------
+
+#' @export
+#' @importFrom broomExtra tidy
+broomExtra::tidy
+
+#' @export
+#' @importFrom broomExtra glance
+broomExtra::glance
+
+#' @export
+#' @importFrom broomExtra augment
+broomExtra::augment
+
+
+# ----------------------- zeallot -------------------------------------
+
+#' @export
+#' @importFrom zeallot "%<-%"
+zeallot::`%<-%`

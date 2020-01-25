@@ -24,6 +24,11 @@ Quartile) \code{coef} times the Inter-Quartile Range (IQR) (Default: \code{1.5})
 
 \item{...}{Additional arguments.}
 }
+\value{
+The dataframe entered as \code{data} argument is returned with two
+additional columns: \code{isanoutlier} and \code{outlier} denoting which observation
+are outliers and their corresponding labels.
+}
 \description{
 Adding a column to dataframe describing outlier status
 }

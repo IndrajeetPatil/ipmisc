@@ -43,12 +43,23 @@ functions form data cleaning backend for the following packages:
 
 ## Installation
 
-You can install the development version of `ipmisc` from `GitHub` with:
+You can install the development version of `ipmisc`:
+
+``` r
+install.packages("ipmisc")
+```
+
+And from `GitHub` with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("IndrajeetPatil/ipmisc")
 ```
+
+## Functions
+
+To see all available functionality, see the documentation provided here:
+<https://indrajeetpatil.github.io/ipmisc/reference/index.html>
 
 ## Code of Conduct
 

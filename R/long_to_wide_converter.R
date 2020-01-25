@@ -11,10 +11,13 @@
 #' @param paired Logical that decides whether the experimental design is
 #'   repeated measures/within-subjects or between-subjects. The default is
 #'   `FALSE`.
+#' @param ... Currently ignored.
 #'
 #' @importFrom rlang :=
 #' @importFrom dplyr n row_number select mutate mutate_at group_by ungroup
 #' @importFrom tidyr spread
+#'
+#' @return A dataframe in the wide (or Cartesian) format.
 #'
 #' @examples
 #' \donttest{
@@ -27,11 +30,14 @@
 #' }
 #' @export
 
-long_to_wide_converter <- function(data, x, y, paired = TRUE) {
-
+# function body
+long_to_wide_converter <- function(data,
+                                   x,
+                                   y,
+                                   paired = TRUE,
+                                   ...) {
   # make sure both quoted and unquoted arguments are allowed
-  x <- rlang::ensym(x)
-  y <- rlang::ensym(y)
+  c(x, y) %<-% c(rlang::ensym(x), rlang::ensym(y))
 
   # creating a dataframe
   data %<>%

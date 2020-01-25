@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Setting Working Directory in RStudio to where the R Script is. — set_cwd • ipmisc</title>
+<title>Display normality test result as a message. — normality_message • ipmisc</title>
 
 
 <!-- jquery -->
@@ -43,10 +43,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Setting Working Directory in RStudio to where the R Script is. — set_cwd" />
-<meta property="og:description" content="This function will change the current working directory to
-whichever directory the R script you are currently working on is located.
-This preempts the trouble of setting the working directory manually." />
+<meta property="og:title" content="Display normality test result as a message. — normality_message" />
+<meta property="og:description" content="A note to the user about the validity of assumptions for the
+default linear model." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -124,34 +123,79 @@ This preempts the trouble of setting the working directory manually." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Setting Working Directory in RStudio to where the R Script is.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/R/set_cwd.R'><code>R/set_cwd.R</code></a></small>
-    <div class="hidden name"><code>set_cwd.Rd</code></div>
+    <h1>Display normality test result as a message.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/R/helpers_messages.R'><code>R/helpers_messages.R</code></a></small>
+    <div class="hidden name"><code>normality_message.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function will change the current working directory to
-whichever directory the R script you are currently working on is located.
-This preempts the trouble of setting the working directory manually.</p>
+    <p>A note to the user about the validity of assumptions for the
+default linear model.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set_cwd</span>()</pre>
+    <pre class="usage"><span class='fu'>normality_message</span>(<span class='no'>x</span>, <span class='kw'>lab</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"message"</span>, <span class='no'>...</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A numeric vector.</p></td>
+    </tr>
+    <tr>
+      <th>lab</th>
+      <td><p>A character describing label for the variable. If <code>NULL</code>, a
+generic <code>"x"</code> label will be used.</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>Number of digits after decimal point (should be an integer)
+(Default: <code>k = 3</code>).</p></td>
+    </tr>
+    <tr>
+      <th>output</th>
+      <td><p>What output is desired: <code>"message"</code> (default) or <code>"stats"</code> (or
+<code>"tidy"</code>) objects.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments (ignored).</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Path to changed working directory.</p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+    <p>A list with class <code>"htest"</code> containing the following components:</p>
+<dt>statistic</dt><dd><p>the value of the Shapiro-Wilk statistic.</p></dd>
+  <dt>p.value</dt><dd><p>an approximate p-value for the test.  This is
+    said in Royston (1995) to be adequate for <code>p.value &lt; 0.1</code>.</p></dd>
+  <dt>method</dt><dd><p>the character string <code>"Shapiro-Wilk normality test"</code>.</p></dd>
+  <dt>data.name</dt><dd><p>a character string giving the name(s) of the data.</p></dd>
 
-    <p>This function will work <strong>only with RStudio IDE</strong>. Reference:
-https://eranraviv.com/r-tips-and-tricks-working-directory/</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='co'># message</span>
+<span class='fu'>normality_message</span>(
+  <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>anscombe</span>$<span class='no'>x1</span>,
+  <span class='kw'>lab</span> <span class='kw'>=</span> <span class='st'>"x1"</span>,
+  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>
+)</div><div class='output co'>#&gt; <span style='color: #00BB00;'>Note: </span><span style='color: #0000BB;'>Shapiro-Wilk Normality Test for </span><span style='color: #BBBB00;'>x1</span><span style='color: #0000BB;'>: p-value = </span><span style='color: #BBBB00;'>0.870</span><span></div><div class='output co'>#&gt; </div><div class='input'>
+<span class='co'># statistical test object</span>
+<span class='fu'>normality_message</span>(
+  <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>anscombe</span>$<span class='no'>x2</span>,
+  <span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"tidy"</span>
+)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 1 x 3</span><span>
+#&gt;   statistic p.value method                     
+#&gt;       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      
+#&gt; </span><span style='color: #555555;'>1</span><span>     0.968   0.870 Shapiro-Wilk normality test</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#note">Note</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

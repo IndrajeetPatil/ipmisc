@@ -17,13 +17,18 @@ authors:
     href: https://sites.google.com/site/indrajeetspatilmorality/
 
 reference:
-  - title: Helper functions
+  - title: Data wrangling functions
     contents:
       - set_cwd
       - long_to_wide_converter
       - outlier_df
       - signif_column
       - specify_decimal_p
+
+  - title: Helper functions (messages)
+    desc:  Simple function to display messages from tests carried out to check statistical assumptions of tests.
+    contents:
+      - ends_with("_message")
 
   - title: Reexported functions
     desc:  Useful functions re-exported from other packages.
@@ -34,6 +39,13 @@ reference:
       - "%||%"
       - "%|%"
       - tibble
+      - tidy
+      - augment
+      - glance
+
+  - title: Miscellaneous functions
+    contents:
+      - set_cwd
 
   - title: Data
     desc:  Datasets included in the package.

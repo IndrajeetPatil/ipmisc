@@ -9,6 +9,10 @@
 \alias{tibble}
 \alias{\%||\%}
 \alias{\%|\%}
+\alias{tidy}
+\alias{glance}
+\alias{augment}
+\alias{\%<-\%}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -16,10 +20,12 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{dplyr}{\code{\link[dplyr]{tibble}}}
-
-  \item{magrittr}{\code{\link[magrittr]{\%$\%}}, \code{\link[magrittr]{\%<>\%}}, \code{\link[magrittr]{\%>\%}}}
+  \item{broomExtra}{\code{\link[broomExtra]{\%$\%}}, \code{\link[broomExtra]{\%<>\%}}, \code{\link[broomExtra]{\%>\%}}, \code{\link[broomExtra]{augment}}, \code{\link[broomExtra]{glance}}, \code{\link[broomExtra]{tidy}}}
 
   \item{rlang}{\code{\link[rlang]{\%|\%}}, \code{\link[rlang]{\%||\%}}}
+
+  \item{tibble}{\code{\link[tibble]{tibble}}}
+
+  \item{zeallot}{\code{\link[zeallot]{\%<-\%}}}
 }}
 

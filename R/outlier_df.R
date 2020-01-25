@@ -9,7 +9,11 @@
 #'   Quartile) `coef` times the Inter-Quartile Range (IQR) (Default: `1.5`).
 #' @param ... Additional arguments.
 #'
-#' @importFrom rlang !! enquo ensym
+#' @return The dataframe entered as `data` argument is returned with two
+#'   additional columns: `isanoutlier` and `outlier` denoting which observation
+#'   are outliers and their corresponding labels.
+#'
+#' @importFrom rlang enquo ensym
 #' @importFrom dplyr group_by mutate ungroup
 #'
 #' @examples
@@ -32,9 +36,8 @@ outlier_df <- function(data,
                        outlier.coef = 1.5,
                        ...) {
   # make sure both quoted and unquoted arguments are allowed
-  x <- rlang::ensym(x)
-  y <- rlang::ensym(y)
-  outlier.label <- rlang::ensym(outlier.label)
+  c(x, y, outlier.label) %<-%
+    c(rlang::ensym(x), rlang::ensym(y), rlang::ensym(outlier.label))
 
   # add a logical column indicating whether a point is or is not an outlier
   data %<>%
