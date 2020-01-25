@@ -1,7 +1,7 @@
 # documentation at https://docs.travis-ci.com/user/languages/r
 
 language: r
-sudo: true
+root: linux
 dist: trusty
 cache: packages
 latex: true
@@ -19,14 +19,12 @@ env:
 
 #r_check_args: "--run-dontrun"
 
-
-
 notifications:
   email:
   on_success: change
   on_failure: change
 
-matrix:
+jobs:
   include:
     - os: linux
       dist: trusty
