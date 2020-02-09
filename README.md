@@ -43,13 +43,13 @@ functions form data cleaning backend for the following packages:
 
 # Installation
 
-You can install the development version of `ipmisc`:
+You can install the `CRAN` version of `ipmisc`:
 
 ``` r
 install.packages("ipmisc")
 ```
 
-And from `GitHub` with:
+And the development version from `GitHub` with:
 
 ``` r
 # install.packages("remotes")

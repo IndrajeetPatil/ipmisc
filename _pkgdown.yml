@@ -22,6 +22,7 @@ reference:
       - outlier_df
       - signif_column
       - specify_decimal_p
+      - easystats_to_tidy_names
 
   - title: Helper functions (messages)
     desc:  Simple function to display messages from tests carried out to check statistical assumptions of tests.
@@ -36,10 +37,16 @@ reference:
       - "%$%"
       - "%||%"
       - "%|%"
+      - "%<-%"
       - tibble
+      - as_tibble
       - tidy
       - augment
       - glance
+      - yellow
+      - green
+      - red
+      - blue
 
   - title: Miscellaneous functions
     contents:

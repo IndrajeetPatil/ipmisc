@@ -1,7 +1,3 @@
-# outlier_df ----------------------------------------------------
-
-context(desc = "outlier_df")
-
 # outlier_df works ----------------------------------------------------
 
 testthat::test_that(

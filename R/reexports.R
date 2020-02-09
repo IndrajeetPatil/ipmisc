@@ -17,6 +17,10 @@ broomExtra::`%$%`
 tibble::tibble
 
 #' @export
+#' @importFrom tibble as_tibble
+tibble::as_tibble
+
+#' @export
 #' @importFrom rlang "%||%"
 rlang::`%||%`
 
@@ -44,3 +48,21 @@ broomExtra::augment
 #' @export
 #' @importFrom zeallot "%<-%"
 zeallot::`%<-%`
+
+# ----------------------- crayon -------------------------------------
+
+#' @export
+#' @importFrom crayon blue
+crayon::blue
+
+#' @export
+#' @importFrom crayon green
+crayon::green
+
+#' @export
+#' @importFrom crayon red
+crayon::red
+
+#' @export
+#' @importFrom crayon yellow
+crayon::yellow

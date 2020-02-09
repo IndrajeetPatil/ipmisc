@@ -1,7 +1,7 @@
 Type: Package
 Package: ipmisc
 Title: Miscellaneous Functions for Data Cleaning and Analysis
-Version: 1.0.0
+Version: 1.1.0.9000
 Authors@R: 
     person(given = "Indrajeet",
            family = "Patil",
@@ -12,7 +12,7 @@ Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
 Description: Provides functions needed for data cleaning and
     formatting and forms data cleaning and wrangling backend for the
     following packages: 'ggstatsplot', 'groupedstats',
-    'pairwiseComparisons', and 'statsExpressions' packages.
+    'pairwiseComparisons', and 'statsExpressions'.
 License: GPL-3 | file LICENSE
 URL: https://indrajeetpatil.github.io/ipmisc/,
     https://github.com/IndrajeetPatil/ipmisc
@@ -20,7 +20,7 @@ BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
 Depends: 
     R (>= 3.5.0)
 Imports:
-    crayon (>= 1.3.4),
+    crayon,
     dplyr (>= 0.8.3),
     broomExtra,
     rlang (>= 0.4.2),
@@ -31,6 +31,7 @@ Imports:
 Suggests: 
     ggplot2,
     knitr,
+    parameters,
     rmarkdown,
     spelling,
     testthat
@@ -39,3 +40,4 @@ Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2.9000
+VignetteBuilder: knitr

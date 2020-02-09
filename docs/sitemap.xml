@@ -10,6 +10,9 @@
     <loc>https://indrajeetpatil.github.io/ipmisc//reference/bugs_long.html</loc>
   </url>
   <url>
+    <loc>https://indrajeetpatil.github.io/ipmisc//reference/easystats_to_tidy_names.html</loc>
+  </url>
+  <url>
     <loc>https://indrajeetpatil.github.io/ipmisc//reference/ipmisc.html</loc>
   </url>
   <url>
@@ -41,5 +44,8 @@
   </url>
   <url>
     <loc>https://indrajeetpatil.github.io/ipmisc//reference/specify_decimal_p.html</loc>
+  </url>
+  <url>
+    <loc>https://indrajeetpatil.github.io/ipmisc//articles/tests_and_coverage.html</loc>
   </url>
 </urlset>
