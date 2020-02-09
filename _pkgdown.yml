@@ -23,6 +23,7 @@ reference:
       - signif_column
       - specify_decimal_p
       - easystats_to_tidy_names
+      - sort_xy
 
   - title: Helper functions (messages)
     desc:  Simple function to display messages from tests carried out to check statistical assumptions of tests.

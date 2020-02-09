@@ -2,7 +2,13 @@ al
 anthropods
 APA
 AppVeyor
+bartlett
+covr
+covrpage
+cwd
+df
 disgustingness
+easystats
 eranraviv
 et
 freighteningness
@@ -19,6 +25,7 @@ LDLF
 LFHD
 Licence
 lifecycle
+mingw
 mpaa
 MPAA
 NumGenre
@@ -28,9 +35,12 @@ README
 Royston
 RStudio
 setosa
+signif
 statsExpressions
+testthat
 tibble
 vectorized
 versicolor
 virginica
 Wilk
+xy

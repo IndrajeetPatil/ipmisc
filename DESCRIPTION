@@ -20,9 +20,10 @@ BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
 Depends: 
     R (>= 3.5.0)
 Imports:
+    broomExtra,
     crayon,
     dplyr (>= 0.8.3),
-    broomExtra,
+    forcats,
     rlang (>= 0.4.2),
     rstudioapi,
     tibble (>= 2.0.1),
@@ -35,9 +36,10 @@ Suggests:
     rmarkdown,
     spelling,
     testthat
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.2.9000
-VignetteBuilder: knitr

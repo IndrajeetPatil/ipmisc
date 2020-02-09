@@ -6,6 +6,9 @@
 \usage{
 easystats_to_tidy_names(x)
 }
+\arguments{
+\item{x}{A statistical model object}
+}
 \description{
 Both \code{broom} package from \code{tidymodels} universe and \code{parameters}
 package from \code{easystats} universe can provide model summaries for a large

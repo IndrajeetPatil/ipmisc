@@ -6,6 +6,8 @@
 #'   naming conventions adopted in `easystats` to the ones adopted in the
 #'   `broom` package.
 #'
+#' @param x A statistical model object
+#'
 #' @importFrom dplyr rename_all recode
 #' @importFrom tibble as_tibble
 #'
