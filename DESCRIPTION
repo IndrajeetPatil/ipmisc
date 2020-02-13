@@ -1,7 +1,7 @@
 Type: Package
 Package: ipmisc
 Title: Miscellaneous Functions for Data Cleaning and Analysis
-Version: 1.1.0
+Version: 1.1.0.9000
 Authors@R: 
     person(given = "Indrajeet",
            family = "Patil",
@@ -26,7 +26,7 @@ Imports:
     forcats,
     rlang (>= 0.4.2),
     rstudioapi,
-    tibble (>= 2.0.1),
+    tibble (>= 2.1.3),
     tidyr (>= 1.0.0),
     zeallot
 Suggests: 

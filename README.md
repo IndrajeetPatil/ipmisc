@@ -29,7 +29,7 @@ Status](https://img.shields.io/codecov/c/github/IndrajeetPatil/ipmisc/master.svg
 Status](https://coveralls.io/repos/github/IndrajeetPatil/ipmisc/badge.svg?branch=master)](https://coveralls.io/github/IndrajeetPatil/ipmisc?branch=master)
 [![status](https://tinyverse.netlify.com/badge/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 
-# Overview
+# Introduction
 
 The `ipmisc` provides functions for data cleaning and formatting. These
 functions form data cleaning backend for the following packages:
