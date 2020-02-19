@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+x
+
 # `ipmisc`: Miscellaneous Functions for Data Cleaning and Analysis
 
 [![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
