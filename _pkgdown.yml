@@ -41,9 +41,6 @@ reference:
       - "%<-%"
       - tibble
       - as_tibble
-      - tidy
-      - augment
-      - glance
       - yellow
       - green
       - red

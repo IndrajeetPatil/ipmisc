@@ -10,9 +10,6 @@
 \alias{as_tibble}
 \alias{\%||\%}
 \alias{\%|\%}
-\alias{tidy}
-\alias{glance}
-\alias{augment}
 \alias{\%<-\%}
 \alias{blue}
 \alias{green}
@@ -25,7 +22,7 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{broomExtra}{\code{\link[broomExtra]{\%$\%}}, \code{\link[broomExtra]{\%<>\%}}, \code{\link[broomExtra]{\%>\%}}, \code{\link[broomExtra]{augment}}, \code{\link[broomExtra]{glance}}, \code{\link[broomExtra]{tidy}}}
+  \item{broomExtra}{\code{\link[broomExtra]{\%$\%}}, \code{\link[broomExtra]{\%<>\%}}, \code{\link[broomExtra]{\%>\%}}}
 
   \item{crayon}{\code{\link[crayon]{blue}}, \code{\link[crayon]{green}}, \code{\link[crayon]{red}}, \code{\link[crayon]{yellow}}}
 
