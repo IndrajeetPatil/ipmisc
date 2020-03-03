@@ -51,3 +51,10 @@ crayon::red
 #' @export
 #' @importFrom crayon yellow
 crayon::yellow
+
+
+# ----------------------- misc -------------------------------------
+
+#' @export
+#' @importFrom broomExtra easystats_to_tidy_names
+broomExtra::easystats_to_tidy_names

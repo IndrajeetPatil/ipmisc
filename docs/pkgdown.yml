@@ -1,8 +1,7 @@
 pandoc: 2.9.2
 pkgdown: 1.4.1.9000
 pkgdown_sha: 5e873fd9e478dddd784c31d8c8f994fd4b341c2a
-articles:
-  tests_and_coverage: tests_and_coverage.html
+articles: []
 urls:
   reference: https://indrajeetpatil.github.io/ipmisc//reference
   article: https://indrajeetpatil.github.io/ipmisc//articles

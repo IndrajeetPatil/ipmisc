@@ -19,8 +19,8 @@ testthat::test_that(
         output = "stats"
       )
 
-    testthat::expect_equal(df$p.value, 0.0102, tolerance = 0.001)
-    testthat::expect_equal(df$statistic, 0.976, tolerance = 0.001)
+    testthat::expect_equal(df$p.value[[1]], 0.01018116, tolerance = 0.001)
+    testthat::expect_equal(df$statistic[[1]], 0.9760903, tolerance = 0.001)
   }
 )
 
@@ -55,8 +55,8 @@ testthat::test_that(
         output = "stats"
       )
 
-    testthat::expect_equal(df$p.value, 0.02101512, tolerance = 0.001)
-    testthat::expect_equal(df$statistic, 11.55176, tolerance = 0.001)
+    testthat::expect_equal(df$p.value[[1]], 0.02101512, tolerance = 0.001)
+    testthat::expect_equal(df$statistic[[1]], 11.55176, tolerance = 0.001)
 
     # with NA ------------------------------------------------------
 
@@ -82,8 +82,8 @@ testthat::test_that(
         output = "stats"
       )
 
-    testthat::expect_equal(df$p.value, 0.0225323, tolerance = 0.001)
-    testthat::expect_equal(df$statistic, 9.576403, tolerance = 0.001)
+    testthat::expect_equal(df$p.value[[1]], 0.0225323, tolerance = 0.001)
+    testthat::expect_equal(df$statistic[[1]], 9.576403, tolerance = 0.001)
 
     # with dropped factor level -------------------------------------------------
 
@@ -111,7 +111,7 @@ testthat::test_that(
       output = "stats"
     )
 
-    testthat::expect_equal(df$p.value, 0.01876283, tolerance = 0.001)
-    testthat::expect_equal(df$statistic, 7.951755, tolerance = 0.001)
+    testthat::expect_equal(df$p.value[[1]], 0.01876283, tolerance = 0.001)
+    testthat::expect_equal(df$statistic[[1]], 7.951755, tolerance = 0.001)
   }
 )

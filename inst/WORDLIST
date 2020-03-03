@@ -39,6 +39,7 @@ signif
 statsExpressions
 testthat
 tibble
+tidiers
 vectorized
 versicolor
 virginica
