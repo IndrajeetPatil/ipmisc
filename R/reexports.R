@@ -58,3 +58,17 @@ crayon::yellow
 #' @export
 #' @importFrom broomExtra easystats_to_tidy_names
 broomExtra::easystats_to_tidy_names
+
+# ----------------------- broom -------------------------------------
+
+#' @export
+#' @importFrom broomExtra tidy
+broomExtra::tidy
+
+#' @export
+#' @importFrom broomExtra glance
+broomExtra::glance
+
+#' @export
+#' @importFrom broomExtra augment
+broomExtra::augment

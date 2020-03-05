@@ -1,6 +1,5 @@
 # ipmisc 1.1.0.9000
 
-  - Stops re-exporting `broomExtra` tidiers.
   - Re-exports `easystats_to_tidy_names` from `broomExtra`.
   - Fixes tests for the new release of `tibble`.
 
