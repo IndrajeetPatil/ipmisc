@@ -7,4 +7,4 @@
 
 0 errors | 0 warnings | 0 note
 
-  - Adds new functions.
+  - Fixes tests for the upcoming release of `tibble`.
