@@ -1,3 +1,7 @@
+# ipmisc 1.3.0
+
+  - New function: 
+
 # ipmisc 1.2.0
 
   - Re-exports `easystats_to_tidy_names` from `broomExtra`.

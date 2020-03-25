@@ -5,11 +5,11 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "ipmisc",
-  "description": "Provides functions needed for data cleaning and\n    formatting and forms data cleaning and wrangling backend for the\n    following packages: 'ggstatsplot', 'groupedstats',\n    'pairwiseComparisons', and 'statsExpressions'.",
+  "description": "Provides functions needed for data cleaning and\n    formatting and forms data cleaning and wrangling backend for the\n    following packages: 'ggstatsplot', 'groupedstats',\n    'pairwiseComparisons', 'statsExpressions', and 'tidyBF'.",
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",

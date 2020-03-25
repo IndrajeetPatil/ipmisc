@@ -41,11 +41,16 @@ The `ipmisc` provides functions for data cleaning and formatting. These
 functions form data cleaning backend for the following packages:
 
   - `ggstatsplot`: <https://indrajeetpatil.github.io/ggstatsplot/>
+  
   - `statsExpressions`: <https://indrajeetpatil.github.io/statsExpressions/>
+  
   - `pairwiseComparisons`:
     <https://indrajeetpatil.github.io/pairwiseComparisons/>
+    
   - `groupedstats`: <https://indrajeetpatil.github.io/groupedstats/>
-
+  
+  - `tidyBF`: <https://indrajeetpatil.github.io/tidyBF/>
+  
 # Installation
 
 You can install the `CRAN` version of `ipmisc`:
