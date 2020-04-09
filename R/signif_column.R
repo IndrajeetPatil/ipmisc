@@ -30,7 +30,7 @@
 # function body
 signif_column <- function(data, p, ...) {
   # add new significance column based on standard APA guidelines
-  data %<>%
+  data %>%
     dplyr::mutate(
       .data = .,
       significance = dplyr::case_when(

@@ -22,12 +22,12 @@ Depends:
 Imports:
     broomExtra,
     crayon,
-    dplyr (>= 0.8.3),
+    dplyr,
     forcats,
-    rlang (>= 0.4.2),
+    rlang,
     rstudioapi,
-    tibble (>= 2.1.3),
-    tidyr (>= 1.0.0),
+    tibble,
+    tidyr,
     zeallot
 Suggests: 
     ggplot2,
