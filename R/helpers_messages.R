@@ -6,8 +6,6 @@
 #' @param x A numeric vector.
 #' @param lab A character describing label for the variable. If `NULL`, a
 #'   generic `"x"` label will be used.
-#' @param output What output is desired: `"message"` (default) or `"stats"` (or
-#'   `"tidy"`) objects.
 #' @param ... Additional arguments (ignored).
 #' @inheritParams specify_decimal_p
 #'
@@ -23,19 +21,12 @@
 #'   lab = "x1",
 #'   k = 3
 #' )
-#'
-#' # statistical test object
-#' normality_message(
-#'   x = anscombe$x2,
-#'   output = "tidy"
-#' )
 #' @export
 
 # function body
 normality_message <- function(x,
                               lab = NULL,
                               k = 2,
-                              output = "message",
                               ...) {
 
   # if label is not provided
@@ -46,21 +37,17 @@ normality_message <- function(x,
     # test object
     sw_norm <- stats::shapiro.test(x)
 
-    # what object to return?
-    if (output == "message") {
-      # exact message
-      message(cat(
-        crayon::green("Note: "),
-        crayon::blue("Shapiro-Wilk Normality Test for "),
-        crayon::yellow(lab),
-        crayon::blue(": p-value = "),
-        crayon::yellow(specify_decimal_p(x = sw_norm$p.value[[1]], k = k, p.value = TRUE)),
-        "\n",
-        sep = ""
-      ))
-    } else {
-      return(broomExtra::tidy(sw_norm))
-    }
+
+    # exact message
+    message(cat(
+      crayon::green("Note: "),
+      crayon::blue("Shapiro-Wilk Normality Test for "),
+      crayon::yellow(lab),
+      crayon::blue(": p-value = "),
+      crayon::yellow(specify_decimal_p(x = sw_norm$p.value[[1]], k = k, p.value = TRUE)),
+      "\n",
+      sep = ""
+    ))
   }
 }
 
@@ -89,14 +76,6 @@ normality_message <- function(x,
 #'   y = Sepal.Length,
 #'   lab = "Iris Species"
 #' )
-#'
-#' # getting results from the test
-#' bartlett_message(
-#'   data = mtcars,
-#'   x = am,
-#'   y = wt,
-#'   output = "tidy"
-#' )
 #' @export
 
 # function body
@@ -105,7 +84,6 @@ bartlett_message <- function(data,
                              y,
                              lab = NULL,
                              k = 2,
-                             output = "message",
                              ...) {
   # make sure both quoted and unquoted arguments are allowed
   c(x, y) %<-% c(rlang::ensym(x), rlang::ensym(y))
@@ -121,19 +99,14 @@ bartlett_message <- function(data,
       na.action = na.omit
     )
 
-  # preparing message
-  if (output == "message") {
-    # display homogeneity of variances test result as a message
-    message(cat(
-      crayon::green("Note: "),
-      crayon::blue("Bartlett's test for homogeneity of variances for factor "),
-      crayon::yellow(lab),
-      crayon::blue(": p-value = "),
-      crayon::yellow(specify_decimal_p(x = bartlett$p.value[[1]], k = k, p.value = TRUE)),
-      "\n",
-      sep = ""
-    ))
-  } else {
-    return(broomExtra::tidy(bartlett))
-  }
+  # display homogeneity of variances test result as a message
+  message(cat(
+    crayon::green("Note: "),
+    crayon::blue("Bartlett's test for homogeneity of variances for factor "),
+    crayon::yellow(lab),
+    crayon::blue(": p-value = "),
+    crayon::yellow(specify_decimal_p(x = bartlett$p.value[[1]], k = k, p.value = TRUE)),
+    "\n",
+    sep = ""
+  ))
 }

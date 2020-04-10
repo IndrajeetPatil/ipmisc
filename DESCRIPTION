@@ -1,7 +1,7 @@
 Type: Package
 Package: ipmisc
 Title: Miscellaneous Functions for Data Cleaning and Analysis
-Version: 1.3.0
+Version: 2.0.0
 Authors@R: 
     person(given = "Indrajeet",
            family = "Patil",
@@ -20,10 +20,10 @@ BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
 Depends: 
     R (>= 3.5.0)
 Imports:
-    broomExtra,
     crayon,
     dplyr,
     forcats,
+    magrittr,
     rlang,
     rstudioapi,
     tibble,

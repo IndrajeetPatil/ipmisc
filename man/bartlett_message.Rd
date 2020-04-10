@@ -4,7 +4,7 @@
 \alias{bartlett_message}
 \title{Display homogeneity of variance test as a message}
 \usage{
-bartlett_message(data, x, y, lab = NULL, k = 2, output = "message", ...)
+bartlett_message(data, x, y, lab = NULL, k = 2, ...)
 }
 \arguments{
 \item{data}{A dataframe (or a tibble) from which variables specified are to
@@ -20,9 +20,6 @@ name will be used.}
 
 \item{k}{Number of digits after decimal point (should be an integer)
 (Default: \code{k = 3}).}
-
-\item{output}{What output is desired: \code{"message"} (default) or \code{"stats"} (or
-\code{"tidy"}) objects.}
 
 \item{...}{Currently ignored.}
 }
@@ -48,13 +45,5 @@ bartlett_message(
   x = Species,
   y = Sepal.Length,
   lab = "Iris Species"
-)
-
-# getting results from the test
-bartlett_message(
-  data = mtcars,
-  x = am,
-  y = wt,
-  output = "tidy"
 )
 }

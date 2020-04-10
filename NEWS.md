@@ -1,8 +1,14 @@
-# ipmisc 1.3.0
+# ipmisc 2.0.0
 
   - New function: `stats_type_switch`.
   
   - `signif_column` now explicitly returns a dataframe.
+  
+  - The following function are no longer re-exported from `broomExtra` to remove
+    it from imports: `tidy`, `glance`, `augment`, and `easystats_to_tidy_names`.
+    
+  - `bartlett_message` and `normality_message` function lose `output` argument.
+    They now always return a message.
 
 # ipmisc 1.2.0
 
