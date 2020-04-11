@@ -7,4 +7,4 @@
 
 0 errors | 0 warnings | 0 note
 
-  - Fixes tests for the upcoming release of `tibble`.
+  - Minor internal refactoring.

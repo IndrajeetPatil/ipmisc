@@ -17,6 +17,10 @@ magrittr::`%$%`
 tibble::tibble
 
 #' @export
+#' @importFrom tibble enframe
+tibble::enframe
+
+#' @export
 #' @importFrom tibble as_tibble
 tibble::as_tibble
 

@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "ipmisc",
-  "description": "Provides functions needed for data cleaning and\n    formatting and forms data cleaning and wrangling backend for the\n    following packages: 'ggstatsplot', 'groupedstats',\n    'pairwiseComparisons', 'statsExpressions', and 'tidyBF'.",
+  "description": "Provides functions needed for data cleaning and\n    formatting and forms data cleaning and wrangling backend for the\n    following packages: 'broomExtra', 'ggstatsplot', 'groupedstats',\n    'pairwiseComparisons', 'statsExpressions', and 'tidyBF'.",
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
@@ -65,18 +65,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "parameters",
-      "name": "parameters",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=parameters"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
       "provider": {
@@ -117,7 +105,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 3.5.0"
+      "version": ">= 3.6.0"
     },
     {
       "@type": "SoftwareApplication",

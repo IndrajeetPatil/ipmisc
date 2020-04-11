@@ -11,14 +11,14 @@ Authors@R:
 Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
 Description: Provides functions needed for data cleaning and
     formatting and forms data cleaning and wrangling backend for the
-    following packages: 'ggstatsplot', 'groupedstats',
+    following packages: 'broomExtra', 'ggstatsplot', 'groupedstats',
     'pairwiseComparisons', 'statsExpressions', and 'tidyBF'.
 License: GPL-3 | file LICENSE
 URL: https://indrajeetpatil.github.io/ipmisc/,
     https://github.com/IndrajeetPatil/ipmisc
 BugReports: https://github.com/IndrajeetPatil/ipmisc/issues
 Depends: 
-    R (>= 3.5.0)
+    R (>= 3.6.0)
 Imports:
     crayon,
     dplyr,
@@ -32,7 +32,6 @@ Imports:
 Suggests: 
     ggplot2,
     knitr,
-    parameters,
     rmarkdown,
     spelling,
     testthat
