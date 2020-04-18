@@ -1,5 +1,9 @@
 # ipmisc 2.0.0.9000
 
+BREAKING CHANGES
+
+  - Removes the unused `sort_xy` function. This removes `forcats` from `imports`.
+
 # ipmisc 2.0.0
 
   - New function: `stats_type_switch`.

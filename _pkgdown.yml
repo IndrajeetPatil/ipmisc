@@ -22,7 +22,6 @@ reference:
       - outlier_df
       - signif_column
       - specify_decimal_p
-      - sort_xy
       - stats_type_switch
 
   - title: Helper functions (messages)
