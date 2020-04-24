@@ -3,6 +3,8 @@
 BREAKING CHANGES
 
   - Removes the unused `sort_xy` function. This removes `forcats` from `imports`.
+  
+  - Removes the unused `normality_message` and `shapiro_message` functions.
 
 # ipmisc 2.0.0
 

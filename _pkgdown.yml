@@ -24,11 +24,6 @@ reference:
       - specify_decimal_p
       - stats_type_switch
 
-  - title: Helper functions (messages)
-    desc:  Simple function to display messages from tests carried out to check statistical assumptions of tests.
-    contents:
-      - ends_with("_message")
-
   - title: Reexported functions
     desc:  Useful functions re-exported from other packages.
     contents:
