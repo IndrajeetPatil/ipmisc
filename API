@@ -1,7 +1,5 @@
-bartlett_message(data, x, y, lab = NULL, k = 2, output = "message", ...)
 easystats_to_tidy_names(x)
 long_to_wide_converter(data, x, y, paired = TRUE, ...)
-normality_message(x, lab = NULL, k = 2, output = "message", ...)
 outlier_df(data, x, y, outlier.label, outlier.coef = 1.5, ...)
 set_cwd(NA)
 signif_column(data, p, ...)

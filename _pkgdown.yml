@@ -36,7 +36,5 @@ reference:
   - title: Data
     desc:  Datasets included in the package.
     contents:
-      - movies_wide
-      - movies_long
       - bugs_long
       - iris_long
