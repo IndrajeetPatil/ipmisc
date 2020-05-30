@@ -7,4 +7,4 @@
 
 0 errors | 0 warnings | 0 note
 
-  - Minor internal refactoring.
+  - Minor internal refactoring and maintenance release.
