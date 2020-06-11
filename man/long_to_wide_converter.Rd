@@ -2,9 +2,9 @@
 % Please edit documentation in R/long_to_wide_converter.R
 \name{long_to_wide_converter}
 \alias{long_to_wide_converter}
-\title{Converts long-format dataframe to wide-format dataframe}
+\title{Converts dataframe from long/tidy to wide format with \code{NA}s removed}
 \usage{
-long_to_wide_converter(data, x, y, paired = TRUE, ...)
+long_to_wide_converter(data, x, y, paired = TRUE, spread = TRUE, ...)
 }
 \arguments{
 \item{data}{A dataframe (or a tibble) from which variables specified are to
@@ -18,6 +18,10 @@ dataframe \code{data}.}
 \item{paired}{Logical that decides whether the experimental design is
 repeated measures/within-subjects or between-subjects. The default is
 \code{FALSE}.}
+
+\item{spread}{Logical that decides whether the dataframe needs to be
+converted from long/tidy to wide (default: \code{TRUE}), or the data needs to be
+returned as it is but with the \code{NA}s removed.}
 
 \item{...}{Currently ignored.}
 }
@@ -36,7 +40,4 @@ long_to_wide_converter(
   paired = TRUE
 )
 }
-}
-\author{
-\href{https://github.com/IndrajeetPatil}{Indrajeet Patil}
 }

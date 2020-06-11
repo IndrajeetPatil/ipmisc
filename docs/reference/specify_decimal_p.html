@@ -80,7 +80,7 @@ vectorized." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ipmisc</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">3.0.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">3.0.0.9000</span>
       </span>
     </div>
 
@@ -157,6 +157,9 @@ vectorized.</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Formatted numeric value.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Indrajeet Patil</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.00001</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "&lt; 0.001"</div><div class='input'><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.008</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "0.008"</div><div class='input'><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.008</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] "0.008"</div></pre>

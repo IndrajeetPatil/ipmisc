@@ -11,6 +11,7 @@
 \alias{as_tibble}
 \alias{\%||\%}
 \alias{\%|\%}
+\alias{:=}
 \alias{\%<-\%}
 \alias{blue}
 \alias{green}
@@ -27,7 +28,7 @@ below to see their documentation.
 
   \item{magrittr}{\code{\link[magrittr]{\%$\%}}, \code{\link[magrittr]{\%<>\%}}, \code{\link[magrittr]{\%>\%}}}
 
-  \item{rlang}{\code{\link[rlang]{\%|\%}}, \code{\link[rlang]{\%||\%}}}
+  \item{rlang}{\code{\link[rlang]{\%|\%}}, \code{\link[rlang]{\%||\%}}, \code{\link[rlang]{:=}}}
 
   \item{tibble}{\code{\link[tibble]{as_tibble}}, \code{\link[tibble]{enframe}}, \code{\link[tibble]{tibble}}}
 

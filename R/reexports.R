@@ -32,6 +32,10 @@ rlang::`%||%`
 #' @importFrom rlang "%|%"
 rlang::`%|%`
 
+#' @export
+#' @importFrom rlang ":="
+rlang::`:=`
+
 # ----------------------- zeallot -------------------------------------
 
 #' @export
