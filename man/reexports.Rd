@@ -24,14 +24,14 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{crayon}{\code{\link[crayon]{blue}}, \code{\link[crayon]{green}}, \code{\link[crayon]{red}}, \code{\link[crayon]{yellow}}}
+  \item{crayon}{\code{\link[crayon:crayon]{blue}}, \code{\link[crayon:crayon]{green}}, \code{\link[crayon:crayon]{red}}, \code{\link[crayon:crayon]{yellow}}}
 
-  \item{magrittr}{\code{\link[magrittr]{\%$\%}}, \code{\link[magrittr]{\%<>\%}}, \code{\link[magrittr]{\%>\%}}}
+  \item{magrittr}{\code{\link[magrittr:pipe]{\%$\%}}, \code{\link[magrittr:compound]{\%<>\%}}, \code{\link[magrittr:exposition]{\%>\%}}}
 
-  \item{rlang}{\code{\link[rlang]{\%|\%}}, \code{\link[rlang]{\%||\%}}, \code{\link[rlang]{:=}}}
+  \item{rlang}{\code{\link[rlang:op-null-default]{\%|\%}}, \code{\link[rlang:op-na-default]{\%||\%}}, \code{\link[rlang:nse-force]{:=}}}
 
   \item{tibble}{\code{\link[tibble]{as_tibble}}, \code{\link[tibble]{enframe}}, \code{\link[tibble]{tibble}}}
 
-  \item{zeallot}{\code{\link[zeallot]{\%<-\%}}}
+  \item{zeallot}{\code{\link[zeallot:operator]{\%<-\%}}}
 }}
 
