@@ -26,9 +26,9 @@ below to see their documentation.
 \describe{
   \item{crayon}{\code{\link[crayon:crayon]{blue}}, \code{\link[crayon:crayon]{green}}, \code{\link[crayon:crayon]{red}}, \code{\link[crayon:crayon]{yellow}}}
 
-  \item{magrittr}{\code{\link[magrittr:pipe]{\%$\%}}, \code{\link[magrittr:compound]{\%<>\%}}, \code{\link[magrittr:exposition]{\%>\%}}}
+  \item{magrittr}{\code{\link[magrittr:exposition]{\%$\%}}, \code{\link[magrittr:compound]{\%<>\%}}, \code{\link[magrittr:pipe]{\%>\%}}}
 
-  \item{rlang}{\code{\link[rlang:op-null-default]{\%|\%}}, \code{\link[rlang:op-na-default]{\%||\%}}, \code{\link[rlang:nse-force]{:=}}}
+  \item{rlang}{\code{\link[rlang:op-na-default]{\%|\%}}, \code{\link[rlang:op-null-default]{\%||\%}}, \code{\link[rlang:nse-force]{:=}}}
 
   \item{tibble}{\code{\link[tibble]{as_tibble}}, \code{\link[tibble]{enframe}}, \code{\link[tibble]{tibble}}}
 
