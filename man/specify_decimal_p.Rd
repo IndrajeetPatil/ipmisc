@@ -4,13 +4,13 @@
 \alias{specify_decimal_p}
 \title{Formatting numeric (\emph{p}-)values}
 \usage{
-specify_decimal_p(x, k = 3, p.value = FALSE)
+specify_decimal_p(x, k = 3L, p.value = FALSE)
 }
 \arguments{
 \item{x}{A numeric value.}
 
 \item{k}{Number of digits after decimal point (should be an integer)
-(Default: \code{k = 3}).}
+(Default: \code{k = 3L}).}
 
 \item{p.value}{Decides whether the number is a \emph{p}-value (Default: \code{FALSE}).}
 }
@@ -30,7 +30,4 @@ vectorized.
 specify_decimal_p(x = 0.00001, k = 2, p.value = TRUE)
 specify_decimal_p(x = 0.008, k = 2, p.value = TRUE)
 specify_decimal_p(x = 0.008, k = 3, p.value = FALSE)
-}
-\author{
-Indrajeet Patil
 }

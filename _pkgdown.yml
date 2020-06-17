@@ -23,6 +23,7 @@ reference:
       - signif_column
       - specify_decimal_p
       - stats_type_switch
+      - p_value_formatter
 
   - title: Reexported functions
     desc:  Useful functions re-exported from other packages.

@@ -1,6 +1,5 @@
 #' @title Creating a new column with significance labels
 #' @name signif_column
-#' @author Indrajeet Patil
 #' @description This function will add a new column with significance labels to
 #'   a dataframe containing *p*-values.
 #' @return Returns the dataframe in tibble format with an additional column
@@ -13,15 +12,14 @@
 #'
 #' @importFrom dplyr mutate case_when
 #'
-#' @family helper_stats
-#'
 #' @examples
 #' # preparing a new dataframe
-#' df <- cbind.data.frame(
-#'   x = 1:5,
-#'   y = 1,
-#'   p.value = c(0.1, 0.5, 0.00001, 0.05, 0.01)
-#' )
+#' df <-
+#'   cbind.data.frame(
+#'     x = 1:5,
+#'     y = 1,
+#'     p.value = c(0.1, 0.5, 0.00001, 0.05, 0.01)
+#'   )
 #'
 #' # dataframe with significance column
 #' signif_column(data = df, p = p.value)

@@ -60,12 +60,12 @@ long_to_wide_converter <- function(data,
 
   # convert to wide?
   if (isTRUE(spread)) {
-  data %>%
-    tidyr::pivot_wider(
-      data = .,
-      names_from = {{ x }},
-      values_from = {{ y }}
-    )
+    data %>%
+      tidyr::pivot_wider(
+        data = .,
+        names_from = {{ x }},
+        values_from = {{ y }}
+      )
   } else {
     data
   }

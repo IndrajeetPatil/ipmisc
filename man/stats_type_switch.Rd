@@ -10,10 +10,10 @@ stats_type_switch(type)
 \item{type}{Character string describing the type of statistics.}
 }
 \description{
-Relevant mostly for \code{ggstatsplot} and \code{statsExpressions}, where
-there are four types of statistics are supported: parametric,
-non-parametric, robust, and Bayesian. This switch function converts strings
-entered by users to a common pattern.
+Relevant mostly for \code{ggstatsplot} and \code{statsExpressions}
+packages, where there are four types of statistics are supported:
+parametric, non-parametric, robust, and Bayesian. This switch function
+converts strings entered by users to a common pattern.
 }
 \examples{
 stats_type_switch("p")

@@ -1,6 +1,5 @@
 #' @title Formatting numeric (*p*-)values
 #' @name specify_decimal_p
-#' @author Indrajeet Patil
 #'
 #' @description Function to format an R object for pretty printing with a
 #'   specified (`k`) number of decimal places. The function also allows really
@@ -12,7 +11,7 @@
 #'
 #' @param x A numeric value.
 #' @param k Number of digits after decimal point (should be an integer)
-#'   (Default: `k = 3`).
+#'   (Default: `k = 3L`).
 #' @param p.value Decides whether the number is a *p*-value (Default: `FALSE`).
 #'
 #' @return Formatted numeric value.
@@ -24,10 +23,10 @@
 #' @export
 
 # function body
-specify_decimal_p <- function(x, k = 3, p.value = FALSE) {
+specify_decimal_p <- function(x, k = 3L, p.value = FALSE) {
 
   # for example, if p.value is 0.002, it should be displayed as such
-  if (k < 3 && isTRUE(p.value)) k <- 3
+  if (k < 3L && isTRUE(p.value)) k <- 3L
 
   # formatting the output properly
   output <- trimws(format(round(x = x, digits = k), nsmall = k), which = "both")

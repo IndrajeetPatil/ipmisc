@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Formatting numeric (<em>p</em>-)values — specify_decimal_p • ipmisc</title>
+<title>Format <em>p</em>-values for creating labels from them for graphics — p_value_formatter • ipmisc</title>
 
 
 <!-- jquery -->
@@ -41,14 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Formatting numeric (<em>p</em>-)values — specify_decimal_p" />
-<meta property="og:description" content="Function to format an R object for pretty printing with a
-specified (k) number of decimal places. The function also allows really
-small p-values to be denoted as &quot;p &amp;lt; 0.001&quot; rather than &quot;p = 0.000&quot;.
-Note that if p.value is set to TRUE, the minimum value of k allowed
-is 3. If k is set to less than 3, the function will ignore entered k
-value and use k = 3 instead. Important: This function is not
-vectorized." />
+<meta property="og:title" content="Format <em>p</em>-values for creating labels from them for graphics — p_value_formatter" />
+<meta property="og:description" content="Format p-values for creating labels from them for graphics" />
 
 
 
@@ -119,29 +113,24 @@ vectorized." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Formatting numeric (<em>p</em>-)values</h1>
-    <small class="dont-index">Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/R/specify_decimal_p.R'><code>R/specify_decimal_p.R</code></a></small>
-    <div class="hidden name"><code>specify_decimal_p.Rd</code></div>
+    <h1>Format <em>p</em>-values for creating labels from them for graphics</h1>
+    <small class="dont-index">Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/R/p_value_formatter.R'><code>R/p_value_formatter.R</code></a></small>
+    <div class="hidden name"><code>p_value_formatter.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Function to format an R object for pretty printing with a
-specified (<code>k</code>) number of decimal places. The function also allows really
-small <em>p</em>-values to be denoted as <code>"p &lt; 0.001"</code> rather than <code>"p = 0.000"</code>.
-Note that if <code>p.value</code> is set to <code>TRUE</code>, the minimum value of <code>k</code> allowed
-is <code>3</code>. If <code>k</code> is set to less than 3, the function will ignore entered <code>k</code>
-value and use <code>k = 3</code> instead. <strong>Important</strong>: This function is not
-vectorized.</p>
+    <p>Format <em>p</em>-values for creating labels from them for graphics</p>
     </div>
 
-    <pre class="usage"><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span>, k = <span class='fl'>3L</span>, p.value = <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>p_value_formatter</span>(<span class='kw'>data</span>, k = <span class='fl'>3L</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>A numeric value.</p></td>
+      <th>data</th>
+      <td><p>Data frame from which variables specified are preferentially to
+be taken.</p></td>
     </tr>
     <tr>
       <th>k</th>
@@ -149,17 +138,30 @@ vectorized.</p>
 (Default: <code>k = 3L</code>).</p></td>
     </tr>
     <tr>
-      <th>p.value</th>
-      <td><p>Decides whether the number is a <em>p</em>-value (Default: <code>FALSE</code>).</p></td>
+      <th>...</th>
+      <td><p>Currently ignored.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Formatted numeric value.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>specify_decimal_p</span>(x = <span class='fl'>0.00001</span>, k = <span class='fl'>2</span>, p.value = <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "&lt; 0.001"</div><div class='input'><span class='fu'>specify_decimal_p</span>(x = <span class='fl'>0.008</span>, k = <span class='fl'>2</span>, p.value = <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "0.008"</div><div class='input'><span class='fu'>specify_decimal_p</span>(x = <span class='fl'>0.008</span>, k = <span class='fl'>3</span>, p.value = <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] "0.008"</div></pre>
+    <pre class="examples"><div class='input'><span class='co'># preparing a new dataframe</span>
+<span class='kw'>df</span> <span class='op'>&lt;-</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind.data.frame</a></span>(
+    x = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,
+    y = <span class='fl'>1</span>,
+    p.value = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.00001</span>, <span class='fl'>0.05</span>, <span class='fl'>0.01</span>)
+  )
+
+<span class='co'># prepare label</span>
+<span class='fu'>p_value_formatter</span>(data = <span class='kw'>df</span>, k = <span class='fl'>4L</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5 x 4</span><span>
+#&gt;       x     y p.value p.value.formatted
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            
+#&gt; </span><span style='color: #555555;'>1</span><span>     1     1 0.1     == 0.1000        
+#&gt; </span><span style='color: #555555;'>2</span><span>     2     1 0.5     == 0.5000        
+#&gt; </span><span style='color: #555555;'>3</span><span>     3     1 0.000</span><span style='text-decoration: underline;'>01</span><span> &lt;= 0.001         
+#&gt; </span><span style='color: #555555;'>4</span><span>     4     1 0.05    == 0.0500        
+#&gt; </span><span style='color: #555555;'>5</span><span>     5     1 0.01    == 0.0100        </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

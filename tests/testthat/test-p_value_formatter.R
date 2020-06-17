@@ -1,7 +1,7 @@
-# signif_column works ---------------------------------------------------
+# p_value_formatter works ----------------------------------------
 
 test_that(
-  desc = "signif_column works",
+  desc = "p_value_formatter works",
   code = {
     testthat::skip_if(getRversion() < "3.6")
 
@@ -17,9 +17,8 @@ test_that(
       )
 
     df <-
-      signif_column(
+      p_value_formatter(
         data = p.data,
-        p = p.value,
         messages = FALSE
       )
 
@@ -27,12 +26,12 @@ test_that(
     set.seed(123)
     testthat::expect_identical(
       names(df),
-      c("x", "y", "p.value", "significance")
+      c("x", "y", "p.value", "p.value.formatted")
     )
     testthat::expect_equal(dim(df), c(5L, 4L))
     testthat::expect_identical(
-      df$significance,
-      c("ns", "ns", "***", "ns", "*")
+      df$p.value.formatted,
+      c("== 0.100", "== 0.500", "<= 0.001", "== 0.050", "== 0.010")
     )
   }
 )
