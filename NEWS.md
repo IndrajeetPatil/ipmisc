@@ -1,4 +1,4 @@
-# ipmisc 3.0.0.9000
+# ipmisc 3.1.0
 
   - Minor refactoring of `long_to_wide_converter`. It gains `spread` argument.
     When set to `FALSE`, the original dataframe will be returned with the `NA`'s
