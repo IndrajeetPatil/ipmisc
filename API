@@ -12,10 +12,10 @@ stats_type_switch(type)
 
 ## Reexported objects
 
-::%$%
+magrittr::%$%
 zeallot::%<-%
-::%<>%
-::%>%
+magrittr::%<>%
+magrittr::%>%
 rlang::%|%
 rlang::%||%
 rlang:::=

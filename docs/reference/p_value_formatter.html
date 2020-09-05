@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Format <em>p</em>-values for creating labels from them for graphics — p_value_formatter • ipmisc</title>
+<title>Format p-values for creating labels from them for graphics — p_value_formatter • ipmisc</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Format <em>p</em>-values for creating labels from them for graphics — p_value_formatter" />
+<meta property="og:title" content="Format p-values for creating labels from them for graphics — p_value_formatter" />
 <meta property="og:description" content="Format p-values for creating labels from them for graphics" />
 
 
@@ -122,7 +122,7 @@
     <p>Format <em>p</em>-values for creating labels from them for graphics</p>
     </div>
 
-    <pre class="usage"><span class='fu'>p_value_formatter</span>(<span class='no'>data</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>p_value_formatter</span>(<span class='kw'>data</span>, k = <span class='fl'>3L</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,22 +146,23 @@ be taken.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># preparing a new dataframe</span>
-<span class='no'>df</span> <span class='kw'>&lt;-</span>
+<span class='kw'>df</span> <span class='op'>&lt;-</span>
   <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind.data.frame</a></span>(
-    <span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>,
-    <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-    <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.00001</span>, <span class='fl'>0.05</span>, <span class='fl'>0.01</span>)
+    x = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>,
+    y = <span class='fl'>1</span>,
+    p.value = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.1</span>, <span class='fl'>0.5</span>, <span class='fl'>0.00001</span>, <span class='fl'>0.05</span>, <span class='fl'>0.01</span>)
   )
 
 <span class='co'># prepare label</span>
-<span class='fu'>p_value_formatter</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4L</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5 x 4</span><span>
-#&gt;       x     y p.value p.value.formatted
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            
-#&gt; </span><span style='color: #555555;'>1</span><span>     1     1 0.1     == 0.1000        
-#&gt; </span><span style='color: #555555;'>2</span><span>     2     1 0.5     == 0.5000        
-#&gt; </span><span style='color: #555555;'>3</span><span>     3     1 0.000</span><span style='text-decoration: underline;'>01</span><span> &lt;= 0.001         
-#&gt; </span><span style='color: #555555;'>4</span><span>     4     1 0.05    == 0.0500        
-#&gt; </span><span style='color: #555555;'>5</span><span>     5     1 0.01    == 0.0100        </div></span></pre>
+<span class='fu'>p_value_formatter</span>(data = <span class='kw'>df</span>, k = <span class='fl'>4L</span>)
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 5 x 4</span><span>
+#&gt;       </span><span style='font-weight: bold;'>x</span><span>     </span><span style='font-weight: bold;'>y</span><span> </span><span style='font-weight: bold;'>p.value</span><span> </span><span style='font-weight: bold;'>p.value.formatted</span><span>
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span>     1     1 0.1     == 0.1000        
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span>     2     1 0.5     == 0.5000        
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span>     3     1 0.000</span><span style='text-decoration: underline;'>01</span><span> &lt;= 0.001         
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span>     4     1 0.05    == 0.0500        
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span>     5     1 0.01    == 0.0100        </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -177,7 +178,7 @@ be taken.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

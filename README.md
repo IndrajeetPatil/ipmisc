@@ -1,7 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# `ipmisc`: Miscellaneous Functions for Data Cleaning and Analysis
+`ipmisc`: Miscellaneous Functions for Data Cleaning and Analysis
+================================================================
 
 [![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 [![Daily downloads
@@ -29,44 +30,47 @@ Status](https://img.shields.io/codecov/c/github/IndrajeetPatil/ipmisc/master.svg
 Status](https://coveralls.io/repos/github/IndrajeetPatil/ipmisc/badge.svg?branch=master)](https://coveralls.io/github/IndrajeetPatil/ipmisc?branch=master)
 [![status](https://tinyverse.netlify.com/badge/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 
-# Introduction
+Introduction
+============
 
 The `ipmisc` provides functions for data cleaning and formatting. These
 functions form data cleaning backend for the following packages:
 
-  - `ggstatsplot`: <https://indrajeetpatil.github.io/ggstatsplot/>
+-   `ggstatsplot`:
+    <a href="https://indrajeetpatil.github.io/ggstatsplot/" class="uri">https://indrajeetpatil.github.io/ggstatsplot/</a>
 
-  - `statsExpressions`:
-    <https://indrajeetpatil.github.io/statsExpressions/>
+-   `statsExpressions`:
+    <a href="https://indrajeetpatil.github.io/statsExpressions/" class="uri">https://indrajeetpatil.github.io/statsExpressions/</a>
 
-  - `pairwiseComparisons`:
-    <https://indrajeetpatil.github.io/pairwiseComparisons/>
+-   `pairwiseComparisons`:
+    <a href="https://indrajeetpatil.github.io/pairwiseComparisons/" class="uri">https://indrajeetpatil.github.io/pairwiseComparisons/</a>
 
-  - `groupedstats`: <https://indrajeetpatil.github.io/groupedstats/>
+-   `groupedstats`:
+    <a href="https://indrajeetpatil.github.io/groupedstats/" class="uri">https://indrajeetpatil.github.io/groupedstats/</a>
 
-  - `tidyBF`: <https://indrajeetpatil.github.io/tidyBF/>
+-   `tidyBF`:
+    <a href="https://indrajeetpatil.github.io/tidyBF/" class="uri">https://indrajeetpatil.github.io/tidyBF/</a>
 
-# Installation
+Installation
+============
 
 You can install the `CRAN` version of `ipmisc`:
 
-``` r
-install.packages("ipmisc")
-```
+    install.packages("ipmisc")
 
 And the development version from `GitHub` with:
 
-``` r
-# install.packages("remotes")
-remotes::install_github("IndrajeetPatil/ipmisc")
-```
+    # install.packages("remotes")
+    remotes::install_github("IndrajeetPatil/ipmisc")
 
-# Functions
+Functions
+=========
 
 To see all available functionality, see the documentation provided here:
-<https://indrajeetpatil.github.io/ipmisc/reference/index.html>
+<a href="https://indrajeetpatil.github.io/ipmisc/reference/index.html" class="uri">https://indrajeetpatil.github.io/ipmisc/reference/index.html</a>
 
-# Code of Conduct
+Code of Conduct
+===============
 
 Please note that the `ipmisc` project is released with a [Contributor
 Code of

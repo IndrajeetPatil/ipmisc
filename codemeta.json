@@ -15,7 +15,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-06-27 r78747)",
+  "runtimePlatform": "R Under development (unstable) (2020-09-01 r79114)",
   "author": [
     {
       "@type": "Person",
@@ -226,5 +226,5 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "fileSize": "445.946KB"
+  "fileSize": "449.227KB"
 }
