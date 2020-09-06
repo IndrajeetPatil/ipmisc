@@ -22,9 +22,10 @@
 p_value_formatter <- function(data, k = 3L, ...) {
   data %>%
     dplyr::rowwise() %>%
-    dplyr::mutate(p.value.formatted = specify_decimal_p(x = p.value, k = k, p.value = TRUE)) %>%
+    dplyr::mutate(.data = ., p.value.formatted = specify_decimal_p(p.value, k, p.value = TRUE)) %>%
     dplyr::ungroup() %>%
     dplyr::mutate(
+      .data = .,
       p.value.formatted = dplyr::case_when(
         p.value.formatted == "< 0.001" ~ "<= 0.001",
         TRUE ~ paste("==", p.value.formatted, sep = " ")

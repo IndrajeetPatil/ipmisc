@@ -36,32 +36,17 @@ outlier_df <- function(data,
                        outlier.coef = 1.5,
                        ...) {
   # make sure both quoted and unquoted arguments are allowed
-  c(x, y, outlier.label) %<-%
-    c(rlang::ensym(x), rlang::ensym(y), rlang::ensym(outlier.label))
+  c(x, y, outlier.label) %<-% c(rlang::ensym(x), rlang::ensym(y), rlang::ensym(outlier.label))
 
   # add a logical column indicating whether a point is or is not an outlier
-  data %<>%
+  data %>%
     dplyr::group_by(.data = ., {{ x }}) %>%
     dplyr::mutate(
       .data = .,
-      isanoutlier = ifelse(
-        test = check_outlier(var = {{ y }}, coef = outlier.coef),
-        yes = TRUE,
-        no = FALSE
-      )
+      isanoutlier = ifelse(check_outlier({{ y }}, outlier.coef), TRUE, FALSE),
+      outlier = ifelse(isanoutlier, {{ outlier.label }}, NA)
     ) %>%
-    dplyr::mutate(
-      .data = .,
-      outlier = ifelse(
-        test = isanoutlier,
-        yes = {{ outlier.label }},
-        no = NA
-      )
-    ) %>%
-    dplyr::ungroup(x = .)
-
-  # return the data frame with outlier
-  return(data)
+    dplyr::ungroup(.)
 }
 
 #' @title Finding the outliers in the dataframe using Tukey's interquartile
@@ -79,5 +64,5 @@ check_outlier <- function(var, coef = 1.5) {
   IQR <- quantiles[2] - quantiles[1]
 
   # check for outlier and output a logical
-  return((var < (quantiles[1] - coef * IQR)) | (var > (quantiles[2] + coef * IQR)))
+  (var < (quantiles[1] - coef * IQR)) | (var > (quantiles[2] + coef * IQR))
 }
