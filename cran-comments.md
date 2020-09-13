@@ -8,3 +8,4 @@
 0 errors | 0 warnings | 0 note
 
   - Minor internal refactoring and maintenance release.
+  - Adds a new function.

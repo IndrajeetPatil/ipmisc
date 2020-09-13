@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 # `ipmisc`: Miscellaneous Functions for Data Cleaning and Analysis
 
-[![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
+[![CRAN_Release_Badge](https://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 [![Daily downloads badge](https://cranlogs.r-pkg.org/badges/last-day/ipmisc?color=blue)](https://CRAN.R-project.org/package=ipmisc)
 [![Weekly downloads badge](https://cranlogs.r-pkg.org/badges/last-week/ipmisc?color=blue)](https://CRAN.R-project.org/package=ipmisc)
 [![Monthly downloads badge](https://cranlogs.r-pkg.org/badges/last-month/ipmisc?color=blue)](https://CRAN.R-project.org/package=ipmisc)
@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 [![Travis Build Status](https://travis-ci.org/IndrajeetPatil/ipmisc.svg?branch=master)](https://travis-ci.org/IndrajeetPatil/ipmisc) 
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/IndrajeetPatil/ipmisc?branch=master&svg=true)](https://ci.appveyor.com/project/IndrajeetPatil/ipmisc) 
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/)
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.6.0-6666ff.svg)](https://cran.r-project.org/)
 [![Coverage Status](https://img.shields.io/codecov/c/github/IndrajeetPatil/ipmisc/master.svg)](https://codecov.io/github/IndrajeetPatil/ipmisc?branch=master)
@@ -50,6 +50,8 @@ functions form data cleaning backend for the following packages:
   - `groupedstats`: <https://indrajeetpatil.github.io/groupedstats/>
   
   - `tidyBF`: <https://indrajeetpatil.github.io/tidyBF/>
+
+  - `broomExtra`: <https://indrajeetpatil.github.io/broomExtra/>
   
 # Installation
 

@@ -24,6 +24,7 @@ reference:
       - specify_decimal_p
       - stats_type_switch
       - p_value_formatter
+      - easystats_to_tidy_names
 
   - title: Reexported functions
     desc:  Useful functions re-exported from other packages.

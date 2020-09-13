@@ -4,7 +4,7 @@
 `ipmisc`: Miscellaneous Functions for Data Cleaning and Analysis
 ================================================================
 
-[![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
+[![CRAN\_Release\_Badge](https://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 [![Daily downloads
 badge](https://cranlogs.r-pkg.org/badges/last-day/ipmisc?color=blue)](https://CRAN.R-project.org/package=ipmisc)
 [![Weekly downloads
@@ -20,7 +20,7 @@ Status](https://ci.appveyor.com/api/projects/status/github/IndrajeetPatil/ipmisc
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
-developed.](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/)
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.6.0-6666ff.svg)](https://cran.r-project.org/)
@@ -50,6 +50,9 @@ functions form data cleaning backend for the following packages:
 
 -   `tidyBF`:
     <a href="https://indrajeetpatil.github.io/tidyBF/" class="uri">https://indrajeetpatil.github.io/tidyBF/</a>
+
+-   `broomExtra`:
+    <a href="https://indrajeetpatil.github.io/broomExtra/" class="uri">https://indrajeetpatil.github.io/broomExtra/</a>
 
 Installation
 ============

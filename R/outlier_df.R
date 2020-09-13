@@ -42,7 +42,6 @@ outlier_df <- function(data,
   data %>%
     dplyr::group_by(.data = ., {{ x }}) %>%
     dplyr::mutate(
-      .data = .,
       isanoutlier = ifelse(check_outlier({{ y }}, outlier.coef), TRUE, FALSE),
       outlier = ifelse(isanoutlier, {{ outlier.label }}, NA)
     ) %>%

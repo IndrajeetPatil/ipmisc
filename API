@@ -2,6 +2,7 @@
 
 ## Exported functions
 
+easystats_to_tidy_names(x, ...)
 long_to_wide_converter(data, x, y, paired = TRUE, spread = TRUE, ...)
 outlier_df(data, x, y, outlier.label, outlier.coef = 1.5, ...)
 p_value_formatter(data, k = 3L, ...)

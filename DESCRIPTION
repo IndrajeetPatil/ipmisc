@@ -1,7 +1,7 @@
 Type: Package
 Package: ipmisc
 Title: Miscellaneous Functions for Data Cleaning and Analysis
-Version: 3.1.0.9000
+Version: 3.2.0
 Authors@R: 
     person(given = "Indrajeet",
            family = "Patil",
@@ -32,6 +32,7 @@ Suggests:
     ggplot2,
     knitr,
     rmarkdown,
+    parameters,
     spelling,
     testthat
 Encoding: UTF-8
