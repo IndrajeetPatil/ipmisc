@@ -23,6 +23,8 @@ easystats_to_tidy_names <- function(x, ...) {
       # parameters
       "parameter" = "term",
       "coefficient" = "estimate",
+      "std.coefficient" = "estimate",
+      "exp.coefficient" = "estimate",
       "median" = "estimate",
       "se" = "std.error",
       "ci.low" = "conf.low",

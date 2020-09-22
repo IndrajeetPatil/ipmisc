@@ -1,10 +1,9 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 `ipmisc`: Miscellaneous Functions for Data Cleaning and Analysis
 ================================================================
 
-[![CRAN\_Release\_Badge](https://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
+[![CRAN_Release_Badge](https://www.r-pkg.org/badges/version-ago/ipmisc)](https://CRAN.R-project.org/package=ipmisc)
 [![Daily downloads
 badge](https://cranlogs.r-pkg.org/badges/last-day/ipmisc?color=blue)](https://CRAN.R-project.org/package=ipmisc)
 [![Weekly downloads
@@ -59,12 +58,16 @@ Installation
 
 You can install the `CRAN` version of `ipmisc`:
 
-    install.packages("ipmisc")
+``` r
+install.packages("ipmisc")
+```
 
 And the development version from `GitHub` with:
 
-    # install.packages("remotes")
-    remotes::install_github("IndrajeetPatil/ipmisc")
+``` r
+# install.packages("remotes")
+remotes::install_github("IndrajeetPatil/ipmisc")
+```
 
 Functions
 =========
