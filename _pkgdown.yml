@@ -17,13 +17,11 @@ authors:
 reference:
   - title: Data wrangling functions
     contents:
-      - set_cwd
       - long_to_wide_converter
       - outlier_df
       - signif_column
       - specify_decimal_p
       - stats_type_switch
-      - p_value_formatter
       - easystats_to_tidy_names
 
   - title: Reexported functions

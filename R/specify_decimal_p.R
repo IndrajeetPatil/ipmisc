@@ -17,9 +17,9 @@
 #' @return Formatted numeric value.
 #'
 #' @examples
-#' specify_decimal_p(x = 0.00001, k = 2, p.value = TRUE)
-#' specify_decimal_p(x = 0.008, k = 2, p.value = TRUE)
-#' specify_decimal_p(x = 0.008, k = 3, p.value = FALSE)
+#' specify_decimal_p(x = 0.0000123, k = 2, p.value = TRUE)
+#' specify_decimal_p(x = 0.008675, k = 2, p.value = TRUE)
+#' specify_decimal_p(x = 0.003458, k = 3, p.value = FALSE)
 #' @export
 
 # function body
@@ -32,7 +32,7 @@ specify_decimal_p <- function(x, k = 3L, p.value = FALSE) {
   output <- trimws(format(round(x = x, digits = k), nsmall = k), which = "both")
 
   # if it's a p-value, then format it properly
-  if (isTRUE(p.value) && output < 0.001) output <- "< 0.001"
+  if (isTRUE(p.value) && output < 0.001) output <- prettyNum(x, scientific = TRUE, digits = k)
 
   # this will return a character
   return(output)

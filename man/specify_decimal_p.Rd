@@ -27,7 +27,7 @@ value and use \code{k = 3} instead. \strong{Important}: This function is not
 vectorized.
 }
 \examples{
-specify_decimal_p(x = 0.00001, k = 2, p.value = TRUE)
-specify_decimal_p(x = 0.008, k = 2, p.value = TRUE)
-specify_decimal_p(x = 0.008, k = 3, p.value = FALSE)
+specify_decimal_p(x = 0.0000123, k = 2, p.value = TRUE)
+specify_decimal_p(x = 0.008675, k = 2, p.value = TRUE)
+specify_decimal_p(x = 0.003458, k = 3, p.value = FALSE)
 }

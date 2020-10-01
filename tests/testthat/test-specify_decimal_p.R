@@ -1,5 +1,3 @@
-context("Specify decimals")
-
 # specify_decimal_p works --------------------------------------------------
 
 test_that(
@@ -24,12 +22,12 @@ test_that(
 
     # tests
     testthat::expect_match(string1, regexp = "0.000")
-    testthat::expect_match(string2, regexp = "< 0.001")
+    testthat::expect_match(string2, regexp = "1.23e-05")
     testthat::expect_match(string3, regexp = "1.234e-05")
     testthat::expect_error(specify_decimal_p("123"))
     testthat::expect_match(string4, regexp = "0.0010")
     testthat::expect_match(string5, regexp = "1e-04")
-    testthat::expect_match(string6, regexp = "< 0.001")
+    testthat::expect_match(string6, regexp = "1e-04")
     testthat::expect_match(string7, regexp = "0.000")
     testthat::expect_match(string8, regexp = "0.003")
   }

@@ -5,7 +5,6 @@
 easystats_to_tidy_names(x, ...)
 long_to_wide_converter(data, x, y, paired = TRUE, spread = TRUE, ...)
 outlier_df(data, x, y, outlier.label, outlier.coef = 1.5, ...)
-p_value_formatter(data, k = 3L, ...)
 set_cwd()
 signif_column(data, p, ...)
 specify_decimal_p(x, k = 3L, p.value = FALSE)

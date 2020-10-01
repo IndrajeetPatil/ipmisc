@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ipmisc</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">3.2.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">4.0.0</span>
       </span>
     </div>
 
@@ -116,10 +116,14 @@
       <small>Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="ipmisc-3209000" class="section level1">
-<h1 class="page-header" data-toc-text="3.2.0.9000">
-<a href="#ipmisc-3209000" class="anchor"></a>ipmisc 3.2.0.9000<small> Unreleased </small>
+    <div id="ipmisc-4009000" class="section level1">
+<h1 class="page-header" data-toc-text="4.0.0.9000">
+<a href="#ipmisc-4009000" class="anchor"></a>ipmisc 4.0.0.9000<small> Unreleased </small>
 </h1>
+<ul>
+<li><p><code>specify_decimal_p</code> no longer shows <em>p</em>-values less than 0.001 as <code>"&lt; 0.001"</code>, but rather in scientific notation.</p></li>
+<li><p><code>p_value_formatter</code> function is removed as it is no longer used in the <code>ggstatsverse</code>.</p></li>
+</ul>
 </div>
     <div id="ipmisc-320" class="section level1">
 <h1 class="page-header" data-toc-text="3.2.0">
@@ -142,7 +146,6 @@
 <h1 class="page-header" data-toc-text="3.0.0">
 <a href="#ipmisc-300" class="anchor"></a>ipmisc 3.0.0<small> 2020-05-31 </small>
 </h1>
-<p>BREAKING CHANGES</p>
 <ul>
 <li><p>Removes the unused <code>sort_xy</code> function. This removes <code>forcats</code> from <code>imports</code>.</p></li>
 <li><p>Removes the unused <code>normality_message</code> and <code>shapiro_message</code> functions.</p></li>
