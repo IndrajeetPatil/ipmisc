@@ -47,6 +47,7 @@ long_to_wide_converter <- function(data,
     dplyr::select(.data = ., {{ x }}, {{ y }}) %>%
     dplyr::mutate(.data = ., {{ x }} := droplevels(as.factor({{ x }}))) %>%
     as_tibble(.) %>%
+    dplyr::arrange(.data = ., {{ x }}) %>%
     dplyr::group_by(.data = ., {{ x }}) %>%
     dplyr::mutate(.data = ., rowid = dplyr::row_number()) %>%
     dplyr::ungroup(.)

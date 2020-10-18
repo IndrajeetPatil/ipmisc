@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Formatting numeric (<em>p</em>-)values — specify_decimal_p • ipmisc</title>
+<title>Formatting numeric (p-)values — specify_decimal_p • ipmisc</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Formatting numeric (<em>p</em>-)values — specify_decimal_p" />
+<meta property="og:title" content="Formatting numeric (p-)values — specify_decimal_p" />
 <meta property="og:description" content="Function to format an R object for pretty printing with a
 specified (k) number of decimal places. The function also allows really
 small p-values to be denoted as &quot;p &amp;lt; 0.001&quot; rather than &quot;p = 0.000&quot;.
@@ -80,7 +80,7 @@ vectorized." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ipmisc</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">4.0.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">4.0.0.9000</span>
       </span>
     </div>
 
@@ -134,7 +134,7 @@ value and use <code>k = 3</code> instead. <strong>Important</strong>: This funct
 vectorized.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>specify_decimal_p</span>(<span class='no'>x</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>specify_decimal_p</span><span class='op'>(</span><span class='va'>x</span>, k <span class='op'>=</span> <span class='fl'>3L</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -159,7 +159,10 @@ vectorized.</p>
     <p>Formatted numeric value.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.0000123</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "1.23e-05"</div><div class='input'><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.008675</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "0.009"</div><div class='input'><span class='fu'>specify_decimal_p</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>0.003458</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p.value</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] "0.003"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>specify_decimal_p</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0.0000123</span>, k <span class='op'>=</span> <span class='fl'>2</span>, p.value <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "1.23e-05"</div><div class='input'><span class='fu'>specify_decimal_p</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0.008675</span>, k <span class='op'>=</span> <span class='fl'>2</span>, p.value <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "0.009"</div><div class='input'><span class='fu'>specify_decimal_p</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0.003458</span>, k <span class='op'>=</span> <span class='fl'>3</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "0.003"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -175,7 +178,7 @@ vectorized.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

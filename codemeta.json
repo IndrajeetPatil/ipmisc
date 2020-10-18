@@ -9,13 +9,13 @@
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "4.0.0",
+  "version": "4.0.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-09-11 r79188)",
+  "runtimePlatform": "R Under development (unstable) (2020-10-07 r79310)",
   "author": [
     {
       "@type": "Person",
@@ -238,5 +238,5 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "fileSize": "422.893KB"
+  "fileSize": "432.508KB"
 }
