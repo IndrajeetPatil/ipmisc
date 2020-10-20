@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ipmisc</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">4.0.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">4.1.0</span>
       </span>
     </div>
 
@@ -122,7 +122,15 @@
     <p>This conversion is helpful mostly for repeated measures design.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>long_to_wide_converter</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>x</span>, <span class='va'>y</span>, paired <span class='op'>=</span> <span class='cn'>TRUE</span>, spread <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>long_to_wide_converter</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>x</span>,
+  <span class='va'>y</span>,
+  subject.id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  paired <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  spread <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -140,6 +148,15 @@ be taken. A matrix or tables will <strong>not</strong> be accepted.</p></td>
       <th>y</th>
       <td><p>The response (a.k.a. outcome or dependent) variable from the
 dataframe <code>data</code>.</p></td>
+    </tr>
+    <tr>
+      <th>subject.id</th>
+      <td><p>In case of repeated measures design (<code>paired = TRUE</code>,
+i.e.), this argument specifies the subject or repeated measures id. Note
+that if this argument is <code>NULL</code> (which is the default), the function
+assumes that the data has already been sorted by such an id by the user and
+creates an internal identifier. So if your data is <strong>not</strong> sorted and you
+leave this argument unspecified, the results can be inaccurate.</p></td>
     </tr>
     <tr>
       <th>paired</th>
@@ -164,28 +181,54 @@ returned as it is but with the <code>NA</code>s removed.</p></td>
     <p>A dataframe in the wide (or Cartesian) format.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+    <pre class="examples"><div class='input'><span class='co'># for reproducibility</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://indrajeetpatil.github.io/ipmisc/'>ipmisc</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+
+<span class='co'># repeated measures design</span>
 <span class='fu'>long_to_wide_converter</span><span class='op'>(</span>
-  data <span class='op'>=</span> <span class='va'>iris_long</span>,
+  data <span class='op'>=</span> <span class='va'>bugs_long</span>,
   x <span class='op'>=</span> <span class='va'>condition</span>,
-  y <span class='op'>=</span> <span class='va'>value</span>,
+  y <span class='op'>=</span> <span class='va'>desire</span>,
+  subject.id <span class='op'>=</span> <span class='va'>subject</span>,
   paired <span class='op'>=</span> <span class='cn'>TRUE</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 150 x 5</span><span>
-#&gt;    </span><span style='font-weight: bold;'>rowid</span><span> </span><span style='font-weight: bold;'>Petal.Length</span><span> </span><span style='font-weight: bold;'>Petal.Width</span><span> </span><span style='font-weight: bold;'>Sepal.Length</span><span> </span><span style='font-weight: bold;'>Sepal.Width</span><span>
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span>     1          1.4         </span><span style='color: #555555;'>0.</span><span>2          5.1         3.5
-#&gt; </span><span style='color: #555555;'> 2</span><span>     2          1.4         </span><span style='color: #555555;'>0.</span><span>2          4.9         3  
-#&gt; </span><span style='color: #555555;'> 3</span><span>     3          1.3         </span><span style='color: #555555;'>0.</span><span>2          4.7         3.2
-#&gt; </span><span style='color: #555555;'> 4</span><span>     4          1.5         </span><span style='color: #555555;'>0.</span><span>2          4.6         3.1
-#&gt; </span><span style='color: #555555;'> 5</span><span>     5          1.4         </span><span style='color: #555555;'>0.</span><span>2          5           3.6
-#&gt; </span><span style='color: #555555;'> 6</span><span>     6          1.7         </span><span style='color: #555555;'>0.</span><span>4          5.4         3.9
-#&gt; </span><span style='color: #555555;'> 7</span><span>     7          1.4         </span><span style='color: #555555;'>0.</span><span>3          4.6         3.4
-#&gt; </span><span style='color: #555555;'> 8</span><span>     8          1.5         </span><span style='color: #555555;'>0.</span><span>2          5           3.4
-#&gt; </span><span style='color: #555555;'> 9</span><span>     9          1.4         </span><span style='color: #555555;'>0.</span><span>2          4.4         2.9
-#&gt; </span><span style='color: #555555;'>10</span><span>    10          1.5         </span><span style='color: #555555;'>0.</span><span>1          4.9         3.1
-#&gt; </span><span style='color: #555555;'># ... with 140 more rows</span><span></div><div class='input'><span class='co'># }</span>
-</div></span></pre>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 88 x 5</span><span>
+#&gt;    </span><span style='font-weight: bold;'>rowid</span><span>  </span><span style='font-weight: bold;'>HDHF</span><span>  </span><span style='font-weight: bold;'>HDLF</span><span>  </span><span style='font-weight: bold;'>LDHF</span><span>  </span><span style='font-weight: bold;'>LDLF</span><span>
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span>     1  10     9     6     6  
+#&gt; </span><span style='color: #555555;'> 2</span><span>     3  10    10    10     5  
+#&gt; </span><span style='color: #555555;'> 3</span><span>     4   9     6     9     6  
+#&gt; </span><span style='color: #555555;'> 4</span><span>     5   8.5   5.5   6.5   3  
+#&gt; </span><span style='color: #555555;'> 5</span><span>     6   3     7.5   </span><span style='color: #555555;'>0.</span><span>5   2  
+#&gt; </span><span style='color: #555555;'> 6</span><span>     7  10    10    10    10  
+#&gt; </span><span style='color: #555555;'> 7</span><span>     8  10     9    10    10  
+#&gt; </span><span style='color: #555555;'> 8</span><span>     9  10     6     9.5   9.5
+#&gt; </span><span style='color: #555555;'> 9</span><span>    11   </span><span style='color: #555555;'>0</span><span>     </span><span style='color: #555555;'>0</span><span>     2.5   </span><span style='color: #555555;'>0</span><span>  
+#&gt; </span><span style='color: #555555;'>10</span><span>    12  10     8.5   7.5   9.5
+#&gt; </span><span style='color: #555555;'># ... with 78 more rows</span><span></div><div class='input'>
+<span class='co'># independent measures design</span>
+<span class='fu'>long_to_wide_converter</span><span class='op'>(</span>
+  data <span class='op'>=</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='va'><a href='https://ggplot2.tidyverse.org/reference/msleep.html'>msleep</a></span>,
+  x <span class='op'>=</span> <span class='va'>vore</span>,
+  y <span class='op'>=</span> <span class='va'>brainwt</span>,
+  paired <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  spread <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 51 x 3</span><span>
+#&gt;    </span><span style='font-weight: bold;'>rowid</span><span> </span><span style='font-weight: bold;'>vore</span><span>     </span><span style='font-weight: bold;'>brainwt</span><span>
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span>     1 insecti </span><span style='color: #555555;'>0.000</span><span style='text-decoration: underline;'>300</span><span>
+#&gt; </span><span style='color: #555555;'> 2</span><span>     1 omni    </span><span style='color: #555555;'>0.0</span><span>15</span><span style='text-decoration: underline;'>5</span><span>  
+#&gt; </span><span style='color: #555555;'> 3</span><span>     2 herbi   </span><span style='color: #555555;'>0.</span><span>423   
+#&gt; </span><span style='color: #555555;'> 4</span><span>     2 insecti </span><span style='color: #555555;'>0.000</span><span style='text-decoration: underline;'>25</span><span> 
+#&gt; </span><span style='color: #555555;'> 5</span><span>     2 omni    </span><span style='color: #555555;'>0.000</span><span style='text-decoration: underline;'>29</span><span> 
+#&gt; </span><span style='color: #555555;'> 6</span><span>     3 carni   </span><span style='color: #555555;'>0.0</span><span>7    
+#&gt; </span><span style='color: #555555;'> 7</span><span>     3 insecti </span><span style='color: #555555;'>0.0</span><span>81   
+#&gt; </span><span style='color: #555555;'> 8</span><span>     4 carni   </span><span style='color: #555555;'>0.0</span><span>10</span><span style='text-decoration: underline;'>8</span><span>  
+#&gt; </span><span style='color: #555555;'> 9</span><span>     4 herbi   </span><span style='color: #555555;'>0.0</span><span>98</span><span style='text-decoration: underline;'>2</span><span>  
+#&gt; </span><span style='color: #555555;'>10</span><span>     4 insecti </span><span style='color: #555555;'>0.00</span><span>1</span><span style='text-decoration: underline;'>20</span><span> 
+#&gt; </span><span style='color: #555555;'># ... with 41 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

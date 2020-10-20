@@ -1,4 +1,8 @@
-# ipmisc 4.0.0.9000
+# ipmisc 4.1.0
+
+  - `long_to_wide_converter` gains `subject.id` argument to avoid #13.
+
+# ipmisc 4.0.0
  
   - `specify_decimal_p` no longer shows *p*-values less than 0.001 as
     `"< 0.001"`, but rather in scientific notation.

@@ -16,6 +16,10 @@ testthat::test_that(
       )
 
     testthat::expect_equal(dim(df1), c(150L, 5L))
+    testthat::expect_identical(
+      names(df1),
+      c("rowid", "Petal.Length", "Petal.Width", "Sepal.Length", "Sepal.Width")
+    )
 
     # between-subjects
     set.seed(123)
@@ -42,6 +46,10 @@ testthat::test_that(
       )
 
     testthat::expect_equal(dim(df3), c(88L, 5L))
+    testthat::expect_identical(
+      names(df3),
+      c("rowid", "HDHF", "HDLF", "LDHF", "LDLF")
+    )
 
     # between-subjects
     set.seed(123)
@@ -54,6 +62,10 @@ testthat::test_that(
       )
 
     testthat::expect_equal(dim(df4), c(26L, 5L))
+    testthat::expect_identical(
+      names(df4),
+      c("rowid", "carni", "herbi", "insecti", "omni")
+    )
   }
 )
 
@@ -175,17 +187,20 @@ testthat::test_that(
         ), Max = c(5.424, 3.57), Skewness = c(
           1.15134151847953,
           0.269264150826873
-        ), Kurtosis = c(1.05925609632379, -0.653832564906377), n = c(19L, 13L), n_Missing = c(0L, 0L)
+        ), Kurtosis = c(1.05925609632379, -0.653832564906377),
+        n = c(19L, 13L), n_Missing = c(0L, 0L)
       ), row.names = c(
         NA,
         -2L
       ), groups = structure(list(am = structure(1:2, .Label = c(
         "0",
         "1"
-      ), class = "factor"), .rows = structure(list(1L, 2L), ptype = integer(0), class = c(
-        "vctrs_list_of",
-        "vctrs_vctr", "list"
-      ))), row.names = 1:2, class = c(
+      ), class = "factor"), .rows = structure(list(1L, 2L),
+        ptype = integer(0), class = c(
+          "vctrs_list_of",
+          "vctrs_vctr", "list"
+        )
+      )), row.names = 1:2, class = c(
         "tbl_df",
         "tbl", "data.frame"
       ), .drop = TRUE), class = c(
@@ -241,7 +256,9 @@ testthat::test_that(
       ), n = c(
         88L, 88L, 88L,
         88L
-      ), n_Missing = c(0L, 0L, 0L, 0L)), row.names = c(NA, -4L), groups = structure(list(
+      ), n_Missing = c(0L, 0L, 0L, 0L)),
+      row.names = c(NA, -4L),
+      groups = structure(list(
         condition = structure(1:4, .Label = c(
           "HDHF", "HDLF", "LDHF",
           "LDLF"
@@ -258,7 +275,8 @@ testthat::test_that(
       ), .drop = TRUE), class = c(
         "grouped_df",
         "tbl_df", "tbl", "data.frame"
-      ))
+      )
+      )
     )
 
     # between-subjects
@@ -327,6 +345,89 @@ testthat::test_that(
         "grouped_df",
         "tbl_df", "tbl", "data.frame"
       ))
+    )
+  }
+)
+
+
+# with rowid - without NA ---------------------------------------------
+
+testthat::test_that(
+  desc = "with rowid - without NA",
+  code = {
+    df <-
+      structure(list(score = c(90, 90, 72.5, 45), condition = structure(c(
+        1L,
+        2L, 2L, 1L
+      ), .Label = c("4", "5"), class = "factor"), id = c(
+        1L,
+        2L, 1L, 2L
+      )), row.names = c(NA, -4L), class = c(
+        "tbl_df", "tbl",
+        "data.frame"
+      ))
+
+    df1 <- dplyr::arrange(df, id)
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, score),
+      long_to_wide_converter(df, condition, score, id)
+    )
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, score, paired = FALSE),
+      long_to_wide_converter(df, condition, score, id, paired = FALSE)
+    )
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, score, paired = FALSE, spread = FALSE) %>%
+        dplyr::select(-rowid),
+      long_to_wide_converter(df, condition, score, id, paired = FALSE, spread = FALSE) %>%
+        dplyr::select(-rowid)
+    )
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, score, spread = FALSE),
+      long_to_wide_converter(df, condition, score, id, spread = FALSE)
+    )
+  }
+)
+
+
+# with rowid - with NA ---------------------------------------------
+
+testthat::test_that(
+  desc = "with rowid - without NA",
+  code = {
+    df <- bugs_long
+    df1 <- dplyr::arrange(bugs_long, subject)
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, desire) %>%
+        dplyr::select(-rowid),
+      long_to_wide_converter(df, condition, desire, subject) %>%
+        dplyr::select(-rowid)
+    )
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, desire, paired = FALSE) %>%
+        dplyr::select(-rowid),
+      long_to_wide_converter(df, condition, desire, subject, paired = FALSE) %>%
+        dplyr::select(-rowid)
+    )
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, desire, paired = FALSE, spread = FALSE) %>%
+        dplyr::select(-rowid),
+      long_to_wide_converter(df, condition, desire, subject, paired = FALSE, spread = FALSE) %>%
+        dplyr::select(-rowid)
+    )
+
+    testthat::expect_equal(
+      long_to_wide_converter(df1, condition, desire, spread = FALSE) %>%
+        dplyr::select(-rowid),
+      long_to_wide_converter(df, condition, desire, subject, spread = FALSE) %>%
+        dplyr::select(-rowid)
     )
   }
 )
