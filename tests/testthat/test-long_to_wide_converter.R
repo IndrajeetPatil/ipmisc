@@ -381,14 +381,18 @@ testthat::test_that(
 
     testthat::expect_equal(
       long_to_wide_converter(df1, condition, score, paired = FALSE, spread = FALSE) %>%
+        dplyr::arrange(rowid) %>%
         dplyr::select(-rowid),
       long_to_wide_converter(df, condition, score, id, paired = FALSE, spread = FALSE) %>%
+        dplyr::arrange(rowid) %>%
         dplyr::select(-rowid)
     )
 
     testthat::expect_equal(
-      long_to_wide_converter(df1, condition, score, spread = FALSE),
-      long_to_wide_converter(df, condition, score, id, spread = FALSE)
+      long_to_wide_converter(df1, condition, score, spread = FALSE) %>%
+        dplyr::arrange(rowid),
+      long_to_wide_converter(df, condition, score, id, spread = FALSE) %>%
+        dplyr::arrange(rowid)
     )
   }
 )

@@ -21,7 +21,7 @@
 #'   returned as it is but with the `NA`s removed.
 #' @param ... Currently ignored.
 #'
-#' @importFrom dplyr row_number select mutate group_by ungroup arrange
+#' @importFrom dplyr row_number select mutate group_by ungroup arrange everything
 #' @importFrom tidyr pivot_longer
 #'
 #' @return A dataframe in the wide (or Cartesian) format.
@@ -71,10 +71,10 @@ long_to_wide_converter <- function(data,
 
   # if `subject.id` wasn't provided, create one for internal usage
   if (!"rowid" %in% names(data)) {
-      data %<>%
-        dplyr::group_by(.data = ., {{ x }}) %>% # for paired designs
-        dplyr::mutate(.data = ., rowid = dplyr::row_number()) %>%
-        dplyr::ungroup(.)
+    data %<>%
+      dplyr::group_by(.data = ., {{ x }}) %>% # for paired designs
+      dplyr::mutate(.data = ., rowid = dplyr::row_number()) %>%
+      dplyr::ungroup(.)
   }
 
   # NA removal
@@ -90,7 +90,5 @@ long_to_wide_converter <- function(data,
   }
 
   # final clean-up
-  data %>%
-    dplyr::arrange(.data = ., rowid) %>%
-    dplyr::select(.data = ., rowid, dplyr::everything())
+  dplyr::select(.data = data, rowid, dplyr::everything())
 }
