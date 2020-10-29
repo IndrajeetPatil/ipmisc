@@ -46,8 +46,6 @@ functions form data cleaning backend for the following packages:
 
 -   `tidyBF`: <https://indrajeetpatil.github.io/tidyBF/>
 
--   `broomExtra`: <https://indrajeetpatil.github.io/broomExtra/>
-
 # Installation
 
 You can install the `CRAN` version of `ipmisc`:

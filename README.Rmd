@@ -50,8 +50,6 @@ functions form data cleaning backend for the following packages:
   - `groupedstats`: <https://indrajeetpatil.github.io/groupedstats/>
   
   - `tidyBF`: <https://indrajeetpatil.github.io/tidyBF/>
-
-  - `broomExtra`: <https://indrajeetpatil.github.io/broomExtra/>
   
 # Installation
 

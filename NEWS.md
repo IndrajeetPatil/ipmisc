@@ -1,3 +1,8 @@
+# ipmisc 4.1.0.9000
+
+  - Retires vestigial `easystats_to_tidy_names` in favor of
+    `insight::standardize_names`.
+
 # ipmisc 4.1.0
 
   - `long_to_wide_converter` gains `subject.id` argument to avoid #13.

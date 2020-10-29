@@ -22,7 +22,6 @@ reference:
       - signif_column
       - specify_decimal_p
       - stats_type_switch
-      - easystats_to_tidy_names
 
   - title: Reexported functions
     desc:  Useful functions re-exported from other packages.
