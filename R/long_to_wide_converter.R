@@ -60,7 +60,6 @@ long_to_wide_converter <- function(data,
                                    ...) {
   # make sure both quoted and unquoted arguments are allowed
   c(x, y) %<-% c(rlang::ensym(x), rlang::ensym(y))
-  subject.id <- if (!rlang::quo_is_null(rlang::enquo(subject.id))) rlang::ensym(subject.id)
 
   # initial cleanup
   data %<>%

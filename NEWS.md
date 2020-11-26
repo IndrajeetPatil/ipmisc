@@ -2,6 +2,11 @@
 
   - Retires vestigial `easystats_to_tidy_names` in favor of
     `insight::standardize_names`.
+    
+  - Removes color function re-exports from `crayon` as they are no longer used
+    anywhere in the `ggstatsverse`.
+    
+  - Removes `outlier_df` function as it is only relevant for `ggstatsplot`.
 
 # ipmisc 4.1.0
 

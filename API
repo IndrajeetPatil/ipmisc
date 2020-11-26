@@ -3,7 +3,6 @@
 ## Exported functions
 
 long_to_wide_converter(data, x, y, subject.id = NULL, paired = TRUE, spread = TRUE, ...)
-outlier_df(data, x, y, outlier.label, outlier.coef = 1.5, ...)
 set_cwd()
 signif_column(data, p, ...)
 specify_decimal_p(x, k = 3L, p.value = FALSE)
@@ -19,9 +18,5 @@ rlang::%|%
 rlang::%||%
 rlang:::=
 tibble::as_tibble
-crayon::blue
 tibble::enframe
-crayon::green
-crayon::red
 tibble::tibble
-crayon::yellow

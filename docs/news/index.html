@@ -80,12 +80,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -121,7 +115,9 @@
 <a href="#ipmisc-4109000" class="anchor"></a>ipmisc 4.1.0.9000<small> Unreleased </small>
 </h1>
 <ul>
-<li>Retires vestigial <code>easystats_to_tidy_names</code> in favor of <code><a href="https://easystats.github.io/insight/reference/standardize_names.html">insight::standardize_names</a></code>.</li>
+<li><p>Retires vestigial <code>easystats_to_tidy_names</code> in favor of <code><a href="https://easystats.github.io/insight/reference/standardize_names.html">insight::standardize_names</a></code>.</p></li>
+<li><p>Removes color function re-exports from <code>crayon</code> as they are no longer used anywhere in the <code>ggstatsverse</code>.</p></li>
+<li><p>Removes <code>outlier_df</code> function as it is only relevant for <code>ggstatsplot</code>.</p></li>
 </ul>
 </div>
     <div id="ipmisc-410" class="section level1">
@@ -224,7 +220,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
