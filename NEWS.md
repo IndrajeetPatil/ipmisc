@@ -1,4 +1,4 @@
-# ipmisc 4.1.0.9000
+# ipmisc 5.0.0
 
   - Retires vestigial `easystats_to_tidy_names` in favor of
     `insight::standardize_names`.
@@ -7,6 +7,8 @@
     anywhere in the `ggstatsverse`.
     
   - Removes `outlier_df` function as it is only relevant for `ggstatsplot`.
+  
+  - Removes `set_cwd` function in favor of encouraging using `here::here()`.
 
 # ipmisc 4.1.0
 

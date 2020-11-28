@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Formatting numeric (p-)values — specify_decimal_p • ipmisc</title>
+<title>Formatting numeric values — specify_decimal_p • ipmisc</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Formatting numeric (p-)values — specify_decimal_p" />
+<meta property="og:title" content="Formatting numeric values — specify_decimal_p" />
 <meta property="og:description" content="Function to format an R object for pretty printing with a
 specified (k) number of decimal places. The function also allows really
 small p-values to be denoted as &quot;p &amp;lt; 0.001&quot; rather than &quot;p = 0.000&quot;.
@@ -80,7 +80,7 @@ vectorized." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ipmisc</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">4.1.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">5.0.0</span>
       </span>
     </div>
 
@@ -113,7 +113,7 @@ vectorized." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Formatting numeric (<em>p</em>-)values</h1>
+    <h1>Formatting numeric values</h1>
     <small class="dont-index">Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/R/specify_decimal_p.R'><code>R/specify_decimal_p.R</code></a></small>
     <div class="hidden name"><code>specify_decimal_p.Rd</code></div>
     </div>
@@ -128,7 +128,9 @@ value and use <code>k = 3</code> instead. <strong>Important</strong>: This funct
 vectorized.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>specify_decimal_p</span><span class='op'>(</span><span class='va'>x</span>, k <span class='op'>=</span> <span class='fl'>3L</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>specify_decimal_p</span><span class='op'>(</span><span class='va'>x</span>, k <span class='op'>=</span> <span class='fl'>3L</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
+
+<span class='fu'>format_num</span><span class='op'>(</span><span class='va'>x</span>, k <span class='op'>=</span> <span class='fl'>3L</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,6 +147,10 @@ vectorized.</p>
     <tr>
       <th>p.value</th>
       <td><p>Decides whether the number is a <em>p</em>-value (Default: <code>FALSE</code>).</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Currently ignored.</p></td>
     </tr>
     </table>
 

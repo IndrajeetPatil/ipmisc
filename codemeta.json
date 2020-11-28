@@ -9,13 +9,13 @@
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "4.1.0.9000",
+  "version": "5.0.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2020-10-07 r79310)",
+  "runtimePlatform": "R Under development (unstable) (2020-11-23 r79474)",
   "author": [
     {
       "@type": "Person",
@@ -128,18 +128,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "crayon",
-      "name": "crayon",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=crayon"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "dplyr",
       "name": "dplyr",
       "provider": {
@@ -173,18 +161,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rlang"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "rstudioapi",
-      "name": "rstudioapi",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rstudioapi"
     },
     {
       "@type": "SoftwareApplication",
@@ -238,5 +214,5 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "fileSize": "421.707KB"
+  "fileSize": "415.972KB"
 }

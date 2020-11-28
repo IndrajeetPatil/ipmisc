@@ -27,10 +27,6 @@ reference:
     contents:
       - as_tibble
 
-  - title: Miscellaneous functions
-    contents:
-      - set_cwd
-
   - title: Data
     desc:  Datasets included in the package.
     contents:

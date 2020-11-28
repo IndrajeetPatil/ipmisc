@@ -1,4 +1,4 @@
-#' @title Formatting numeric (*p*-)values
+#' @title Formatting numeric values
 #' @name specify_decimal_p
 #'
 #' @description Function to format an R object for pretty printing with a
@@ -13,6 +13,7 @@
 #' @param k Number of digits after decimal point (should be an integer)
 #'   (Default: `k = 3L`).
 #' @param p.value Decides whether the number is a *p*-value (Default: `FALSE`).
+#' @param ... Currently ignored.
 #'
 #' @return Formatted numeric value.
 #'
@@ -23,7 +24,7 @@
 #' @export
 
 # function body
-specify_decimal_p <- function(x, k = 3L, p.value = FALSE) {
+specify_decimal_p <- function(x, k = 3L, p.value = FALSE, ...) {
 
   # for example, if p.value is 0.002, it should be displayed as such
   if (k < 3L && isTRUE(p.value)) k <- 3L
@@ -35,5 +36,12 @@ specify_decimal_p <- function(x, k = 3L, p.value = FALSE) {
   if (isTRUE(p.value) && output < 0.001) output <- prettyNum(x, scientific = TRUE, digits = k)
 
   # this will return a character
-  return(output)
+  output
 }
+
+
+#' @rdname specify_decimal_p
+#' @aliases specify_decimal_p
+#' @export
+
+format_num <- specify_decimal_p

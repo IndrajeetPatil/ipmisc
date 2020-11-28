@@ -2,9 +2,12 @@
 % Please edit documentation in R/specify_decimal_p.R
 \name{specify_decimal_p}
 \alias{specify_decimal_p}
-\title{Formatting numeric (\emph{p}-)values}
+\alias{format_num}
+\title{Formatting numeric values}
 \usage{
-specify_decimal_p(x, k = 3L, p.value = FALSE)
+specify_decimal_p(x, k = 3L, p.value = FALSE, ...)
+
+format_num(x, k = 3L, p.value = FALSE, ...)
 }
 \arguments{
 \item{x}{A numeric value.}
@@ -13,6 +16,8 @@ specify_decimal_p(x, k = 3L, p.value = FALSE)
 (Default: \code{k = 3L}).}
 
 \item{p.value}{Decides whether the number is a \emph{p}-value (Default: \code{FALSE}).}
+
+\item{...}{Currently ignored.}
 }
 \value{
 Formatted numeric value.
