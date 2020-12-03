@@ -18,7 +18,6 @@ reference:
   - title: Data wrangling functions
     contents:
       - long_to_wide_converter
-      - signif_column
       - specify_decimal_p
       - stats_type_switch
 

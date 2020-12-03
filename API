@@ -4,7 +4,6 @@
 
 format_num(x, k = 3L, p.value = FALSE, ...)
 long_to_wide_converter(data, x, y, subject.id = NULL, paired = TRUE, spread = TRUE, ...)
-signif_column(data, p, ...)
 specify_decimal_p(x, k = 3L, p.value = FALSE, ...)
 stats_type_switch(type)
 

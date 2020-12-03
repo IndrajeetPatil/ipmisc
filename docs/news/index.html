@@ -119,6 +119,7 @@
 <li><p>Removes color function re-exports from <code>crayon</code> as they are no longer used anywhere in the <code>ggstatsverse</code>.</p></li>
 <li><p>Removes <code>outlier_df</code> function as it is only relevant for <code>ggstatsplot</code>.</p></li>
 <li><p>Removes <code>set_cwd</code> function in favor of encouraging using <code><a href="https://here.r-lib.org//reference/here.html">here::here()</a></code>.</p></li>
+<li><p>Removes <code>signif_column</code> function as <code>ggstatsplot</code> no longer uses asterisks-based conventions anywhere to display <em>p</em>-values.</p></li>
 </ul>
 </div>
     <div id="ipmisc-410" class="section level1">
@@ -135,7 +136,7 @@
 <a href="#ipmisc-400" class="anchor"></a>ipmisc 4.0.0<small> 2020-10-05 </small>
 </h1>
 <ul>
-<li><p><code>specify_decimal_p</code> no longer shows <em>p</em>-values less than 0.001 as <code>"&lt; 0.001"</code>, but rather in scientific notation.</p></li>
+<li><p><code>specify_decimal_p</code> no longer shows <em>p</em>-values less than 0.001 as <code>"&lt;     0.001"</code>, but rather in scientific notation.</p></li>
 <li><p><code>p_value_formatter</code> function is removed as it is no longer used in the <code>ggstatsverse</code>.</p></li>
 </ul>
 </div>
