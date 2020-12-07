@@ -13,6 +13,10 @@
 \alias{\%|\%}
 \alias{:=}
 \alias{\%<-\%}
+\alias{blue}
+\alias{green}
+\alias{red}
+\alias{yellow}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -20,6 +24,8 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
+  \item{crayon}{\code{\link[crayon:crayon]{blue}}, \code{\link[crayon:crayon]{green}}, \code{\link[crayon:crayon]{red}}, \code{\link[crayon:crayon]{yellow}}}
+
   \item{magrittr}{\code{\link[magrittr:exposition]{\%$\%}}, \code{\link[magrittr:compound]{\%<>\%}}, \code{\link[magrittr:pipe]{\%>\%}}}
 
   \item{rlang}{\code{\link[rlang:op-na-default]{\%|\%}}, \code{\link[rlang:op-null-default]{\%||\%}}, \code{\link[rlang:nse-force]{:=}}}

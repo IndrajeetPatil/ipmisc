@@ -1,3 +1,8 @@
+# ipmisc 5.0.1
+
+  - Temporarily re-export the crayon function to salvage the `ggstatsplot`
+    ecosystem.
+
 # ipmisc 5.0.0
 
   - Retires vestigial `easystats_to_tidy_names` in favor of
