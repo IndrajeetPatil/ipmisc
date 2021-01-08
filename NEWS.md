@@ -1,5 +1,9 @@
 # ipmisc 5.0.1
 
+  - Removes `crayon` from dependencies.
+
+# ipmisc 5.0.1
+
   - Temporarily re-export the crayon function to salvage the `ggstatsplot`
     ecosystem.
 

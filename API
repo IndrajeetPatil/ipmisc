@@ -17,9 +17,5 @@ rlang::%|%
 rlang::%||%
 rlang:::=
 tibble::as_tibble
-crayon::blue
 tibble::enframe
-crayon::green
-crayon::red
 tibble::tibble
-crayon::yellow

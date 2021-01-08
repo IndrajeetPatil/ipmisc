@@ -7,5 +7,4 @@
 
 0 errors | 0 warnings | 0 note
 
-  - Reverting some of the changes that will remove breakages happening to
-  `tidyBF`, `statsExpressions`, `ggstatsplot`.
+  - Removes `crayon` from dependencies.
