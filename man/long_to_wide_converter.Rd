@@ -44,6 +44,8 @@ returned as it is but with the \code{NA}s removed.}
 A dataframe in the wide (or Cartesian) format.
 }
 \description{
+\Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
+
 This conversion is helpful mostly for repeated measures design.
 }
 \examples{

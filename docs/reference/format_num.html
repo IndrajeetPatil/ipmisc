@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ipmisc</title>
+<title>Formatting numeric values — format_num • ipmisc</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,14 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Formatting numeric values — format_num" />
+<meta property="og:description" content="
+Function to format an R object for pretty printing with a specified (k)
+number of decimal places. The function also allows really small p-values to
+be denoted as &quot;p &amp;lt; 0.001&quot; rather than &quot;p = 0.000&quot;. Note that if p.value
+is set to TRUE, the minimum value of k allowed is 3. If k is set to
+less than 3, the function will ignore entered k value and use k = 3
+instead." />
 
 
 
@@ -60,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -104,98 +111,62 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Formatting numeric values</h1>
+    <small class="dont-index">Source: <a href='https://github.com/IndrajeetPatil/ipmisc/blob/master/R/format_num.R'><code>R/format_num.R</code></a></small>
+    <div class="hidden name"><code>format_num.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p><a href='https://www.tidyverse.org/lifecycle/#maturing'><img src='figures/lifecycle-maturing.svg' alt='Maturing lifecycle'></a></p>
+<p>Function to format an R object for pretty printing with a specified (<code>k</code>)
+number of decimal places. The function also allows really small <em>p</em>-values to
+be denoted as <code>"p &lt; 0.001"</code> rather than <code>"p = 0.000"</code>. Note that if <code>p.value</code>
+is set to <code>TRUE</code>, the minimum value of <code>k</code> allowed is <code>3</code>. If <code>k</code> is set to
+less than 3, the function will ignore entered <code>k</code> value and use <code>k = 3</code>
+instead.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>format_num</span><span class='op'>(</span><span class='va'>x</span>, k <span class='op'>=</span> <span class='fl'>3L</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-data-wrangling-functions" class="hasAnchor"><a href="#section-data-wrangling-functions" class="anchor"></a>Data wrangling functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="long_to_wide_converter.html">long_to_wide_converter()</a></code> </p>
-        </td>
-        <td><p>Converts dataframe from long/tidy to wide format with <code>NA</code>s removed</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="format_num.html">format_num()</a></code> <code><a href="format_num.html">specify_decimal_p()</a></code> </p>
-        </td>
-        <td><p>Formatting numeric values</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="stats_type_switch.html">stats_type_switch()</a></code> </p>
-        </td>
-        <td><p>Switch type of statistics.</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-reexported-functions" class="hasAnchor"><a href="#section-reexported-functions" class="anchor"></a>Reexported functions</h2>
-          <p class="section-desc"><p>Useful functions re-exported from other packages.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="reexports.html">reexports</a></code> </p>
-        </td>
-        <td><p>Objects exported from other packages</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-data" class="hasAnchor"><a href="#section-data" class="anchor"></a>Data</h2>
-          <p class="section-desc"><p>Datasets included in the package.</p></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="bugs_long.html">bugs_long</a></code> </p>
-        </td>
-        <td><p>Tidy version of the "Bugs" dataset.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="iris_long.html">iris_long</a></code> </p>
-        </td>
-        <td><p>Edgar Anderson's Iris Data in long format.</p></td>
-      </tr>
-    </tbody>
+<span class='fu'>specify_decimal_p</span><span class='op'>(</span><span class='va'>x</span>, k <span class='op'>=</span> <span class='fl'>3L</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A numeric value.</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>Number of digits after decimal point (should be an integer)
+(Default: <code>k = 3L</code>).</p></td>
+    </tr>
+    <tr>
+      <th>p.value</th>
+      <td><p>Decides whether the number is a <em>p</em>-value (Default: <code>FALSE</code>).</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Currently ignored.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Formatted numeric value.</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>This function is <strong>not</strong> vectorized.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>format_num</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0.0000123</span>, k <span class='op'>=</span> <span class='fl'>2</span>, p.value <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "1.23e-05"</div><div class='input'><span class='fu'>format_num</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0.008675</span>, k <span class='op'>=</span> <span class='fl'>2</span>, p.value <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "0.009"</div><div class='input'><span class='fu'>format_num</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>0.003458</span>, k <span class='op'>=</span> <span class='fl'>3</span>, p.value <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "0.003"</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

@@ -1,9 +1,14 @@
 #' @name stats_type_switch
 #' @title Switch type of statistics.
-#' @description Relevant mostly for `ggstatsplot` and `statsExpressions`
-#'   packages, where there are four types of statistics are supported:
-#'   parametric, non-parametric, robust, and Bayesian. This switch function
-#'   converts strings entered by users to a common pattern.
+#'
+#' @description
+#'
+#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
+#'
+#' Relevant mostly for `ggstatsplot` and `statsExpressions` packages, where
+#' there are four types of statistics are supported: parametric, non-parametric,
+#' robust, and Bayesian. This switch function converts strings entered by users
+#' to a common pattern.
 #'
 #' @param type Character string describing the type of statistics.
 #'

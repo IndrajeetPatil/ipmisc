@@ -1,6 +1,11 @@
 #' @title Converts dataframe from long/tidy to wide format with `NA`s removed
 #' @name long_to_wide_converter
-#' @description This conversion is helpful mostly for repeated measures design.
+#'
+#' @description
+#'
+#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
+#'
+#' This conversion is helpful mostly for repeated measures design.
 #'
 #' @param data A dataframe (or a tibble) from which variables specified are to
 #'   be taken. A matrix or tables will **not** be accepted.

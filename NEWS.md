@@ -1,4 +1,6 @@
-# ipmisc 5.0.1
+# ipmisc 5.0.2.9000
+
+# ipmisc 5.0.2
 
   - Removes `crayon` from dependencies.
 
