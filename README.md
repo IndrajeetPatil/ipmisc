@@ -42,8 +42,6 @@ functions form data cleaning backend for the following packages:
 -   `pairwiseComparisons`:
     <https://indrajeetpatil.github.io/pairwiseComparisons/>
 
--   `groupedstats`: <https://indrajeetpatil.github.io/groupedstats/>
-
 -   `tidyBF`: <https://indrajeetpatil.github.io/tidyBF/>
 
 # Installation

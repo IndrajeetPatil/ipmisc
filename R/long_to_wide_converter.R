@@ -68,16 +68,16 @@ long_to_wide_converter <- function(data,
 
   # initial cleanup
   data %<>%
-    dplyr::select(.data = ., {{ x }}, {{ y }}, rowid = {{ subject.id }}) %>%
-    dplyr::mutate(.data = ., {{ x }} := droplevels(as.factor({{ x }}))) %>%
+    dplyr::select({{ x }}, {{ y }}, rowid = {{ subject.id }}) %>%
+    dplyr::mutate({{ x }} := droplevels(as.factor({{ x }}))) %>%
     as_tibble(.) %>%
-    dplyr::arrange(.data = ., {{ x }})
+    dplyr::arrange({{ x }})
 
   # if `subject.id` wasn't provided, create one for internal usage
   if (!"rowid" %in% names(data)) {
     data %<>%
-      dplyr::group_by(.data = ., {{ x }}) %>% # for paired designs
-      dplyr::mutate(.data = ., rowid = dplyr::row_number()) %>%
+      dplyr::group_by({{ x }}) %>% # for paired designs
+      dplyr::mutate(rowid = dplyr::row_number()) %>%
       dplyr::ungroup(.)
   }
 

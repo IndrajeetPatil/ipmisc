@@ -36,7 +36,7 @@ instead.
 This function is \strong{not} vectorized.
 }
 \examples{
-format_num(x = 0.0000123, k = 2, p.value = TRUE)
-format_num(x = 0.008675, k = 2, p.value = TRUE)
-format_num(x = 0.003458, k = 3, p.value = FALSE)
+format_num(0.0000123, k = 2, p.value = TRUE)
+format_num(0.008675, k = 2, p.value = TRUE)
+format_num(0.003458, k = 3, p.value = FALSE)
 }

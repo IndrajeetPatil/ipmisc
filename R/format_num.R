@@ -23,9 +23,9 @@
 #' @return Formatted numeric value.
 #'
 #' @examples
-#' format_num(x = 0.0000123, k = 2, p.value = TRUE)
-#' format_num(x = 0.008675, k = 2, p.value = TRUE)
-#' format_num(x = 0.003458, k = 3, p.value = FALSE)
+#' format_num(0.0000123, k = 2, p.value = TRUE)
+#' format_num(0.008675, k = 2, p.value = TRUE)
+#' format_num(0.003458, k = 3, p.value = FALSE)
 #' @export
 
 # function body
@@ -35,7 +35,7 @@ format_num <- function(x, k = 3L, p.value = FALSE, ...) {
   if (k < 3L && isTRUE(p.value)) k <- 3L
 
   # formatting the output properly
-  output <- trimws(format(round(x = x, digits = k), nsmall = k), which = "both")
+  output <- trimws(format(round(x, digits = k), nsmall = k), which = "both")
 
   # if it's a p-value, then format it properly
   if (isTRUE(p.value) && output < 0.001) output <- prettyNum(x, scientific = TRUE, digits = k)

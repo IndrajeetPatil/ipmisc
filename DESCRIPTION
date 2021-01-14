@@ -11,7 +11,7 @@ Authors@R:
 Maintainer: Indrajeet Patil <patilindrajeet.science@gmail.com>
 Description: Provides functions needed for data cleaning and
     formatting and forms data cleaning and wrangling backend for the
-    following packages: 'broomExtra', 'ggstatsplot', 'groupedstats',
+    following packages: 'broomExtra', 'ggstatsplot',
     'pairwiseComparisons', 'statsExpressions', and 'tidyBF'.
 License: GPL-3 | file LICENSE
 URL: https://indrajeetpatil.github.io/ipmisc/,
