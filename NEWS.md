@@ -1,4 +1,6 @@
-# ipmisc 5.0.2.9000
+# ipmisc 6.0.0.9000
+
+  - Removes `specify_decimal_p` alias for `format_num`.
 
 # ipmisc 5.0.2
 

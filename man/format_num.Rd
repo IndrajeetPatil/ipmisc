@@ -2,12 +2,9 @@
 % Please edit documentation in R/format_num.R
 \name{format_num}
 \alias{format_num}
-\alias{specify_decimal_p}
 \title{Formatting numeric values}
 \usage{
 format_num(x, k = 3L, p.value = FALSE, ...)
-
-specify_decimal_p(x, k = 3L, p.value = FALSE, ...)
 }
 \arguments{
 \item{x}{A numeric value.}
@@ -23,7 +20,7 @@ specify_decimal_p(x, k = 3L, p.value = FALSE, ...)
 Formatted numeric value.
 }
 \description{
-\Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
+\Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
 
 Function to format an R object for pretty printing with a specified (\code{k})
 number of decimal places. The function also allows really small \emph{p}-values to

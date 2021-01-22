@@ -3,7 +3,7 @@
 #'
 #' @description
 #'
-#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
+#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
 #'
 #' Function to format an R object for pretty printing with a specified (`k`)
 #' number of decimal places. The function also allows really small *p*-values to
@@ -43,10 +43,3 @@ format_num <- function(x, k = 3L, p.value = FALSE, ...) {
   # this will return a character
   output
 }
-
-
-#' @rdname format_num
-#' @aliases format_num
-#' @export
-
-specify_decimal_p <- format_num
