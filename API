@@ -12,6 +12,7 @@ magrittr::%$%
 zeallot::%<-%
 magrittr::%<>%
 magrittr::%>%
+magrittr::%T>%
 rlang::%|%
 rlang::%||%
 rlang:::=

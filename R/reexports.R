@@ -13,6 +13,10 @@ magrittr::`%<>%`
 magrittr::`%$%`
 
 #' @export
+#' @importFrom magrittr "%T>%"
+magrittr::`%T>%`
+
+#' @export
 #' @importFrom tibble tibble
 tibble::tibble
 
