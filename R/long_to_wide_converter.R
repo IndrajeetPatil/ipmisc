@@ -32,9 +32,10 @@
 #' @param ... Currently ignored.
 #'
 #' @importFrom dplyr row_number select mutate group_by ungroup arrange everything
-#' @importFrom tidyr pivot_longer
+#' @importFrom dplyr nest_by filter
+#' @importFrom tidyr pivot_longer unnest
 #'
-#' @return A dataframe in the wide (or Cartesian) format.
+#' @return A dataframe with `NA`s removed.
 #'
 #' @examples
 #' # for reproducibility
@@ -86,17 +87,15 @@ long_to_wide_converter <- function(data,
     if (isTRUE(paired)) data %<>% dplyr::group_by({{ x }})
 
     # unique id for each participant
-    data %<>%
-      dplyr::mutate(rowid = dplyr::row_number()) %>%
-      dplyr::ungroup(.)
+    data %<>% dplyr::mutate(rowid = dplyr::row_number())
   }
 
   # NA removal
-  if (isTRUE(paired)) {
-    data %<>% dplyr::anti_join(x = ., y = dplyr::filter(., is.na({{ y }})), by = "rowid")
-  } else {
-    data %<>% tidyr::drop_na(.)
-  }
+  data %<>%
+    dplyr::ungroup(.) %>%
+    dplyr::nest_by(rowid, .key = "df") %>%
+    dplyr::filter(sum(is.na(df)) == 0) %>%
+    tidyr::unnest(cols = c(df))
 
   # convert to wide?
   if (spread && paired) data %<>% tidyr::pivot_wider(names_from = {{ x }}, values_from = {{ y }})

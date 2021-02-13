@@ -41,7 +41,7 @@ converted from long/tidy to wide (default: \code{TRUE}). Relevant only if
 \item{...}{Currently ignored.}
 }
 \value{
-A dataframe in the wide (or Cartesian) format.
+A dataframe with \code{NA}s removed.
 }
 \description{
 \Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
