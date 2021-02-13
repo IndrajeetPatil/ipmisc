@@ -1,8 +1,11 @@
 # ipmisc 6.0.0
 
   - Removes `specify_decimal_p` alias for `format_num`.
-  
+
   - Re-exports `%T>%` operator from `magrittr`.
+
+  - In `long_to_wide_converter` function, the argument `spared` is ignored when
+    `paired = FALSE`.
 
 # ipmisc 5.0.2
 
@@ -35,7 +38,8 @@
 # ipmisc 4.0.0
  
   - `specify_decimal_p` no longer shows *p*-values less than 0.001 as `"<
-    0.001"`, but rather in scientific notation.
+
+0.001"`, but rather in scientific notation.
 
   - `p_value_formatter` function is removed as it is no longer used in the
     `ggstatsverse`.

@@ -19,14 +19,14 @@ test_that(
 
     # testing
     set.seed(123)
-    testthat::expect_match(string1, regexp = "0.000")
-    testthat::expect_match(string2, regexp = "1.23e-05")
-    testthat::expect_match(string3, regexp = "1.234e-05")
-    testthat::expect_error(format_num("123"))
-    testthat::expect_match(string4, regexp = "0.0010")
-    testthat::expect_match(string5, regexp = "1e-04")
-    testthat::expect_match(string6, regexp = "1e-04")
-    testthat::expect_match(string7, regexp = "0.000")
-    testthat::expect_match(string8, regexp = "0.003")
+    expect_match(string1, regexp = "0.000")
+    expect_match(string2, regexp = "1.23e-05")
+    expect_match(string3, regexp = "1.234e-05")
+    expect_error(format_num("123"))
+    expect_match(string4, regexp = "0.0010")
+    expect_match(string5, regexp = "1e-04")
+    expect_match(string6, regexp = "1e-04")
+    expect_match(string7, regexp = "0.000")
+    expect_match(string8, regexp = "0.003")
   }
 )

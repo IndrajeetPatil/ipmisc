@@ -29,7 +29,6 @@ Imports:
 Suggests: 
     ggplot2,
     rmarkdown,
-    parameters,
     spelling,
     testthat
 Encoding: UTF-8

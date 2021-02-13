@@ -9,13 +9,13 @@
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "6.0.0.9000",
+  "version": "6.0.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2021-01-13 r79826)",
+  "runtimePlatform": "R version 4.0.3 (2020-10-10)",
   "author": [
     {
       "@type": "Person",
@@ -69,18 +69,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "parameters",
-      "name": "parameters",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=parameters"
     },
     {
       "@type": "SoftwareApplication",
@@ -188,7 +176,6 @@
     }
   ],
   "codeRepository": "https://github.com/IndrajeetPatil/ipmisc",
-  "readme": "https://github.com/IndrajeetPatil/ipmisc/blob/master/README.md",
   "contIntegration": ["https://travis-ci.org/IndrajeetPatil/ipmisc", "https://ci.appveyor.com/project/IndrajeetPatil/ipmisc", "https://codecov.io/github/IndrajeetPatil/ipmisc?branch=master", "https://coveralls.io/github/IndrajeetPatil/ipmisc?branch=master"],
   "developmentStatus": ["https://www.repostatus.org/#active", "https://www.tidyverse.org/lifecycle/"],
   "relatedLink": [
@@ -202,5 +189,5 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "fileSize": "420.097KB"
+  "fileSize": "406.078KB"
 }

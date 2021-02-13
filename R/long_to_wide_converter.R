@@ -5,25 +5,30 @@
 #'
 #' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
 #'
-#' This conversion is helpful mostly for repeated measures design.
+#' This conversion is helpful mostly for repeated measures design, where
+#' removing `NA`s by participant can be a bit tedious.
+#'
+#' It doesn't make sense to spread the dataframe to wide format when the measure
+#' is not repeated, so if `paired = TRUE`, `spread` argument will be ignored.
 #'
 #' @param data A dataframe (or a tibble) from which variables specified are to
-#'   be taken. A matrix or tables will **not** be accepted.
+#'   be taken. A matrix or a table will **not** be accepted.
 #' @param x The grouping variable from the dataframe `data`.
 #' @param y The response (a.k.a. outcome or dependent) variable from the
 #'   dataframe `data`.
-#' @param subject.id In case of repeated measures design (`paired = TRUE`,
-#'   i.e.), this argument specifies the subject or repeated measures id. Note
-#'   that if this argument is `NULL` (which is the default), the function
-#'   assumes that the data has already been sorted by such an id by the user and
-#'   creates an internal identifier. So if your data is **not** sorted and you
-#'   leave this argument unspecified, the results can be inaccurate.
+#' @param subject.id Relevant in case of repeated measures design (`paired =
+#'   TRUE`, i.e.), it specifies the subject or repeated measures identifier.
+#'   **Important**: Note that if this argument is `NULL` (which is the default),
+#'   the function assumes that the data has already been sorted by such an id by
+#'   the user and creates an internal identifier. So if your data is **not**
+#'   sorted and you leave this argument unspecified, the results can be
+#'   inaccurate.
 #' @param paired Logical that decides whether the experimental design is
 #'   repeated measures/within-subjects or between-subjects. The default is
 #'   `FALSE`.
 #' @param spread Logical that decides whether the dataframe needs to be
-#'   converted from long/tidy to wide (default: `TRUE`), or the data needs to be
-#'   returned as it is but with the `NA`s removed.
+#'   converted from long/tidy to wide (default: `TRUE`). Relevant only if
+#'   `paired = TRUE`.
 #' @param ... Currently ignored.
 #'
 #' @importFrom dplyr row_number select mutate group_by ungroup arrange everything
@@ -45,7 +50,7 @@
 #'   paired = TRUE
 #' )
 #'
-#' # independent measures design
+#' # independent measures design (spread argument is ignored)
 #' long_to_wide_converter(
 #'   data = ggplot2::msleep,
 #'   x = vore,
@@ -66,17 +71,22 @@ long_to_wide_converter <- function(data,
   # make sure both quoted and unquoted arguments are allowed
   c(x, y) %<-% c(rlang::ensym(x), rlang::ensym(y))
 
+  # for non-paired data, even if specified, ignore it
+  if (isFALSE(paired)) subject.id <- NULL
+
   # initial cleanup
   data %<>%
     dplyr::select({{ x }}, {{ y }}, rowid = {{ subject.id }}) %>%
     dplyr::mutate({{ x }} := droplevels(as.factor({{ x }}))) %>%
-    as_tibble(.) %>%
     dplyr::arrange({{ x }})
 
   # if `subject.id` wasn't provided, create one for internal usage
   if (!"rowid" %in% names(data)) {
+    # the row number needs to be assigned for each participant in paired data
+    if (isTRUE(paired)) data %<>% dplyr::group_by({{ x }})
+
+    # unique id for each participant
     data %<>%
-      dplyr::group_by({{ x }}) %>% # for paired designs
       dplyr::mutate(rowid = dplyr::row_number()) %>%
       dplyr::ungroup(.)
   }
@@ -89,12 +99,8 @@ long_to_wide_converter <- function(data,
   }
 
   # convert to wide?
-  if (isTRUE(spread)) {
-    data %<>% tidyr::pivot_wider(data = ., names_from = {{ x }}, values_from = {{ y }})
-  } else {
-    if (isTRUE(paired)) data %<>% dplyr::arrange(rowid)
-  }
+  if (spread && paired) data %<>% tidyr::pivot_wider(names_from = {{ x }}, values_from = {{ y }})
 
   # final clean-up
-  dplyr::select(.data = data, rowid, dplyr::everything())
+  as_tibble(dplyr::select(data, rowid, dplyr::everything()) %>% dplyr::arrange(rowid))
 }

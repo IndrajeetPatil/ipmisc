@@ -16,27 +16,27 @@ long_to_wide_converter(
 }
 \arguments{
 \item{data}{A dataframe (or a tibble) from which variables specified are to
-be taken. A matrix or tables will \strong{not} be accepted.}
+be taken. A matrix or a table will \strong{not} be accepted.}
 
 \item{x}{The grouping variable from the dataframe \code{data}.}
 
 \item{y}{The response (a.k.a. outcome or dependent) variable from the
 dataframe \code{data}.}
 
-\item{subject.id}{In case of repeated measures design (\code{paired = TRUE},
-i.e.), this argument specifies the subject or repeated measures id. Note
-that if this argument is \code{NULL} (which is the default), the function
-assumes that the data has already been sorted by such an id by the user and
-creates an internal identifier. So if your data is \strong{not} sorted and you
-leave this argument unspecified, the results can be inaccurate.}
+\item{subject.id}{Relevant in case of repeated measures design (\code{paired = TRUE}, i.e.), it specifies the subject or repeated measures identifier.
+\strong{Important}: Note that if this argument is \code{NULL} (which is the default),
+the function assumes that the data has already been sorted by such an id by
+the user and creates an internal identifier. So if your data is \strong{not}
+sorted and you leave this argument unspecified, the results can be
+inaccurate.}
 
 \item{paired}{Logical that decides whether the experimental design is
 repeated measures/within-subjects or between-subjects. The default is
 \code{FALSE}.}
 
 \item{spread}{Logical that decides whether the dataframe needs to be
-converted from long/tidy to wide (default: \code{TRUE}), or the data needs to be
-returned as it is but with the \code{NA}s removed.}
+converted from long/tidy to wide (default: \code{TRUE}). Relevant only if
+\code{paired = TRUE}.}
 
 \item{...}{Currently ignored.}
 }
@@ -46,7 +46,11 @@ A dataframe in the wide (or Cartesian) format.
 \description{
 \Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
 
-This conversion is helpful mostly for repeated measures design.
+This conversion is helpful mostly for repeated measures design, where
+removing \code{NA}s by participant can be a bit tedious.
+
+It doesn't make sense to spread the dataframe to wide format when the measure
+is not repeated, so if \code{paired = TRUE}, \code{spread} argument will be ignored.
 }
 \examples{
 # for reproducibility
@@ -62,7 +66,7 @@ long_to_wide_converter(
   paired = TRUE
 )
 
-# independent measures design
+# independent measures design (spread argument is ignored)
 long_to_wide_converter(
   data = ggplot2::msleep,
   x = vore,
