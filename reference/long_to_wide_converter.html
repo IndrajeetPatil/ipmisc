@@ -43,7 +43,10 @@
 
 <meta property="og:title" content="Converts dataframe from long/tidy to wide format with NAs removed — long_to_wide_converter" />
 <meta property="og:description" content="
-This conversion is helpful mostly for repeated measures design." />
+This conversion is helpful mostly for repeated measures design, where
+removing NAs by participant can be a bit tedious.
+It doesn't make sense to spread the dataframe to wide format when the measure
+is not repeated, so if paired = TRUE, spread argument will be ignored." />
 
 
 
@@ -121,7 +124,10 @@ This conversion is helpful mostly for repeated measures design." />
 
     <div class="ref-description">
     <p><a href='https://www.tidyverse.org/lifecycle/#maturing'><img src='figures/lifecycle-maturing.svg' alt='Maturing lifecycle'></a></p>
-<p>This conversion is helpful mostly for repeated measures design.</p>
+<p>This conversion is helpful mostly for repeated measures design, where
+removing <code>NA</code>s by participant can be a bit tedious.</p>
+<p>It doesn't make sense to spread the dataframe to wide format when the measure
+is not repeated, so if <code>paired = TRUE</code>, <code>spread</code> argument will be ignored.</p>
     </div>
 
     <pre class="usage"><span class='fu'>long_to_wide_converter</span><span class='op'>(</span>
@@ -140,7 +146,7 @@ This conversion is helpful mostly for repeated measures design." />
     <tr>
       <th>data</th>
       <td><p>A dataframe (or a tibble) from which variables specified are to
-be taken. A matrix or tables will <strong>not</strong> be accepted.</p></td>
+be taken. A matrix or a table will <strong>not</strong> be accepted.</p></td>
     </tr>
     <tr>
       <th>x</th>
@@ -153,12 +159,12 @@ dataframe <code>data</code>.</p></td>
     </tr>
     <tr>
       <th>subject.id</th>
-      <td><p>In case of repeated measures design (<code>paired = TRUE</code>,
-i.e.), this argument specifies the subject or repeated measures id. Note
-that if this argument is <code>NULL</code> (which is the default), the function
-assumes that the data has already been sorted by such an id by the user and
-creates an internal identifier. So if your data is <strong>not</strong> sorted and you
-leave this argument unspecified, the results can be inaccurate.</p></td>
+      <td><p>Relevant in case of repeated measures design (<code>paired = TRUE</code>, i.e.), it specifies the subject or repeated measures identifier.
+<strong>Important</strong>: Note that if this argument is <code>NULL</code> (which is the default),
+the function assumes that the data has already been sorted by such an id by
+the user and creates an internal identifier. So if your data is <strong>not</strong>
+sorted and you leave this argument unspecified, the results can be
+inaccurate.</p></td>
     </tr>
     <tr>
       <th>paired</th>
@@ -169,8 +175,8 @@ repeated measures/within-subjects or between-subjects. The default is
     <tr>
       <th>spread</th>
       <td><p>Logical that decides whether the dataframe needs to be
-converted from long/tidy to wide (default: <code>TRUE</code>), or the data needs to be
-returned as it is but with the <code>NA</code>s removed.</p></td>
+converted from long/tidy to wide (default: <code>TRUE</code>). Relevant only if
+<code>paired = TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -209,7 +215,7 @@ returned as it is but with the <code>NA</code>s removed.</p></td>
 #&gt; </span><span style='color: #555555;'> 9</span><span>    11   0     0     2.5   0  
 #&gt; </span><span style='color: #555555;'>10</span><span>    12  10     8.5   7.5   9.5
 #&gt; </span><span style='color: #555555;'># … with 78 more rows</span><span></div><div class='input'>
-<span class='co'># independent measures design</span>
+<span class='co'># independent measures design (spread argument is ignored)</span>
 <span class='fu'>long_to_wide_converter</span><span class='op'>(</span>
   data <span class='op'>=</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='va'><a href='https://ggplot2.tidyverse.org/reference/msleep.html'>msleep</a></span>,
   x <span class='op'>=</span> <span class='va'>vore</span>,
@@ -229,7 +235,7 @@ returned as it is but with the <code>NA</code>s removed.</p></td>
 #&gt; </span><span style='color: #555555;'> 7</span><span>    17 carni  0.017</span><span style='text-decoration: underline;'>5</span><span>
 #&gt; </span><span style='color: #555555;'> 8</span><span>    18 carni  0.044</span><span style='text-decoration: underline;'>5</span><span>
 #&gt; </span><span style='color: #555555;'> 9</span><span>    19 carni  0.050</span><span style='text-decoration: underline;'>4</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span>     2 herbi  0.423 
+#&gt; </span><span style='color: #555555;'>10</span><span>    21 herbi  0.423 
 #&gt; </span><span style='color: #555555;'># … with 41 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
