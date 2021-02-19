@@ -59,7 +59,6 @@ install.packages("ipmisc")
 And the development version from `GitHub` with:
 
 ```{r installation2, eval = FALSE}
-# install.packages("remotes")
 remotes::install_github("IndrajeetPatil/ipmisc")
 ```
 
