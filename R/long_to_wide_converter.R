@@ -8,13 +8,14 @@
 #' This conversion is helpful mostly for repeated measures design, where
 #' removing `NA`s by participant can be a bit tedious.
 #'
-#' It doesn't make sense to spread the dataframe to wide format when the measure
+#' It does not make sense to spread the dataframe to wide format when the measure
 #' is not repeated, so if `paired = TRUE`, `spread` argument will be ignored.
 #'
 #' @param data A dataframe (or a tibble) from which variables specified are to
-#'   be taken. A matrix or a table will **not** be accepted.
-#' @param x The grouping variable from the dataframe `data`.
-#' @param y The response (a.k.a. outcome or dependent) variable from the
+#'   be taken. Other data types (e.g., matrix,table, array, etc.) will **not**
+#'   be accepted.
+#' @param x The grouping (or independent) variable from the dataframe `data`.
+#' @param y The response (or outcome or dependent) variable from the
 #'   dataframe `data`.
 #' @param subject.id Relevant in case of repeated measures design (`paired =
 #'   TRUE`, i.e.), it specifies the subject or repeated measures identifier.

@@ -16,11 +16,12 @@ long_to_wide_converter(
 }
 \arguments{
 \item{data}{A dataframe (or a tibble) from which variables specified are to
-be taken. A matrix or a table will \strong{not} be accepted.}
+be taken. Other data types (e.g., matrix,table, array, etc.) will \strong{not}
+be accepted.}
 
-\item{x}{The grouping variable from the dataframe \code{data}.}
+\item{x}{The grouping (or independent) variable from the dataframe \code{data}.}
 
-\item{y}{The response (a.k.a. outcome or dependent) variable from the
+\item{y}{The response (or outcome or dependent) variable from the
 dataframe \code{data}.}
 
 \item{subject.id}{Relevant in case of repeated measures design (\code{paired = TRUE}, i.e.), it specifies the subject or repeated measures identifier.
@@ -49,7 +50,7 @@ A dataframe with \code{NA}s removed.
 This conversion is helpful mostly for repeated measures design, where
 removing \code{NA}s by participant can be a bit tedious.
 
-It doesn't make sense to spread the dataframe to wide format when the measure
+It does not make sense to spread the dataframe to wide format when the measure
 is not repeated, so if \code{paired = TRUE}, \code{spread} argument will be ignored.
 }
 \examples{
