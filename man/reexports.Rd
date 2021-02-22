@@ -14,6 +14,7 @@
 \alias{\%|\%}
 \alias{:=}
 \alias{\%<-\%}
+\alias{\%->\%}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -27,6 +28,6 @@ below to see their documentation.
 
   \item{tibble}{\code{\link[tibble]{as_tibble}}, \code{\link[tibble]{enframe}}, \code{\link[tibble]{tibble}}}
 
-  \item{zeallot}{\code{\link[zeallot:operator]{\%<-\%}}}
+  \item{zeallot}{\code{\link[zeallot:operator]{\%->\%}}, \code{\link[zeallot:operator]{\%<-\%}}}
 }}
 

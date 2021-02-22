@@ -9,6 +9,7 @@ stats_type_switch(type)
 ## Reexported objects
 
 magrittr::%$%
+zeallot::%->%
 zeallot::%<-%
 magrittr::%<>%
 magrittr::%>%

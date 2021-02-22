@@ -45,3 +45,7 @@ rlang::`:=`
 #' @export
 #' @importFrom zeallot "%<-%"
 zeallot::`%<-%`
+
+#' @export
+#' @importFrom zeallot "%->%"
+zeallot::`%->%`

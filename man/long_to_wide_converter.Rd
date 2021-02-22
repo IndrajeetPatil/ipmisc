@@ -24,12 +24,13 @@ be accepted.}
 \item{y}{The response (or outcome or dependent) variable from the
 dataframe \code{data}.}
 
-\item{subject.id}{Relevant in case of repeated measures design (\code{paired = TRUE}, i.e.), it specifies the subject or repeated measures identifier.
-\strong{Important}: Note that if this argument is \code{NULL} (which is the default),
-the function assumes that the data has already been sorted by such an id by
-the user and creates an internal identifier. So if your data is \strong{not}
-sorted and you leave this argument unspecified, the results can be
-inaccurate.}
+\item{subject.id}{Relevant in case of repeated measures or within-subjects
+design (\code{paired = TRUE}, i.e.), it specifies the subject or repeated
+measures identifier. \strong{Important}: Note that if this argument is \code{NULL}
+(which is the default), the function assumes that the data has already been
+sorted by such an id by the user and creates an internal identifier. So if
+your data is \strong{not} sorted and you leave this argument unspecified, the
+results can be inaccurate.}
 
 \item{paired}{Logical that decides whether the experimental design is
 repeated measures/within-subjects or between-subjects. The default is
@@ -50,8 +51,9 @@ A dataframe with \code{NA}s removed.
 This conversion is helpful mostly for repeated measures design, where
 removing \code{NA}s by participant can be a bit tedious.
 
-It does not make sense to spread the dataframe to wide format when the measure
-is not repeated, so if \code{paired = TRUE}, \code{spread} argument will be ignored.
+It does not make sense to spread the dataframe to wide format when the
+measure is not repeated, so if \code{paired = TRUE}, \code{spread} argument will be
+ignored.
 }
 \examples{
 # for reproducibility
