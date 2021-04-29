@@ -1,14 +1,10 @@
 url: https://indrajeetpatil.github.io/ipmisc/
 
 template:
-  params:
-    bootswatch: simplex
+  package: preferably
 
 development:
-  mode: unreleased
-
-toc:
-  depth: 3
+  mode: auto
 
 authors:
   Indrajeet Patil:
