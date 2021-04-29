@@ -3,8 +3,8 @@ url: https://indrajeetpatil.github.io/ipmisc/
 template:
   package: preferably
 
-development:
-  mode: unreleased
+# development:
+#   mode: unreleased
 
 authors:
   Indrajeet Patil:
