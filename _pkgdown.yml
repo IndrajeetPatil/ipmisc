@@ -4,7 +4,7 @@ template:
   package: preferably
 
 development:
-  mode: auto
+  mode: unreleased
 
 authors:
   Indrajeet Patil:
