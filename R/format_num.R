@@ -3,8 +3,6 @@
 #'
 #' @description
 #'
-#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
-#'
 #' Function to format an R object for pretty printing with a specified (`k`)
 #' number of decimal places. The function also allows really small *p*-values to
 #' be denoted as `"p < 0.001"` rather than `"p = 0.000"`. Note that if `p.value`

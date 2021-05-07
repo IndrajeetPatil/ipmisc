@@ -1,4 +1,4 @@
-# ipmisc 6.0.1
+# ipmisc 6.0.2
 
   - Minor improvements to function documentation.
 

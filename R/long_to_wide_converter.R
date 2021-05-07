@@ -3,8 +3,6 @@
 #'
 #' @description
 #'
-#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
-#'
 #' This conversion is helpful mostly for repeated measures design, where
 #' removing `NA`s by participant can be a bit tedious.
 #'

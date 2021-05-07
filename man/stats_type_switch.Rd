@@ -13,11 +13,13 @@ stats_type_switch(type)
 \item \code{"nonparametric"}
 \item \code{"robust"}
 \item \code{"bayes"}
-}}
+}
+
+This argument also accepts the following abbreviations: \code{"p"} (for
+\emph{parametric}), \code{"np"} (for \emph{nonparametric}), \code{"r"} (for \emph{robust}), \code{"bf"}
+(for \emph{Bayes Factor} or \emph{Bayesian}).}
 }
 \description{
-\Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
-
 Relevant mostly for \code{ggstatsplot} and \code{statsExpressions} packages, where
 different statistical approaches are supported via this argument: parametric,
 non-parametric, robust, and Bayesian. This switch function converts strings

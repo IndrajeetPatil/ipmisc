@@ -20,8 +20,6 @@ format_num(x, k = 3L, p.value = FALSE, ...)
 Formatted numeric value.
 }
 \description{
-\Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
-
 Function to format an R object for pretty printing with a specified (\code{k})
 number of decimal places. The function also allows really small \emph{p}-values to
 be denoted as \code{"p < 0.001"} rather than \code{"p = 0.000"}. Note that if \code{p.value}

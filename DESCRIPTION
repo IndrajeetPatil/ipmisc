@@ -1,7 +1,7 @@
 Type: Package
 Package: ipmisc
 Title: Miscellaneous Functions for Data Cleaning and Analysis
-Version: 6.0.1
+Version: 6.0.2
 Authors@R: 
     person(given = "Indrajeet",
            family = "Patil",

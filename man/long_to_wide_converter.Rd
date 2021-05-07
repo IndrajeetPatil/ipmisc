@@ -54,8 +54,6 @@ converted from long/tidy to wide (default: \code{TRUE}). Relevant only if
 A dataframe with \code{NA}s removed.
 }
 \description{
-\Sexpr[results=rd, stage=render]{rlang:::lifecycle("maturing")}
-
 This conversion is helpful mostly for repeated measures design, where
 removing \code{NA}s by participant can be a bit tedious.
 

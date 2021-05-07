@@ -9,7 +9,7 @@
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -189,6 +189,6 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "fileSize": "134.881KB",
+  "fileSize": "126.604KB",
   "readme": "https://github.com/IndrajeetPatil/ipmisc/blob/master/README.md"
 }

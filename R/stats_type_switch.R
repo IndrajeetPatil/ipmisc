@@ -3,8 +3,6 @@
 #'
 #' @description
 #'
-#' \Sexpr[results=rd, stage=render]{rlang:::lifecycle("stable")}
-#'
 #' Relevant mostly for `ggstatsplot` and `statsExpressions` packages, where
 #' different statistical approaches are supported via this argument: parametric,
 #' non-parametric, robust, and Bayesian. This switch function converts strings
@@ -15,6 +13,10 @@
 #'   - `"nonparametric"`
 #'   - `"robust"`
 #'   - `"bayes"`
+#'
+#' This argument also accepts the following abbreviations: `"p"` (for
+#' *parametric*), `"np"` (for *nonparametric*), `"r"` (for *robust*), `"bf"`
+#' (for *Bayes Factor* or *Bayesian*).
 #'
 #' @importFrom dplyr case_when
 #'
