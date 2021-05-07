@@ -1,7 +1,7 @@
 ## Test environments
-* local OS X install, R 4.0.3
+* local OS X install, R 4.0.5
 
-* ubuntu 14.04 (on travis-ci), R 4.0.3
+* ubuntu 14.04 (on github-actons), R 4.0.5
 
 * win-builder (devel and release)
 
@@ -9,7 +9,7 @@
 
 0 errors | 0 warnings | 0 note
 
-  - Minor internal refactoring.
+  - Minor improvements to function documentation.
 
 ## revdepcheck results
 

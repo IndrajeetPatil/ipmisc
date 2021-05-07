@@ -5,17 +5,17 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "ipmisc",
-  "description": "Provides functions needed for data cleaning and\n    formatting and forms data cleaning and wrangling backend for the\n    following packages: 'ggstatsplot', 'pairwiseComparisons',\n    'statsExpressions', and 'tidyBF'.",
+  "description": "Provides functions needed for data cleaning and\n    formatting and forms data cleaning and wrangling backend for the\n    following packages: 'ggstatsplot', 'pairwiseComparisons', and\n    'statsExpressions'.",
   "name": "ipmisc: Miscellaneous Functions for Data Cleaning and Analysis",
   "issueTracker": "https://github.com/IndrajeetPatil/ipmisc/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "6.0.0.9000",
+  "version": "6.0.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2021-02-11 r79990)",
+  "runtimePlatform": "R version 4.0.5 (2021-03-31)",
   "author": [
     {
       "@type": "Person",
@@ -176,7 +176,7 @@
     }
   ],
   "codeRepository": "https://github.com/IndrajeetPatil/ipmisc",
-  "contIntegration": ["https://travis-ci.org/IndrajeetPatil/ipmisc", "https://ci.appveyor.com/project/IndrajeetPatil/ipmisc", "https://codecov.io/github/IndrajeetPatil/ipmisc?branch=master", "https://coveralls.io/github/IndrajeetPatil/ipmisc?branch=master"],
+  "contIntegration": "https://codecov.io/gh/IndrajeetPatil/ipmisc?branch=master",
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html"],
   "relatedLink": [
     "https://indrajeetpatil.github.io/ipmisc/",
@@ -189,6 +189,6 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "fileSize": "418.189KB",
+  "fileSize": "134.881KB",
   "readme": "https://github.com/IndrajeetPatil/ipmisc/blob/master/README.md"
 }

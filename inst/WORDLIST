@@ -1,4 +1,4 @@
-AppVeyor
+Codecov
 HFHD
 LDLF
 LFHD
@@ -15,6 +15,7 @@ indrajeetpatil
 io
 lifecycle
 pairwiseComparisons
+pkgdown
 setosa
 statsExpressions
 tibble
