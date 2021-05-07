@@ -70,9 +70,9 @@
 <meta property="og:title" content="Switch type of statistics. — stats_type_switch" />
 <meta property="og:description" content="
 Relevant mostly for ggstatsplot and statsExpressions packages, where
-there are four types of statistics are supported: parametric, non-parametric,
-robust, and Bayesian. This switch function converts strings entered by users
-to a common pattern." />
+different statistical approaches are supported via this argument: parametric,
+non-parametric, robust, and Bayesian. This switch function converts strings
+entered by users to a common pattern for convenience." />
 
 
 
@@ -107,7 +107,7 @@ to a common pattern." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ipmisc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">6.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">6.0.1</span>
       </span>
     </div>
 
@@ -159,9 +159,9 @@ to a common pattern." />
     <div class="ref-description">
     <p><a href='https://www.tidyverse.org/lifecycle/#stable'><img src='figures/lifecycle-stable.svg' alt='Stable lifecycle'></a></p>
 <p>Relevant mostly for <code>ggstatsplot</code> and <code>statsExpressions</code> packages, where
-there are four types of statistics are supported: parametric, non-parametric,
-robust, and Bayesian. This switch function converts strings entered by users
-to a common pattern.</p>
+different statistical approaches are supported via this argument: parametric,
+non-parametric, robust, and Bayesian. This switch function converts strings
+entered by users to a common pattern for convenience.</p>
     </div>
 
     <pre class="usage"><span class='fu'>stats_type_switch</span><span class='op'>(</span><span class='va'>type</span><span class='op'>)</span></pre>
@@ -171,7 +171,12 @@ to a common pattern.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>type</th>
-      <td><p>Character string describing the type of statistics.</p></td>
+      <td><p>A character specifying the type of statistical approach:</p><ul>
+<li><p><code>"parametric"</code></p></li>
+<li><p><code>"nonparametric"</code></p></li>
+<li><p><code>"robust"</code></p></li>
+<li><p><code>"bayes"</code></p></li>
+</ul></td>
     </tr>
     </table>
 
