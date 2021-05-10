@@ -15,9 +15,7 @@ stats_type_switch(type)
 \item \code{"bayes"}
 }
 
-This argument also accepts the following abbreviations: \code{"p"} (for
-\emph{parametric}), \code{"np"} (for \emph{nonparametric}), \code{"r"} (for \emph{robust}), \code{"bf"}
-(for \emph{Bayes Factor} or \emph{Bayesian}).}
+You can specify just the initial letter.}
 }
 \description{
 Relevant mostly for \code{ggstatsplot} and \code{statsExpressions} packages, where

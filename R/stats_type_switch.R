@@ -14,9 +14,7 @@
 #'   - `"robust"`
 #'   - `"bayes"`
 #'
-#' This argument also accepts the following abbreviations: `"p"` (for
-#' *parametric*), `"np"` (for *nonparametric*), `"r"` (for *robust*), `"bf"`
-#' (for *Bayes Factor* or *Bayesian*).
+#' You can specify just the initial letter.
 #'
 #' @importFrom dplyr case_when
 #'
