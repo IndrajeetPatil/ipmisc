@@ -49,17 +49,10 @@ of these packages. So, if you wish to use them, do so at your own risk. 😉
 
 # Installation
 
-You can install the `CRAN` version of `ipmisc`:
-
-```{r installation1, eval=FALSE}
-install.packages("ipmisc")
-```
-
-And the development version from `GitHub` with:
-
-```{r installation2, eval=FALSE}
-remotes::install_github("IndrajeetPatil/ipmisc")
-```
+Type | Source | Command
+---|---|---
+Release | CRAN | `install.packages("ipmisc")`
+Development | GitHub | `remotes::install_github("IndrajeetPatil/ipmisc")`
 
 # Functions
 
