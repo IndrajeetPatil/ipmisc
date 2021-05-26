@@ -20,10 +20,15 @@
 #'
 #' @return Formatted numeric value.
 #'
-#' @examples
+#' @section Examples:
+#' ```{r, child = "man/rmd/setup.Rmd"}
+#' ```
+#'
+#' ```{r}
 #' format_num(0.0000123, k = 2, p.value = TRUE)
 #' format_num(0.008675, k = 2, p.value = TRUE)
 #' format_num(0.003458, k = 3, p.value = FALSE)
+#' ```
 #' @export
 
 # function body

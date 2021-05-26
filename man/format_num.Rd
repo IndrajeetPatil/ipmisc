@@ -30,8 +30,13 @@ instead.
 \note{
 This function is \strong{not} vectorized.
 }
-\examples{
-format_num(0.0000123, k = 2, p.value = TRUE)
-format_num(0.008675, k = 2, p.value = TRUE)
-format_num(0.003458, k = 3, p.value = FALSE)
+\section{Examples}{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{format_num(0.0000123, k = 2, p.value = TRUE)
+}\if{html}{\out{</div>}}\preformatted{## [1] "1.23e-05"
+}\if{html}{\out{<div class="sourceCode r">}}\preformatted{format_num(0.008675, k = 2, p.value = TRUE)
+}\if{html}{\out{</div>}}\preformatted{## [1] "0.009"
+}\if{html}{\out{<div class="sourceCode r">}}\preformatted{format_num(0.003458, k = 3, p.value = FALSE)
+}\if{html}{\out{</div>}}\preformatted{## [1] "0.003"
 }
+}
+

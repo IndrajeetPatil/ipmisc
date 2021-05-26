@@ -51,7 +51,8 @@ converted from long/tidy to wide (default: \code{TRUE}). Relevant only if
 \item{...}{Currently ignored.}
 }
 \value{
-A dataframe with \code{NA}s removed.
+A dataframe with \code{NA}s removed while respecting the
+between-or-within-subjects nature of the dataset.
 }
 \description{
 This conversion is helpful mostly for repeated measures design, where
@@ -61,8 +62,8 @@ It does not make sense to spread the dataframe to wide format when the
 measure is not repeated, so if \code{paired = TRUE}, \code{spread} argument will be
 ignored.
 }
-\examples{
-# for reproducibility
+\section{Examples}{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{# for reproducibility
 library(ipmisc)
 set.seed(123)
 
@@ -74,8 +75,21 @@ long_to_wide_converter(
   subject.id = subject,
   paired = TRUE
 )
-
-# independent measures design (spread argument is ignored)
+}\if{html}{\out{</div>}}\preformatted{## # A tibble: 88 x 5
+##    rowid  HDHF  HDLF  LDHF  LDLF
+##    <int> <dbl> <dbl> <dbl> <dbl>
+##  1     1  10     9     6     6  
+##  2     3  10    10    10     5  
+##  3     4   9     6     9     6  
+##  4     5   8.5   5.5   6.5   3  
+##  5     6   3     7.5   0.5   2  
+##  6     7  10    10    10    10  
+##  7     8  10     9    10    10  
+##  8     9  10     6     9.5   9.5
+##  9    11   0     0     2.5   0  
+## 10    12  10     8.5   7.5   9.5
+## # … with 78 more rows
+}\if{html}{\out{<div class="sourceCode r">}}\preformatted{# independent measures design (spread argument is ignored)
 long_to_wide_converter(
   data = ggplot2::msleep,
   x = vore,
@@ -83,4 +97,20 @@ long_to_wide_converter(
   paired = FALSE,
   spread = FALSE
 )
+}\if{html}{\out{</div>}}\preformatted{## # A tibble: 51 x 3
+##    rowid vore  brainwt
+##    <int> <fct>   <dbl>
+##  1     3 carni  0.07  
+##  2     4 carni  0.0108
+##  3     5 carni  0.0256
+##  4     7 carni  0.325 
+##  5     9 carni  0.0125
+##  6    12 carni  0.157 
+##  7    17 carni  0.0175
+##  8    18 carni  0.0445
+##  9    19 carni  0.0504
+## 10    21 herbi  0.423 
+## # … with 41 more rows
 }
+}
+

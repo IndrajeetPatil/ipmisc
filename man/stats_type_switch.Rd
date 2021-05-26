@@ -23,7 +23,11 @@ different statistical approaches are supported via this argument: parametric,
 non-parametric, robust, and Bayesian. This switch function converts strings
 entered by users to a common pattern for convenience.
 }
-\examples{
-stats_type_switch("p")
-stats_type_switch("bf")
+\section{Examples}{
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{stats_type_switch("p")
+}\if{html}{\out{</div>}}\preformatted{## [1] "parametric"
+}\if{html}{\out{<div class="sourceCode r">}}\preformatted{stats_type_switch("bf")
+}\if{html}{\out{</div>}}\preformatted{## [1] "bayes"
 }
+}
+

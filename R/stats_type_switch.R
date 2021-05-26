@@ -18,9 +18,13 @@
 #'
 #' @importFrom dplyr case_when
 #'
-#' @examples
+#' @section Examples:
+#' ```{r, child = "man/rmd/setup.Rmd"}
+#' ```
+#' ```{r}
 #' stats_type_switch("p")
 #' stats_type_switch("bf")
+#' ```
 #' @export
 
 stats_type_switch <- function(type) {

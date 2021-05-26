@@ -43,9 +43,13 @@
 #' @importFrom dplyr nest_by filter
 #' @importFrom tidyr pivot_longer unnest
 #'
-#' @return A dataframe with `NA`s removed.
+#' @return A dataframe with `NA`s removed while respecting the
+#'   between-or-within-subjects nature of the dataset.
 #'
-#' @examples
+#' @section Examples:
+#' ```{r, child = "man/rmd/setup.Rmd"}
+#' ```
+#' ```{r}
 #' # for reproducibility
 #' library(ipmisc)
 #' set.seed(123)
@@ -67,6 +71,7 @@
 #'   paired = FALSE,
 #'   spread = FALSE
 #' )
+#' ```
 #' @export
 
 # function body

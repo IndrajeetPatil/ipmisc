@@ -1,0 +1,20 @@
+```{r, include = FALSE}
+options(
+  tibble.width = Inf,
+  pillar.bold = TRUE,
+  pillar.neg = TRUE,
+  pillar.subtle_num = TRUE,
+  pillar.min_chars = Inf
+)
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  dpi = 300,
+  out.width = "100%",
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE
+)
+
+library(ipmisc)
+```
