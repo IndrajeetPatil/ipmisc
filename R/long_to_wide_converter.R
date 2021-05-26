@@ -47,9 +47,7 @@
 #'   between-or-within-subjects nature of the dataset.
 #'
 #' @section Examples:
-#' ```{r, child = "man/rmd/setup.Rmd"}
-#' ```
-#' ```{r}
+#' ```{r, comment="#>"}
 #' # for reproducibility
 #' library(ipmisc)
 #' set.seed(123)
@@ -63,13 +61,12 @@
 #'   paired = TRUE
 #' )
 #'
-#' # independent measures design (spread argument is ignored)
+#' # independent measures design
 #' long_to_wide_converter(
 #'   data = ggplot2::msleep,
 #'   x = vore,
 #'   y = brainwt,
-#'   paired = FALSE,
-#'   spread = FALSE
+#'   paired = FALSE
 #' )
 #' ```
 #' @export

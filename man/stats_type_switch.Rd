@@ -25,9 +25,9 @@ entered by users to a common pattern for convenience.
 }
 \section{Examples}{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{stats_type_switch("p")
-}\if{html}{\out{</div>}}\preformatted{## [1] "parametric"
+}\if{html}{\out{</div>}}\preformatted{#> [1] "parametric"
 }\if{html}{\out{<div class="sourceCode r">}}\preformatted{stats_type_switch("bf")
-}\if{html}{\out{</div>}}\preformatted{## [1] "bayes"
+}\if{html}{\out{</div>}}\preformatted{#> [1] "bayes"
 }
 }
 

@@ -19,9 +19,7 @@
 #' @importFrom dplyr case_when
 #'
 #' @section Examples:
-#' ```{r, child = "man/rmd/setup.Rmd"}
-#' ```
-#' ```{r}
+#' ```{r, comment="#>"}
 #' stats_type_switch("p")
 #' stats_type_switch("bf")
 #' ```
