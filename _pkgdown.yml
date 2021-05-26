@@ -3,9 +3,6 @@ url: https://indrajeetpatil.github.io/ipmisc/
 template:
   package: preferably
 
-# development:
-#   mode: unreleased
-
 authors:
   Indrajeet Patil:
     href: https://sites.google.com/site/indrajeetspatilmorality/
